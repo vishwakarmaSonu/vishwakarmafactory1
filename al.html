@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Our Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height:100vh;
+            background-color: rgba(229, 239, 218, 0.5);
+        }
+
+        #popup {
+            display: none;
+            background-color: rgba(229, 239, 218, 0.5);
+            border: 6px solid rgba(229, 239, 218, 0.5);
+            padding: 20px;
+            border-radius: 90px;
+            box-shadow: 55px 5px 80px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+       #diw{
+        border-radius: 30px;
+
+       }
+        #overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(229, 239, 218, 0.5);
+        }
+
+        #closeBtn {
+            cursor: pointer;
+            color: #4CAF50;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="overlay"></div>
+
+    <div id="popup">
+        <p>Welcome to Vishwakarma Art!</p>
+        <p>Happy Diwali to you </p>
+        <img id="diw" src="./assets/images/diwali2.jpg" style="width: 30%;">
+        <!-- <p id="closeBtn" onclick="closePopup()">Close</p> -->
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Display the pop-up after 2 seconds (adjust the time as needed)
+            setTimeout(function() {
+                showPopup();
+            }, 100);
+        });
+
+        function showPopup() {
+            var popup = document.getElementById('popup');
+            var overlay = document.getElementById('overlay');
+
+            popup.style.display = 'block';
+            overlay.style.display = 'block';
+
+            // Close the pop-up after 5 seconds (adjust the time as needed)
+            setTimeout(function() {
+                closePopup();
+                // Redirect to the next page after 2 seconds (adjust the time as needed)
+                setTimeout(function() {
+                    window.location.href = 'al.html';
+                }, 100);
+            }, 2000);
+        }
+
+        function closePopup() {
+            var popup = document.getElementById('popup');
+            var overlay = document.getElementById('overlay');
+
+            popup.style.display = 'none';
+            overlay.style.display = 'none';
+        }
+    </script>
+
+</body>
+</html>
