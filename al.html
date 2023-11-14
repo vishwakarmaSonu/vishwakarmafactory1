@@ -1,95 +1,3177 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to Our Website</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height:100vh;
-            background-color: rgba(229, 239, 218, 0.5);
-        }
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        #popup {
-            display: none;
-            background-color: rgba(229, 239, 218, 0.5);
-            border: 6px solid rgba(229, 239, 218, 0.5);
-            padding: 20px;
-            border-radius: 90px;
-            box-shadow: 55px 5px 80px rgba(0, 0, 0, 0.1);
-            text-align: center;
-        }
-       #diw{
-        border-radius: 30px;
+  <!-- 
+    - primary meta tag
+  -->
+  <title>Vishwakarma Art</title>
+  <meta name="title" content="Vishwakarma Art - Get Quality Furniture">
+  <meta name="description" content="MANUFACTURER & SUPPLIERS ALL TYPES OF HANDICRAFT ITEMS">
 
-       }
-        #overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(229, 239, 218, 0.5);
-        }
+  <!-- 
+    - favicon
+  -->
+<!--   <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml"> -->
 
-        #closeBtn {
-            cursor: pointer;
-            color: #4CAF50;
-            font-weight: bold;
-        }
-    </style>
+  <!-- 
+    - custom css link
+  -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+  <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Mr+De+Haviland&family=Roboto:wght@400;500;700&display=swap"
+    rel="stylesheet">
+
+  <!-- 
+    - preload images
+  -->
+  <link rel="preload" as="image" href="./assets/images/hero-product-1.jpg">
+  <link rel="preload" as="image" href="./assets/images/hero-product-2.jpg">
+  <link rel="preload" as="image" href="./assets/images/hero-product-3.jpg">
+  <link rel="preload" as="image" href="./assets/images/hero-product-4.jpg">
+  <link rel="preload" as="image" href="./assets/images/hero-product-5.jpg">
+
 </head>
-<body>
 
-    <div id="overlay"></div>
+<body id="top">
 
-    <div id="popup">
-        <p>Welcome to Vishwakarma Art!</p>
-        <p>Happy Diwali to you </p>
-        <img id="diw" src="./assets/images/diwali2.jpg" style="width: 30%;">
-        <!-- <p id="closeBtn" onclick="closePopup()">Close</p> -->
+  <!-- 
+    - #HEADER
+  -->
+
+  <header class="header" data-header>
+    <div class="container">
+
+      <!-- <div class="input-wrapper">
+        <input type="search" name="search" placeholder="Search Anything..." class="input-field">
+
+        <ion-icon name="search-outline" aria-hidden="true"></ion-icon>
+      </div> -->
+
+<!--       <a href="#" class="logo" style="font-size:185% ;">Vishwakarma Art</a> -->
+            <a href="/" class="logo" style="font-size:185% ;"><img src="./assets/images/1.png" style=" width: 23%;"></a>
+
+
+      <div class="header-action">
+
+        <!-- <button class="header-action-btn" aria-label="user">
+          <ion-icon name="person-outline" aria-hidden="true"></ion-icon>
+        </button> -->
+
+        <!-- <button class="header-action-btn" aria-label="favorite list">
+          <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
+
+          <span class="btn-badge">0</span>
+        </button> -->
+        
+
+        
+        <a class="nav-link "  style="color: #000000;  font-weight: bold ;  font-size: 15px;" href="whatsapp://send?text= Nice to contact you !&phone=+919588938688">Contact</a>
+
+
+        
+
+        
+
+        <button class="header-action-btn" aria-label="open menu" data-nav-toggler>
+          <ion-icon name="menu-outline" aria-hidden="true"></ion-icon>
+        </button>
+
+      </div>
+
+    </div>
+  </header>
+
+
+
+
+
+  <!-- 
+    - #SIDEBAR
+  -->
+
+  <div class="sidebar" data-navbar>
+
+    <button class="nav-close-btn" aria-label="close menu" data-nav-toggler>
+      <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
+    </button>
+
+    <!-- <div class="wrapper">
+
+      <ul class="sidebar-list">
+
+        <li>
+          <p class="sidebar-list-title">Language</p>
+        </li>
+
+        <li>
+          <a href="#" class="sidebar-link">English</a>
+        </li>
+
+        <li>
+          <a href="#" class="sidebar-link">French</a>
+        </li>
+
+        <li>
+          <a href="#" class="sidebar-link">Arabric</a>
+        </li>
+
+      </ul>
+
+      <ul class="sidebar-list">
+
+        <li>
+          <p class="sidebar-list-title">Currency</p>
+        </li>
+
+        <li>
+          <a href="#" class="sidebar-link">USD - US Dollar</a>
+        </li>
+
+        <li>
+          <a href="#" class="sidebar-link">Euro</a>
+        </li>
+
+        <li>
+          <a href="#" class="sidebar-link">Pound</a>
+        </li>
+
+      </ul>
+
+    </div> -->
+
+    <nav class="navbar">
+      <ul class="navbar-list">
+
+        <li class="navbar-item">
+          <a href="/" class="navbar-link" data-nav-link>Home</a>
+        </li>
+
+        <li class="navbar-item">
+          <a href="about.html" class="navbar-link" data-nav-link>About</a>
+        </li>
+        <li class="navbar-item">
+
+        <a href="https://vishwakarmaartorder.pythonanywhere.com/app1/login"><span class="btn-badge">Booking</span> </a>
+      </li>
+
+
+        <li class="navbar-item">
+          <a href="#product" class="navbar-link" data-nav-link>Product</a>
+        </li>
+
+        <li class="navbar-item">
+          <a href="#blog" class="navbar-link" data-nav-link>Special Product</a>
+        </li>
+
+      </ul>
+    </nav>
+
+    <ul class="contact-list">
+
+      <li>
+        <p class="contact-list-title">Contact Us</p>
+      </li>
+
+      <li class="contact-item">
+        <address class="address">
+          Indira nagar , Sangariya jodhpur(Raj)
+        </address>
+      </li>
+
+      <li class="contact-item">
+        <a href="mailto:support.vishwakarmaart91@gmail.com" class="contact-link">Vishwakarmaart91@gmail.com</a>
+      </li>
+
+      <li class="contact-item">
+        <a href="tel:+91 9588938688" class="contact-link">+91 9588938688</a>
+      </li>
+      <li class="contact-item">
+        <a href="tel:+91 9251628649" class="contact-link">+91 9251628649</a>
+      </li>
+
+    </ul>
+
+    <div class="social-wrapper">
+
+      <p class="social-list-title">Follow US On Socials</p>
+
+      <ul class="social-list">
+
+        <li>
+          <a href="#" class="social-link">
+            <ion-icon name="logo-facebook"></ion-icon>
+          </a>
+        </li>
+
+        <li>
+          <a href="#" class="social-link">
+            <ion-icon name="logo-twitter"></ion-icon>
+          </a>
+        </li>
+
+        <li>
+          <a href="#" class="social-link">
+            <ion-icon name="logo-tumblr"></ion-icon>
+          </a>
+        </li>
+
+      </ul>
+
     </div>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            // Display the pop-up after 2 seconds (adjust the time as needed)
-            setTimeout(function() {
-                showPopup();
-            }, 100);
-        });
+  </div>
 
-        function showPopup() {
-            var popup = document.getElementById('popup');
-            var overlay = document.getElementById('overlay');
+  <div class="overlay" data-overlay data-nav-toggler></div>
 
-            popup.style.display = 'block';
-            overlay.style.display = 'block';
 
-            // Close the pop-up after 5 seconds (adjust the time as needed)
-            setTimeout(function() {
-                closePopup();
-                // Redirect to the next page after 2 seconds (adjust the time as needed)
-                setTimeout(function() {
-                    window.location.href = 'al.html';
-                }, 100);
-            }, 2000);
-        }
 
-        function closePopup() {
-            var popup = document.getElementById('popup');
-            var overlay = document.getElementById('overlay');
 
-            popup.style.display = 'none';
-            overlay.style.display = 'none';
-        }
-    </script>
+
+  <main>
+    <article>
+
+      <!-- 
+        - #HERO
+      -->
+
+      <section class="section hero" id="home" aria-label="home">
+        <div class="container">
+
+          <ul class="hero-list">
+
+            <li>
+              <div class="hero-card">
+
+                <figure class="card-banner img-holder" style="--width: 285; --height: 396;">
+                  <img src="./assets/images/10chair.jpg" width="285" height="396" alt="Art Deco Home"
+                    class="img-cover">
+                </figure>
+
+                <div class="card-content">
+                  <h3>
+                    <a href="#" class="card-title">Relax Chair</a>
+                  </h3>
+
+                  <p class="card-text">Decoration</p>
+                </div>
+
+              </div>
+            </li>
+
+            <li class="colspan-2">
+              <div class="hero-card">
+
+                <figure class="card-banner img-holder" style="--width: 568; --height: 389;">
+                  <img src="./assets/images/5chair.jpg" width="568" height="389" alt="Helen Chair"
+                    class="img-cover">
+                </figure>
+
+                <div class="card-content">
+                  <h3>
+                    <a href="#" class="card-title">Relax Chair</a>
+                  </h3>
+
+                  <p class="card-text">Decoration</p>
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="hero-card">
+
+                <figure class="card-banner img-holder" style="--width: 285; --height: 396;">
+                  <img src="./assets/images/1w.jpg" width="285" height="396" alt="Vase Of Flowers"
+                    class="img-cover">
+                </figure>
+
+                <div class="card-content">
+                  <h3>
+                    <a href="#" class="card-title">Bed</a>
+                  </h3>
+
+                  <p class="card-text">Decoration</p>
+                </div>
+
+              </div>
+            </li>
+
+            <li class="colspan-2">
+              <div class="hero-card">
+
+                <figure class="card-banner img-holder" style="--width: 580; --height: 213;">
+                  <img src="./assets/images/product-5.jpg" width="580" height="213" alt="Wood Eggs"
+                    class="img-cover">
+                </figure>
+
+                <div class="card-content">
+                  <h3>
+                    <a href="#" class="card-title">Wooden Khalbatta Okhli Masher</a>
+                  </h3>
+
+                  <p class="card-text">Decoration</p>
+                </div>
+
+              </div>
+            </li>
+
+            <li class="colspan-2">
+              <div class="hero-card">
+
+                <figure class="card-banner img-holder" style="--width: 580; --height: 213;">
+                  <img src="./assets/images/hero-product-5.jpg" width="580" height="213" alt="Table Wood Pine"
+                    class="img-cover">
+                </figure>
+
+                <div class="card-content">
+                  <h3>
+                    <a href="#" class="card-title">Table Wood Pine</a>
+                  </h3>
+
+                  <p class="card-text">Furniture</p>
+                </div>
+
+              </div>
+            </li>
+
+          </ul>
+
+        </div>
+      </section>
+
+
+
+
+
+      <!-- 
+        - #ABOUT
+      -->
+
+      <section class="section about" id="about" aria-label="about">
+        <div class="container">
+          <!-- <h1 class="section-title">About</h1> -->
+
+
+          <h2 class="section-title">Vishwakarma Art</h2>
+
+          <p class="section-text">
+            "VISHWAKARMA ARTS" is fantastic factory which "MANUFACTURER & SUPPLIERS ALL TYPES OF HANDICRAFT ITEMS".
+
+The factory provides Home Delivery and it makes even a single item for individuals.
+
+Home Delivery can be placed in Rajasthan, Bihar, Gujarat, Delhi and Uttar Pradesh.
+                           If you want to like or make new design items then contact on        <a class="nav-link "  style="color: #42ed09;  font-weight: bold ;  font-size: 15px;" href="whatsapp://send?text= Nice to contact you !&phone=+919588938688">whatsapp</a>
+
+          </p>
+
+          <div class="about-card">
+            <figure class="card-banner img-holder" style="--width: 1170; --height: 450;">
+              <img src="./assets/images/3w.jpg" width="1170" height="450" loading="lazy" alt="Woodex promo"
+                class="img-cover">
+            </figure>
+
+            <button class="play-btn" aria-label="play video">
+              <ion-icon name="play-circle-outline" aria-hidden="true"></ion-icon>
+            </button>
+          </div>
+
+        </div>
+      </section>
+
+
+
+
+
+      <!-- 
+        - #PRODUCTS
+      -->
+
+      <section class="section product" id="product" aria-label="product">
+        <div class="container">
+
+          <div class="title-wrapper">
+            <h2 class="h2 section-title">Popular Products</h2>
+
+            <ul class="filter-btn-list">
+
+              <li class="filter-btn-item">
+                <button class="filter-btn active" data-filter-btn="all">All Products</button>
+              </li>
+
+              <li class="filter-btn-item">
+                <button class="filter-btn" data-filter-btn="accessory">Dining Table</button>
+              </li>
+
+              <li class="filter-btn-item">
+                <button class="filter-btn" data-filter-btn="decoration">Chair</button>
+              </li>
+
+              <li class="filter-btn-item">
+                <button class="filter-btn" data-filter-btn="furniture">Bed</button>
+              </li>
+
+            </ul>
+          </div>
+
+          <ul class="grid-list product-list" data-filter="all">
+
+            <li class="decoration">
+              <div class="product-card">
+
+                <a href="https://vishwakarmaartorder.pythonanywhere.com/app1/login" class="card-banner img-holder has-before" style="--width: 300; --height: 300;">
+                  <img src="./assets/images/1chair.jpg" width="300" height="300" loading="lazy"
+                    alt="Animi Dolor Pariatur" class="img-cover">
+
+                  <ul class="card-action-list">
+
+                    <!-- <li>
+                      <button class="card-action-btn" aria-label="add to cart" title="add to cart">
+                        <ion-icon name="add-outline" aria-hidden="true"></ion-icon>
+                      </button>
+                    </li> -->
+
+                    <li>
+                      <button class="card-action-btn" aria-label="add to cart" title="add to cart">
+                       <ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>
+                      </button>
+                    </li>
+
+                    <!-- <li>
+                      <button class="card-action-btn" aria-label="add to whishlist" title="add to whishlist">
+                        <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
+                      </button>
+                    </li> -->
+
+                  </ul>
+
+                  <ul class="badge-list">
+
+                    <li>
+                      <div class="badge orange">Sale</div>
+                    </li>
+
+                    <li>
+                      <div class="badge cyan">-10%</div>
+                    </li>
+
+                  </ul>
+                </a>
+
+                <div class="card-content">
+                  <h3 class="h3">
+                    <a href="#" class="card-title">Relax Chair</a>
+                  </h3>
+
+                  <div class="card-price">
+                    <del class="del">Rs 21999</del>
+
+                    <data class="price" value="10">Rs 19799</data>
+                  </div>
+                </div>
+
+                <div class="card-price">
+                  <data class="price" value="30">Product ID:- 105</data>
+                </div>
+
+              </div>
+            </li>
+
+            
+
+            <li class="accessory">
+              <div class="product-card">
+
+                <a href="https://vishwakarmaartorder.pythonanywhere.com/app1/login" class="card-banner img-holder has-before" style="--width: 300; --height: 300;">
+                  <img src="./assets/images/dt2.jpg" width="300" height="300" loading="lazy" alt="Art Deco Home"
+                    class="img-cover">
+
+                  <ul class="card-action-list">
+
+                    <!-- <li>
+                      <button class="card-action-btn" aria-label="add to cart" title="add to cart">
+                        <ion-icon name="add-outline" aria-hidden="true"></ion-icon>
+                      </button>
+                    </li> -->
+
+                    <li>
+                      <button class="card-action-btn" aria-label="add to cart" title="add to cart">
+                        <ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>
+                      </button>
+                    </li>
+
+                    <!-- <li>
+                      <button class="card-action-btn" aria-label="add to whishlist" title="add to whishlist">
+                        <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
+                      </button>
+                    </li> -->
+
+                  </ul>
+
+                  <div class="card-badge">Out of Stock</div>
+                </a>
+
+                <div class="card-content">
+                  <h3 class="h3">
+                    <a href="#" class="card-title">Dining Table</a>
+                  </h3>
+
+                  <div class="card-price">
+                    <data class="price" value="30">Rs 93999</data>
+                  </div>
+                  <div class="card-price">
+                    <data class="price" value="30">Product ID:- 101</data>
+                  </div>
+                </div>
+
+              </div>
+            </li>
+
+            <li class="decoration">
+              <div class="product-card">
+
+                <a href="https://vishwakarmaartorder.pythonanywhere.com/app1/login" class="card-banner img-holder has-before" style="--width: 300; --height: 300;">
+                  <img src="./assets/images/c1.jpg" width="300" height="300" loading="lazy"
+                    alt="Artificial potted plant" class="img-cover">
+
+                  <ul class="card-action-list">
+
+                    <!-- <li>
+                      <button class="card-action-btn" aria-label="add to cart" title="add to cart">
+                        <ion-icon name="add-outline" aria-hidden="true"></ion-icon>
+                      </button>
+                    </li> -->
+
+                    <li>
+                      <button class="card-action-btn" aria-label="add to cart" title="add to cart">
+                        <ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>
+                      </button>
+                    </li>
+
+                    <!-- <li>
+                      <button class="card-action-btn" aria-label="add to whishlist" title="add to whishlist">
+                        <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
+                      </button>
+                    </li> -->
+
+                  </ul>
+                </a>
+
+                <div class="card-content">
+                  <h3 class="h3">
+                    <a href="#" class="card-title">Chair</a>
+                  </h3>
+
+                  <div class="card-price">
+                    <data class="price" value="40">Rs 7099</data>
+                  </div>
+
+                  <div class="card-price">
+                    <data class="price" value="30">Product ID:- 101</data>
+                  </div>
+                </div>
+
+              </div>
+            </li>
+
+            <li class="decoration">
+              <div class="product-card">
+
+                <a href="https://vishwakarmaartorder.pythonanywhere.com/app1/login" class="card-banner img-holder has-before" style="--width: 300; --height: 300;">
+                  <img src="./assets/images/c2.jpg" width="300" height="300" loading="lazy"
+                    alt="Artificial potted plant" class="img-cover">
+
+                  <ul class="card-action-list">
+
+                    <!-- <li>
+                      <button class="card-action-btn" aria-label="add to cart" title="add to cart">
+                        <ion-icon name="add-outline" aria-hidden="true"></ion-icon>
+                      </button>
+                    </li> -->
+
+                    <li>
+                      <button class="card-action-btn" aria-label="add to cart" title="add to cart">
+                        <ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>
+                      </button>
+                    </li>
+
+                    <!-- <li>
+                      <button class="card-action-btn" aria-label="add to whishlist" title="add to whishlist">
+                        <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
+                      </button>
+                    </li> -->
+
+                  </ul>
+                </a>
+
+                <div class="card-content">
+                  <h3 class="h3">
+                    <a href="#" class="card-title">Chair</a>
+                  </h3>
+
+                  <div class="card-price">
+                    <data class="price" value="40">Rs 11999</data>
+                  </div>
+
+                  <div class="card-price">
+                    <data class="price" value="30">Product ID:- 102</data>
+                  </div>
+                </div>
+
+              </div>
+            </li>
+            <li class="decoration">
+              <div class="product-card">
+
+                <a href="https://vishwakarmaartorder.pythonanywhere.com/app1/login" class="card-banner img-holder has-before" style="--width: 300; --height: 300;">
+                  <img src="./assets/images/c3.jpg" width="300" height="300" loading="lazy"
+                    alt="Artificial potted plant" class="img-cover">
+
+                  <ul class="card-action-list">
+
+                    <!-- <li>
+                      <button class="card-action-btn" aria-label="add to cart" title="add to cart">
+                        <ion-icon name="add-outline" aria-hidden="true"></ion-icon>
+                      </button>
+                    </li> -->
+
+                    <li>
+                      <button class="card-action-btn" aria-label="add to cart" title="add to cart">
+                        <ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>
+                      </button>
+                    </li>
+
+                    <!-- <li>
+                      <button class="card-action-btn" aria-label="add to whishlist" title="add to whishlist">
+                        <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
+                      </button>
+                    </li> -->
+
+                  </ul>
+                </a>
+
+                <div class="card-content">
+                  <h3 class="h3">
+                    <a href="#" class="card-title">Chair</a>
+                  </h3>
+
+                  <div class="card-price">
+                    <data class="price" value="40">Rs 4099</data>
+                  </div>
+
+                  <div class="card-price">
+                    <data class="price" value="30">Product ID:- 103</data>
+                  </div>
+                </div>
+
+              </div>
+            </li>
+
+
+            <li class="decoration">
+              <div class="product-card">
+
+                <a href="https://vishwakarmaartorder.pythonanywhere.com/app1/login" class="card-banner img-holder has-before" style="--width: 300; --height: 300;">
+                  <img src="./assets/images/c4.jpg" width="300" height="300" loading="lazy"
+                    alt="Artificial potted plant" class="img-cover">
+
+                  <ul class="card-action-list">
+
+                    <!-- <li>
+                      <button class="card-action-btn" aria-label="add to cart" title="add to cart">
+                        <ion-icon name="add-outline" aria-hidden="true"></ion-icon>
+                      </button>
+                    </li> -->
+
+                    <li>
+                      <button class="card-action-btn" aria-label="add to cart" title="add to cart">
+                        <ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>
+                      </button>
+                    </li>
+
+                    <!-- <li>
+                      <button class="card-action-btn" aria-label="add to whishlist" title="add to whishlist">
+                        <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
+                      </button>
+                    </li> -->
+
+                  </ul>
+                </a>
+
+                <div class="card-content">
+                  <h3 class="h3">
+                    <a href="#" class="card-title">Chair</a>
+                  </h3>
+
+                  <div class="card-price">
+                    <data class="price" value="40">Rs 4009</data>
+                  </div>
+
+                  <div class="card-price">
+                    <data class="price" value="30">Product ID:- 104</data>
+                  </div>
+                </div>
+
+              </div>
+            </li>
+
+
+            <li class="decoration">
+              <div class="product-card">
+
+                <a href="https://vishwakarmaartorder.pythonanywhere.com/app1/login" class="card-banner img-holder has-before" style="--width: 300; --height: 300;">
+                  <img src="./assets/images/3chair.jpg" width="300" height="300" loading="lazy"
+                    alt="Artificial potted plant" class="img-cover">
+
+                  <ul class="card-action-list">
+
+                    <!-- <li>
+                      <button class="card-action-btn" aria-label="add to cart" title="add to cart">
+                        <ion-icon name="add-outline" aria-hidden="true"></ion-icon>
+                      </button>
+                    </li> -->
+
+                    <li>
+                      <button class="card-action-btn" aria-label="add to cart" title="add to cart">
+                        <ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>
+                      </button>
+                    </li>
+
+                    <!-- <li>
+                      <button class="card-action-btn" aria-label="add to whishlist" title="add to whishlist">
+                        <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
+                      </button>
+                    </li> -->
+
+                  </ul>
+                </a>
+
+                <div class="card-content">
+                  <h3 class="h3">
+                    <a href="#" class="card-title">Chair</a>
+                  </h3>
+
+                  <div class="card-price">
+                    <data class="price" value="40">Rs 7999</data>
+                  </div>
+
+                  <div class="card-price">
+                    <data class="price" value="30">Product ID:- 106</data>
+                  </div>
+                </div>
+
+              </div>
+            </li>
+
+            <li class="decoration">
+              <div class="product-card">
+
+                <a href="https://vishwakarmaartorder.pythonanywhere.com/app1/login" class="card-banner img-holder has-before" style="--width: 300; --height: 300;">
+                  <img src="./assets/images/4chair.jpg" width="300" height="300" loading="lazy"
+                    alt="Artificial potted plant" class="img-cover">
+
+                  <ul class="card-action-list">
+
+                    <!-- <li>
+                      <button class="card-action-btn" aria-label="add to cart" title="add to cart">
+                        <ion-icon name="add-outline" aria-hidden="true"></ion-icon>
+                      </button>
+                    </li> -->
+
+                    <li>
+                      <button class="card-action-btn" aria-label="add to cart" title="add to cart">
+                        <ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>
+                      </button>
+                    </li>
+
+                    <!-- <li>
+                      <button class="card-action-btn" aria-label="add to whishlist" title="add to whishlist">
+                        <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
+                      </button>
+                    </li> -->
+
+                  </ul>
+                </a>
+
+                <div class="card-content">
+                  <h3 class="h3">
+                    <a href="#" class="card-title">Chair</a>
+                  </h3>
+
+                  <div class="card-price">
+                    <data class="price" value="40">Rs 9999</data>
+                  </div>
+
+                  <div class="card-price">
+                    <data class="price" value="30">Product ID:- 107</data>
+                  </div>
+                </div>
+
+              </div>
+            </li>
+
+            <li class="decoration">
+              <div class="product-card">
+
+                <a href="https://vishwakarmaartorder.pythonanywhere.com/app1/login" class="card-banner img-holder has-before" style="--width: 300; --height: 300;">
+                  <img src="./assets/images/5chair.jpg" width="300" height="300" loading="lazy"
+                    alt="Artificial potted plant" class="img-cover">
+
+                  <ul class="card-action-list">
+
+                    <!-- <li>
+                      <button class="card-action-btn" aria-label="add to cart" title="add to cart">
+                        <ion-icon name="add-outline" aria-hidden="true"></ion-icon>
+                      </button>
+                    </li> -->
+
+                    <li>
+                      <button class="card-action-btn" aria-label="add to cart" title="add to cart">
+                        <ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>
+                      </button>
+                    </li>
+
+                    <!-- <li>
+                      <button class="card-action-btn" aria-label="add to whishlist" title="add to whishlist">
+                        <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
+                      </button>
+                    </li> -->
+
+                  </ul>
+                </a>
+
+                <div class="card-content">
+                  <h3 class="h3">
+                    <a href="#" class="card-title">Chair</a>
+                  </h3>
+
+                  <div class="card-price">
+                    <data class="price" value="40">Rs 6999</data>
+                  </div>
+
+                  <div class="card-price">
+                    <data class="price" value="30">Product ID:- 108</data>
+                  </div>
+                </div>
+
+              </div>
+            </li>
+
+            <li class="decoration">
+              <div class="product-card">
+
+                <a href="https://vishwakarmaartorder.pythonanywhere.com/app1/login" class="card-banner img-holder has-before" style="--width: 300; --height: 300;">
+                  <img src="./assets/images/6chair.jpg" width="300" height="300" loading="lazy"
+                    alt="Artificial potted plant" class="img-cover">
+
+                  <ul class="card-action-list">
+
+                    <!-- <li>
+                      <button class="card-action-btn" aria-label="add to cart" title="add to cart">
+                        <ion-icon name="add-outline" aria-hidden="true"></ion-icon>
+                      </button>
+                    </li> -->
+
+                    <li>
+                      <button class="card-action-btn" aria-label="add to cart" title="add to cart">
+                        <ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>
+                      </button>
+                    </li>
+
+                    <!-- <li>
+                      <button class="card-action-btn" aria-label="add to whishlist" title="add to whishlist">
+                        <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
+                      </button>
+                    </li> -->
+
+                  </ul>
+                </a>
+
+                <div class="card-content">
+                  <h3 class="h3">
+                    <a href="#" class="card-title">Chair</a>
+                  </h3>
+
+                  <div class="card-price">
+                    <data class="price" value="40">Rs 6999</data>
+                  </div>
+
+                  <div class="card-price">
+                    <data class="price" value="30">Product ID:- 109</data>
+                  </div>
+                </div>
+
+              </div>
+            </li>
+
+            <li class="decoration">
+              <div class="product-card">
+
+                <a href="https://vishwakarmaartorder.pythonanywhere.com/app1/login" class="card-banner img-holder has-before" style="--width: 300; --height: 300;">
+                  <img src="./assets/images/7chair.jpg" width="300" height="300" loading="lazy"
+                    alt="Artificial potted plant" class="img-cover">
+
+                  <ul class="card-action-list">
+
+                    <!-- <li>
+                      <button class="card-action-btn" aria-label="add to cart" title="add to cart">
+                        <ion-icon name="add-outline" aria-hidden="true"></ion-icon>
+                      </button>
+                    </li> -->
+
+                    <li>
+                      <button class="card-action-btn" aria-label="add to cart" title="add to cart">
+                        <ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>
+                      </button>
+                    </li>
+
+                    <!-- <li>
+                      <button class="card-action-btn" aria-label="add to whishlist" title="add to whishlist">
+                        <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
+                      </button>
+                    </li> -->
+
+                  </ul>
+                </a>
+
+                <div class="card-content">
+                  <h3 class="h3">
+                    <a href="#" class="card-title">Chair</a>
+                  </h3>
+
+                  <div class="card-price">
+                    <data class="price" value="40">Rs 9999</data>
+                  </div>
+
+                  <div class="card-price">
+                    <data class="price" value="30">Product ID:- 110</data>
+                  </div>
+                </div>
+
+              </div>
+            </li>
+
+            <li class="decoration">
+              <div class="product-card">
+
+                <a href="https://vishwakarmaartorder.pythonanywhere.com/app1/login" class="card-banner img-holder has-before" style="--width: 300; --height: 300;">
+                  <img src="./assets/images/8chair.jpg" width="300" height="300" loading="lazy"
+                    alt="Artificial potted plant" class="img-cover">
+
+                  <ul class="card-action-list">
+
+                    <!-- <li>
+                      <button class="card-action-btn" aria-label="add to cart" title="add to cart">
+                        <ion-icon name="add-outline" aria-hidden="true"></ion-icon>
+                      </button>
+                    </li> -->
+
+                    <li>
+                      <button class="card-action-btn" aria-label="add to cart" title="add to cart">
+                        <ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>
+                      </button>
+                    </li>
+
+                    <!-- <li>
+                      <button class="card-action-btn" aria-label="add to whishlist" title="add to whishlist">
+                        <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
+                      </button>
+                    </li> -->
+
+                  </ul>
+                </a>
+
+                <div class="card-content">
+                  <h3 class="h3">
+                    <a href="#" class="card-title">Chair</a>
+                  </h3>
+
+                  <div class="card-price">
+                    <data class="price" value="40">Rs 5999</data>
+                  </div>
+
+                  <div class="card-price">
+                    <data class="price" value="30">Product ID:- 111</data>
+                  </div>
+                </div>
+
+              </div>
+            </li>
+
+
+            <li class="decoration">
+              <div class="product-card">
+
+                <a href="https://vishwakarmaartorder.pythonanywhere.com/app1/login" class="card-banner img-holder has-before" style="--width: 300; --height: 300;">
+                  <img src="./assets/images/9chair.jpg" width="300" height="300" loading="lazy"
+                    alt="Artificial potted plant" class="img-cover">
+
+                  <ul class="card-action-list">
+
+                    <!-- <li>
+                      <button class="card-action-btn" aria-label="add to cart" title="add to cart">
+                        <ion-icon name="add-outline" aria-hidden="true"></ion-icon>
+                      </button>
+                    </li> -->
+
+                    <li>
+                      <button class="card-action-btn" aria-label="add to cart" title="add to cart">
+                        <ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>
+                      </button>
+                    </li>
+
+                    <!-- <li>
+                      <button class="card-action-btn" aria-label="add to whishlist" title="add to whishlist">
+                        <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
+                      </button>
+                    </li> -->
+
+                  </ul>
+                </a>
+
+                <div class="card-content">
+                  <h3 class="h3">
+                    <a href="#" class="card-title">Chair</a>
+                  </h3>
+
+                  <div class="card-price">
+                    <data class="price" value="40">Rs 17999</data>
+                  </div>
+
+                  <div class="card-price">
+                    <data class="price" value="30">Product ID:- 112</data>
+                  </div>
+                </div>
+
+              </div>
+            </li>
+
+            <li class="decoration">
+              <div class="product-card">
+
+                <a href="https://vishwakarmaartorder.pythonanywhere.com/app1/login" class="card-banner img-holder has-before" style="--width: 300; --height: 300;">
+                  <img src="./assets/images/10chair.jpg" width="300" height="300" loading="lazy"
+                    alt="Artificial potted plant" class="img-cover">
+
+                  <ul class="card-action-list">
+
+                    <!-- <li>
+                      <button class="card-action-btn" aria-label="add to cart" title="add to cart">
+                        <ion-icon name="add-outline" aria-hidden="true"></ion-icon>
+                      </button>
+                    </li> -->
+
+                    <li>
+                      <button class="card-action-btn" aria-label="add to cart" title="add to cart">
+                        <ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>
+                      </button>
+                    </li>
+
+                    <!-- <li>
+                      <button class="card-action-btn" aria-label="add to whishlist" title="add to whishlist">
+                        <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
+                      </button>
+                    </li> -->
+
+                  </ul>
+                </a>
+
+                <div class="card-content">
+                  <h3 class="h3">
+                    <a href="#" class="card-title">Chair</a>
+                  </h3>
+
+                  <div class="card-price">
+                    <data class="price" value="40">Rs 11999</data>
+                  </div>
+
+                  <div class="card-price">
+                    <data class="price" value="30">Product ID:- 113</data>
+                  </div>
+                </div>
+
+              </div>
+            </li>
+            
+            <li class="decoration">
+              <div class="product-card">
+
+                <a href="https://vishwakarmaartorder.pythonanywhere.com/app1/login" class="card-banner img-holder has-before" style="--width: 300; --height: 300;">
+                  <img src="./assets/images/achair.jpg" width="300" height="300" loading="lazy"
+                    alt="Artificial potted plant" class="img-cover">
+
+                  <ul class="card-action-list">
+
+                    <!-- <li>
+                      <button class="card-action-btn" aria-label="add to cart" title="add to cart">
+                        <ion-icon name="add-outline" aria-hidden="true"></ion-icon>
+                      </button>
+                    </li> -->
+
+                    <li>
+                      <button class="card-action-btn" aria-label="add to cart" title="add to cart">
+                        <ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>
+                      </button>
+                    </li>
+
+                    <!-- <li>
+                      <button class="card-action-btn" aria-label="add to whishlist" title="add to whishlist">
+                        <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
+                      </button>
+                    </li> -->
+
+                  </ul>
+                </a>
+
+                <div class="card-content">
+                  <h3 class="h3">
+                    <a href="#" class="card-title">Chair</a>
+                  </h3>
+
+                  <div class="card-price">
+                    <data class="price" value="40">Rs 3999</data>
+                  </div>
+
+                  <div class="card-price">
+                    <data class="price" value="30">Product ID:- 114</data>
+                  </div>
+                </div>
+
+              </div>
+            </li>
+
+            <li class="decoration">
+              <div class="product-card">
+
+                <a href="https://vishwakarmaartorder.pythonanywhere.com/app1/login" class="card-banner img-holder has-before" style="--width: 300; --height: 300;">
+                  <img src="./assets/images/achair1.jpg" width="300" height="300" loading="lazy"
+                    alt="Artificial potted plant" class="img-cover">
+
+                  <ul class="card-action-list">
+
+                    <!-- <li>
+                      <button class="card-action-btn" aria-label="add to cart" title="add to cart">
+                        <ion-icon name="add-outline" aria-hidden="true"></ion-icon>
+                      </button>
+                    </li> -->
+
+                    <li>
+                      <button class="card-action-btn" aria-label="add to cart" title="add to cart">
+                        <ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>
+                      </button>
+                    </li>
+
+                    <!-- <li>
+                      <button class="card-action-btn" aria-label="add to whishlist" title="add to whishlist">
+                        <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
+                      </button>
+                    </li> -->
+
+                  </ul>
+                </a>
+
+                <div class="card-content">
+                  <h3 class="h3">
+                    <a href="#" class="card-title">Chair</a>
+                  </h3>
+
+                  <div class="card-price">
+                    <data class="price" value="40">Rs 7999</data>
+                  </div>
+
+                  <div class="card-price">
+                    <data class="price" value="30">Product ID:- 115</data>
+                  </div>
+                </div>
+
+              </div>
+            </li>
+
+            <li class="decoration">
+              <div class="product-card">
+
+                <a href="https://vishwakarmaartorder.pythonanywhere.com/app1/login" class="card-banner img-holder has-before" style="--width: 300; --height: 300;">
+                  <img src="./assets/images/achair2.jpg" width="300" height="300" loading="lazy"
+                    alt="Artificial potted plant" class="img-cover">
+
+                  <ul class="card-action-list">
+
+                    <!-- <li>
+                      <button class="card-action-btn" aria-label="add to cart" title="add to cart">
+                        <ion-icon name="add-outline" aria-hidden="true"></ion-icon>
+                      </button>
+                    </li> -->
+
+                    <li>
+                      <button class="card-action-btn" aria-label="add to cart" title="add to cart">
+                        <ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>
+                      </button>
+                    </li>
+
+                    <!-- <li>
+                      <button class="card-action-btn" aria-label="add to whishlist" title="add to whishlist">
+                        <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
+                      </button>
+                    </li> -->
+
+                  </ul>
+                </a>
+
+                <div class="card-content">
+                  <h3 class="h3">
+                    <a href="#" class="card-title">Chair</a>
+                  </h3>
+
+                  <div class="card-price">
+                    <data class="price" value="40">Rs 9999</data>
+                  </div>
+
+                  <div class="card-price">
+                    <data class="price" value="30">Product ID:- 116</data>
+                  </div>
+                </div>
+
+              </div>
+            </li>
+
+            <li class="decoration">
+              <div class="product-card">
+
+                <a href="https://vishwakarmaartorder.pythonanywhere.com/app1/login" class="card-banner img-holder has-before" style="--width: 300; --height: 300;">
+                  <img src="./assets/images/achair4.jpg" width="300" height="300" loading="lazy"
+                    alt="Artificial potted plant" class="img-cover">
+
+                  <ul class="card-action-list">
+
+                    <!-- <li>
+                      <button class="card-action-btn" aria-label="add to cart" title="add to cart">
+                        <ion-icon name="add-outline" aria-hidden="true"></ion-icon>
+                      </button>
+                    </li> -->
+
+                    <li>
+                      <button class="card-action-btn" aria-label="add to cart" title="add to cart">
+                        <ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>
+                      </button>
+                    </li>
+
+                    <!-- <li>
+                      <button class="card-action-btn" aria-label="add to whishlist" title="add to whishlist">
+                        <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
+                      </button>
+                    </li> -->
+
+                  </ul>
+                </a>
+
+                <div class="card-content">
+                  <h3 class="h3">
+                    <a href="#" class="card-title">Chair</a>
+                  </h3>
+
+                  <div class="card-price">
+                    <data class="price" value="40">Rs 6999</data>
+                  </div>
+
+                  <div class="card-price">
+                    <data class="price" value="30">Product ID:- 117</data>
+                  </div>
+                </div>
+
+              </div>
+            </li>
+
+
+            <li class="decoration">
+              <div class="product-card">
+
+                <a href="https://vishwakarmaartorder.pythonanywhere.com/app1/login" class="card-banner img-holder has-before" style="--width: 300; --height: 300;">
+                  <img src="./assets/images/product-9.jpg" width="300" height="300" loading="lazy"
+                    alt="Artificial potted plant" class="img-cover">
+
+                  <ul class="card-action-list">
+
+                    <!-- <li>
+                      <button class="card-action-btn" aria-label="add to cart" title="add to cart">
+                        <ion-icon name="add-outline" aria-hidden="true"></ion-icon>
+                      </button>
+                    </li> -->
+
+                    <li>
+                      <button class="card-action-btn" aria-label="add to cart" title="add to cart">
+                        <ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>
+                      </button>
+                    </li>
+
+                    <!-- <li>
+                      <button class="card-action-btn" aria-label="add to whishlist" title="add to whishlist">
+                        <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
+                      </button>
+                    </li> -->
+
+                  </ul>
+                </a>
+
+                <div class="card-content">
+                  <h3 class="h3">
+                    <a href="#" class="card-title">Chair</a>
+                  </h3>
+
+                  <div class="card-price">
+                    <data class="price" value="40">Rs 5999</data>
+                  </div>
+
+                  <div class="card-price">
+                    <data class="price" value="30">Product ID:- 118</data>
+                  </div>
+                </div>
+
+              </div>
+            </li>
+            <li class="accessory">
+              <div class="product-card">
+
+                <a href="https://vishwakarmaartorder.pythonanywhere.com/app1/login" class="card-banner img-holder has-before" style="--width: 300; --height: 300;">
+                  <img src="./assets/images/dt1.jpg" width="300" height="300" loading="lazy" alt="Dark Green Jug"
+                    class="img-cover">
+
+                  <ul class="card-action-list">
+
+                    <!-- <li>
+                      <button class="card-action-btn" aria-label="add to cart" title="add to cart">
+                        <ion-icon name="add-outline" aria-hidden="true"></ion-icon>
+                      </button>
+                    </li> -->
+
+                    <li>
+                      <button class="card-action-btn" aria-label="add to cart" title="add to cart">
+                        <ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>
+                      </button>
+                    </li>
+
+                    <!-- <li>
+                      <button class="card-action-btn" aria-label="add to whishlist" title="add to whishlist">
+                        <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
+                      </button>
+                    </li> -->
+
+                  </ul>
+                </a>
+
+                <div class="card-content">
+                  <h3 class="h3">
+                    <a href="#" class="card-title">Dining Table</a>
+                  </h3>
+
+                  <div class="card-price">
+                    <data class="price" value="17.10">Rs 25399</data>
+                  </div>
+                  <div class="card-price">
+                    <data class="price" value="30">Product ID:- 102</data>
+                  </div>
+                </div>
+
+              </div>
+            </li>
+
+            <li class="accessory">
+              <div class="product-card">
+
+                <a href="https://vishwakarmaartorder.pythonanywhere.com/app1/login" class="card-banner img-holder has-before" style="--width: 300; --height: 300;">
+                  <img src="./assets/images/dt3.jpg" width="300" height="300" loading="lazy"
+                    alt="Drinking Glasses" class="img-cover">
+
+                  <ul class="card-action-list">
+
+                    <!-- <li>
+                      <button class="card-action-btn" aria-label="add to cart" title="add to cart">
+                        <ion-icon name="add-outline" aria-hidden="true"></ion-icon>
+                      </button>
+                    </li> -->
+
+                    <li>
+                      <button class="card-action-btn" aria-label="add to cart" title="add to cart">
+                        <ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>
+                      </button>
+                    </li>
+
+                    <!-- <li>
+                      <button class="card-action-btn" aria-label="add to whishlist" title="add to whishlist">
+                        <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
+                      </button>
+                    </li> -->
+
+                  </ul>
+                </a>
+
+                <div class="card-content">
+                  <h3 class="h3">
+                    <a href="#" class="card-title">Dining Table</a>
+                  </h3>
+
+                  <div class="card-price">
+                    <data class="price" value="21">Rs 38899</data>
+                  </div>
+
+                  <div class="card-price">
+                    <data class="price" value="30">Product ID:- 103</data>
+                  </div>
+                </div>
+
+              </div>
+            </li>
+
+           
+
+            <li class="accessory">
+              <div class="product-card">
+
+                <a href="https://vishwakarmaartorder.pythonanywhere.com/app1/login" class="card-banner img-holder has-before" style="--width: 300; --height: 300;">
+                  <img src="./assets/images/dt4.jpg" width="300" height="300" loading="lazy"
+                    alt="High Quality Glass Bottle" class="img-cover">
+
+                  <ul class="card-action-list">
+
+                    <!-- <li>
+                      <button class="card-action-btn" aria-label="add to cart" title="add to cart">
+                        <ion-icon name="add-outline" aria-hidden="true"></ion-icon>
+                      </button>
+                    </li> -->
+
+                    <li>
+                      <button class="card-action-btn" aria-label="add to cart" title="add to cart">
+                        <ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>
+                      </button>
+                    </li>
+
+                    <!-- <li>
+                      <button class="card-action-btn" aria-label="add to whishlist" title="add to whishlist">
+                        <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
+                      </button>
+                    </li> -->
+
+                  </ul>
+                </a>
+
+                <div class="card-content">
+                  <h3 class="h3">
+                    <a href="#" class="card-title">Dining Table</a>
+                  </h3>
+
+                  <div class="card-price">
+                    <data class="price" value="30.10">Rs 54899</data>
+                  </div>
+
+                  <div class="card-price">
+                    <data class="price" value="30">Product ID:- 104</data>
+                  </div>
+                </div>
+
+              </div>
+            </li>
+
+            <li class="accessory">
+              <div class="product-card">
+
+                <a href="https://vishwakarmaartorder.pythonanywhere.com/app1/login" class="card-banner img-holder has-before" style="--width: 300; --height: 300;">
+                  <img src="./assets/images/dt5.jpg" width="300" height="300" loading="lazy"
+                    alt="Living Room & Bedroom Lights" class="img-cover">
+
+                  <ul class="card-action-list">
+
+                    <!-- <li>
+                      <button class="card-action-btn" aria-label="add to cart" title="add to cart">
+                        <ion-icon name="add-outline" aria-hidden="true"></ion-icon>
+                      </button>
+                    </li> -->
+
+                    <li>
+                      <button class="card-action-btn" aria-label="add to cart" title="add to cart">
+                        <ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>
+                      </button>
+                    </li>
+
+                    <!-- <li>
+                      <button class="card-action-btn" aria-label="add to whishlist" title="add to whishlist">
+                        <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
+                      </button>
+                    </li> -->
+
+                  </ul>
+                </a>
+
+                <div class="card-content">
+                  <h3 class="h3">
+                    <a href="#" class="card-title">Dining Table</a>
+                  </h3>
+
+                  <div class="card-price">
+                    <data class="price" value="45">Rs 40999</data>
+                  </div>
+                  <div class="card-price">
+                    <data class="price" value="30">Product ID:- 105</data>
+                  </div>
+                </div>
+
+              </div>
+            </li>
+
+            <li class="furniture">
+              <div class="product-card">
+
+                <a href="https://vishwakarmaartorder.pythonanywhere.com/app1/login" class="card-banner img-holder has-before" style="--width: 300; --height: 300;">
+                  <img src="./assets/images/b8.jpg" width="300" height="300" loading="lazy" alt="Nancy Chair"
+                    class="img-cover">
+
+                  <ul class="card-action-list">
+
+                    <!-- <li>
+                      <button class="card-action-btn" aria-label="add to cart" title="add to cart">
+                        <ion-icon name="add-outline" aria-hidden="true"></ion-icon>
+                      </button>
+                    </li> -->
+
+                    <li>
+                      <button class="card-action-btn" aria-label="add to cart" title="add to cart">
+                        <ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>
+                      </button>
+                    </li>
+
+                    <!-- <li>
+                      <button class="card-action-btn" aria-label="add to whishlist" title="add to whishlist">
+                        <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
+                      </button>
+                    </li> -->
+
+                  </ul>
+                </a>
+
+                <div class="card-content">
+                  <h3 class="h3">
+                    <a href="#" class="card-title">Bed</a>
+                  </h3>
+
+                  <div class="card-price">
+                    <data class="price" value="90">14999</data>
+                  </div>
+                </div>
+                <div class="card-price">
+                  <data class="price" value="30">Product ID:- 101</data>
+                </div>
+
+
+              </div>
+            </li>
+
+            <li class="furniture">
+              <div class="product-card">
+
+                <a href="https://vishwakarmaartorder.pythonanywhere.com/app1/login" class="card-banner img-holder has-before" style="--width: 300; --height: 300;">
+                  <img src="./assets/images/b1.jpg" width="300" height="300" loading="lazy" alt="Nancy Chair"
+                    class="img-cover">
+
+                  <ul class="card-action-list">
+
+                    <!-- <li>
+                      <button class="card-action-btn" aria-label="add to cart" title="add to cart">
+                        <ion-icon name="add-outline" aria-hidden="true"></ion-icon>
+                      </button>
+                    </li> -->
+
+                    <li>
+                      <button class="card-action-btn" aria-label="add to cart" title="add to cart">
+                        <ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>
+                      </button>
+                    </li>
+
+                    <!-- <li>
+                      <button class="card-action-btn" aria-label="add to whishlist" title="add to whishlist">
+                        <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
+                      </button>
+                    </li> -->
+
+                  </ul>
+                </a>
+
+                <div class="card-content">
+                  <h3 class="h3">
+                    <a href="#" class="card-title">Bed</a>
+                  </h3>
+
+                  <div class="card-price">
+                    <data class="price" value="90">33999</data>
+                  </div>
+                </div>
+                <div class="card-price">
+                  <data class="price" value="30">Product ID:- 102</data>
+                </div>
+
+
+              </div>
+            </li>
+
+            <li class="furniture">
+              <div class="product-card">
+
+                <a href="https://vishwakarmaartorder.pythonanywhere.com/app1/login" class="card-banner img-holder has-before" style="--width: 300; --height: 300;">
+                  <img src="./assets/images/b2.jpg" width="300" height="300" loading="lazy" alt="Nancy Chair"
+                    class="img-cover">
+
+                  <ul class="card-action-list">
+
+                    <!-- <li>
+                      <button class="card-action-btn" aria-label="add to cart" title="add to cart">
+                        <ion-icon name="add-outline" aria-hidden="true"></ion-icon>
+                      </button>
+                    </li> -->
+
+                    <li>
+                      <button class="card-action-btn" aria-label="add to cart" title="add to cart">
+                        <ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>
+                      </button>
+                    </li>
+
+                    <!-- <li>
+                      <button class="card-action-btn" aria-label="add to whishlist" title="add to whishlist">
+                        <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
+                      </button>
+                    </li> -->
+
+                  </ul>
+                </a>
+
+                <div class="card-content">
+                  <h3 class="h3">
+                    <a href="#" class="card-title">Bed</a>
+                  </h3>
+
+                  <div class="card-price">
+                    <data class="price" value="90">22999</data>
+                  </div>
+                </div>
+                <div class="card-price">
+                  <data class="price" value="30">Product ID:- 103</data>
+                </div>
+
+
+              </div>
+            </li>
+
+            <li class="furniture">
+              <div class="product-card">
+
+                <a href="https://vishwakarmaartorder.pythonanywhere.com/app1/login" class="card-banner img-holder has-before" style="--width: 300; --height: 300;">
+                  <img src="./assets/images/b3.jpg" width="300" height="300" loading="lazy" alt="Nancy Chair"
+                    class="img-cover">
+
+                  <ul class="card-action-list">
+
+                    <!-- <li>
+                      <button class="card-action-btn" aria-label="add to cart" title="add to cart">
+                        <ion-icon name="add-outline" aria-hidden="true"></ion-icon>
+                      </button>
+                    </li> -->
+
+                    <li>
+                      <button class="card-action-btn" aria-label="add to cart" title="add to cart">
+                        <ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>
+                      </button>
+                    </li>
+
+                    <!-- <li>
+                      <button class="card-action-btn" aria-label="add to whishlist" title="add to whishlist">
+                        <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
+                      </button>
+                    </li> -->
+
+                  </ul>
+                </a>
+
+                <div class="card-content">
+                  <h3 class="h3">
+                    <a href="#" class="card-title">Bed</a>
+                  </h3>
+
+                  <div class="card-price">
+                    <data class="price" value="90">31999</data>
+                  </div>
+                </div>
+                <div class="card-price">
+                  <data class="price" value="30">Product ID:- 104</data>
+                </div>
+
+
+              </div>
+            </li>
+            <li class="furniture">
+              <div class="product-card">
+
+                <a href="https://vishwakarmaartorder.pythonanywhere.com/app1/login" class="card-banner img-holder has-before" style="--width: 300; --height: 300;">
+                  <img src="./assets/images/b4.jpg" width="300" height="300" loading="lazy" alt="Nancy Chair"
+                    class="img-cover">
+
+                  <ul class="card-action-list">
+
+                    <!-- <li>
+                      <button class="card-action-btn" aria-label="add to cart" title="add to cart">
+                        <ion-icon name="add-outline" aria-hidden="true"></ion-icon>
+                      </button>
+                    </li> -->
+
+                    <li>
+                      <button class="card-action-btn" aria-label="add to cart" title="add to cart">
+                        <ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>
+                      </button>
+                    </li>
+
+                    <!-- <li>
+                      <button class="card-action-btn" aria-label="add to whishlist" title="add to whishlist">
+                        <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
+                      </button>
+                    </li> -->
+
+                  </ul>
+                </a>
+
+                <div class="card-content">
+                  <h3 class="h3">
+                    <a href="#" class="card-title">Bed</a>
+                  </h3>
+
+                  <div class="card-price">
+                    <data class="price" value="90">21999</data>
+                  </div>
+                </div>
+                <div class="card-price">
+                  <data class="price" value="30">Product ID:- 105</data>
+                </div>
+
+
+              </div>
+            </li>
+
+            <li class="furniture">
+              <div class="product-card">
+
+                <a href="https://vishwakarmaartorder.pythonanywhere.com/app1/login" class="card-banner img-holder has-before" style="--width: 300; --height: 300;">
+                  <img src="./assets/images/b5.jpg" width="300" height="300" loading="lazy" alt="Nancy Chair"
+                    class="img-cover">
+
+                  <ul class="card-action-list">
+
+                    <!-- <li>
+                      <button class="card-action-btn" aria-label="add to cart" title="add to cart">
+                        <ion-icon name="add-outline" aria-hidden="true"></ion-icon>
+                      </button>
+                    </li> -->
+
+                    <li>
+                      <button class="card-action-btn" aria-label="add to cart" title="add to cart">
+                        <ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>
+                      </button>
+                    </li>
+
+                    <!-- <li>
+                      <button class="card-action-btn" aria-label="add to whishlist" title="add to whishlist">
+                        <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
+                      </button>
+                    </li> -->
+
+                  </ul>
+                </a>
+
+                <div class="card-content">
+                  <h3 class="h3">
+                    <a href="#" class="card-title">Bed</a>
+                  </h3>
+
+                  <div class="card-price">
+                    <data class="price" value="90">30999</data>
+                  </div>
+                </div>
+                <div class="card-price">
+                  <data class="price" value="30">Product ID:- 106</data>
+                </div>
+
+
+              </div>
+            </li>
+
+            <li class="furniture">
+              <div class="product-card">
+
+                <a href="https://vishwakarmaartorder.pythonanywhere.com/app1/login" class="card-banner img-holder has-before" style="--width: 300; --height: 300;">
+                  <img src="./assets/images/b6.jpg" width="300" height="300" loading="lazy" alt="Nancy Chair"
+                    class="img-cover">
+
+                  <ul class="card-action-list">
+
+                    <!-- <li>
+                      <button class="card-action-btn" aria-label="add to cart" title="add to cart">
+                        <ion-icon name="add-outline" aria-hidden="true"></ion-icon>
+                      </button>
+                    </li> -->
+
+                    <li>
+                      <button class="card-action-btn" aria-label="add to cart" title="add to cart">
+                        <ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>
+                      </button>
+                    </li>
+
+                    <!-- <li>
+                      <button class="card-action-btn" aria-label="add to whishlist" title="add to whishlist">
+                        <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
+                      </button>
+                    </li> -->
+
+                  </ul>
+                </a>
+
+                <div class="card-content">
+                  <h3 class="h3">
+                    <a href="#" class="card-title">Bed</a>
+                  </h3>
+
+                  <div class="card-price">
+                    <data class="price" value="90">28999</data>
+                  </div>
+                </div>
+                <div class="card-price">
+                  <data class="price" value="30">Product ID:- 107</data>
+                </div>
+
+
+              </div>
+            </li>
+
+            <li class="furniture">
+              <div class="product-card">
+
+                <a href="https://vishwakarmaartorder.pythonanywhere.com/app1/login" class="card-banner img-holder has-before" style="--width: 300; --height: 300;">
+                  <img src="./assets/images/b8.jpg" width="300" height="300" loading="lazy" alt="Nancy Chair"
+                    class="img-cover">
+
+                  <ul class="card-action-list">
+
+                    <!-- <li>
+                      <button class="card-action-btn" aria-label="add to cart" title="add to cart">
+                        <ion-icon name="add-outline" aria-hidden="true"></ion-icon>
+                      </button>
+                    </li> -->
+
+                    <li>
+                      <button class="card-action-btn" aria-label="add to cart" title="add to cart">
+                        <ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>
+                      </button>
+                    </li>
+
+                    <!-- <li>
+                      <button class="card-action-btn" aria-label="add to whishlist" title="add to whishlist">
+                        <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
+                      </button>
+                    </li> -->
+
+                  </ul>
+                </a>
+
+                <div class="card-content">
+                  <h3 class="h3">
+                    <a href="#" class="card-title">Bed</a>
+                  </h3>
+
+                  <div class="card-price">
+                    <data class="price" value="90">33999</data>
+                  </div>
+                </div>
+                <div class="card-price">
+                  <data class="price" value="30">Product ID:- 108</data>
+                </div>
+
+
+              </div>
+            </li>
+
+            <li class="furniture">
+              <div class="product-card">
+
+                <a href="https://vishwakarmaartorder.pythonanywhere.com/app1/login" class="card-banner img-holder has-before" style="--width: 300; --height: 300;">
+                  <img src="./assets/images/b9.jpg" width="300" height="300" loading="lazy" alt="Nancy Chair"
+                    class="img-cover">
+
+                  <ul class="card-action-list">
+
+                    <!-- <li>
+                      <button class="card-action-btn" aria-label="add to cart" title="add to cart">
+                        <ion-icon name="add-outline" aria-hidden="true"></ion-icon>
+                      </button>
+                    </li> -->
+
+                    <li>
+                      <button class="card-action-btn" aria-label="add to cart" title="add to cart">
+                        <ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>
+                      </button>
+                    </li>
+
+                    <!-- <li>
+                      <button class="card-action-btn" aria-label="add to whishlist" title="add to whishlist">
+                        <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
+                      </button>
+                    </li> -->
+
+                  </ul>
+                </a>
+
+                <div class="card-content">
+                  <h3 class="h3">
+                    <a href="#" class="card-title">Bed</a>
+                  </h3>
+
+                  <div class="card-price">
+                    <data class="price" value="90">27999</data>
+                  </div>
+                </div>
+                <div class="card-price">
+                  <data class="price" value="30">Product ID:- 109</data>
+                </div>
+
+
+              </div>
+            </li>
+            <li class="furniture">
+              <div class="product-card">
+
+                <a href="https://vishwakarmaartorder.pythonanywhere.com/app1/login" class="card-banner img-holder has-before" style="--width: 300; --height: 300;">
+                  <img src="./assets/images/b10.jpg" width="300" height="300" loading="lazy" alt="Nancy Chair"
+                    class="img-cover">
+
+                  <ul class="card-action-list">
+
+                    <!-- <li>
+                      <button class="card-action-btn" aria-label="add to cart" title="add to cart">
+                        <ion-icon name="add-outline" aria-hidden="true"></ion-icon>
+                      </button>
+                    </li> -->
+
+                    <li>
+                      <button class="card-action-btn" aria-label="add to cart" title="add to cart">
+                        <ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>
+                      </button>
+                    </li>
+
+                    <!-- <li>
+                      <button class="card-action-btn" aria-label="add to whishlist" title="add to whishlist">
+                        <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
+                      </button>
+                    </li> -->
+
+                  </ul>
+                </a>
+
+                <div class="card-content">
+                  <h3 class="h3">
+                    <a href="#" class="card-title">Bed</a>
+                  </h3>
+
+                  <div class="card-price">
+                    <data class="price" value="90">31999</data>
+                  </div>
+                </div>
+                <div class="card-price">
+                  <data class="price" value="30">Product ID:- 110</data>
+                </div>
+
+
+              </div>
+            </li>
+
+
+            <li class="furniture">
+              <div class="product-card">
+
+                <a href="https://vishwakarmaartorder.pythonanywhere.com/app1/login" class="card-banner img-holder has-before" style="--width: 300; --height: 300;">
+                  <img src="./assets/images/b11.jpg" width="300" height="300" loading="lazy" alt="Nancy Chair"
+                    class="img-cover">
+
+                  <ul class="card-action-list">
+
+                    <!-- <li>
+                      <button class="card-action-btn" aria-label="add to cart" title="add to cart">
+                        <ion-icon name="add-outline" aria-hidden="true"></ion-icon>
+                      </button>
+                    </li> -->
+
+                    <li>
+                      <button class="card-action-btn" aria-label="add to cart" title="add to cart">
+                        <ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>
+                      </button>
+                    </li>
+
+                    <!-- <li>
+                      <button class="card-action-btn" aria-label="add to whishlist" title="add to whishlist">
+                        <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
+                      </button>
+                    </li> -->
+
+                  </ul>
+                </a>
+
+                <div class="card-content">
+                  <h3 class="h3">
+                    <a href="#" class="card-title">Bed</a>
+                  </h3>
+
+                  <div class="card-price">
+                    <data class="price" value="90">20999</data>
+                  </div>
+                </div>
+                <div class="card-price">
+                  <data class="price" value="30">Product ID:- 111</data>
+                </div>
+
+
+              </div>
+            </li>
+
+            <li class="furniture">
+              <div class="product-card">
+
+                <a href="https://vishwakarmaartorder.pythonanywhere.com/app1/login" class="card-banner img-holder has-before" style="--width: 300; --height: 300;">
+                  <img src="./assets/images/b12.jpg" width="300" height="300" loading="lazy" alt="Nancy Chair"
+                    class="img-cover">
+
+                  <ul class="card-action-list">
+
+                    <!-- <li>
+                      <button class="card-action-btn" aria-label="add to cart" title="add to cart">
+                        <ion-icon name="add-outline" aria-hidden="true"></ion-icon>
+                      </button>
+                    </li> -->
+
+                    <li>
+                      <button class="card-action-btn" aria-label="add to cart" title="add to cart">
+                        <ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>
+                      </button>
+                    </li>
+
+                    <!-- <li>
+                      <button class="card-action-btn" aria-label="add to whishlist" title="add to whishlist">
+                        <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
+                      </button>
+                    </li> -->
+
+                  </ul>
+                </a>
+
+                <div class="card-content">
+                  <h3 class="h3">
+                    <a href="#" class="card-title">Bed</a>
+                  </h3>
+
+                  <div class="card-price">
+                    <data class="price" value="90">35999</data>
+                  </div>
+                </div>
+                <div class="card-price">
+                  <data class="price" value="30">Product ID:- 112</data>
+                </div>
+
+
+              </div>
+            </li>
+
+            <li class="furniture">
+              <div class="product-card">
+
+                <a href="https://vishwakarmaartorder.pythonanywhere.com/app1/login" class="card-banner img-holder has-before" style="--width: 300; --height: 300;">
+                  <img src="./assets/images/b13.jpg" width="300" height="300" loading="lazy" alt="Nancy Chair"
+                    class="img-cover">
+
+                  <ul class="card-action-list">
+
+                    <!-- <li>
+                      <button class="card-action-btn" aria-label="add to cart" title="add to cart">
+                        <ion-icon name="add-outline" aria-hidden="true"></ion-icon>
+                      </button>
+                    </li> -->
+
+                    <li>
+                      <button class="card-action-btn" aria-label="add to cart" title="add to cart">
+                        <ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>
+                      </button>
+                    </li>
+
+                    <!-- <li>
+                      <button class="card-action-btn" aria-label="add to whishlist" title="add to whishlist">
+                        <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
+                      </button>
+                    </li> -->
+
+                  </ul>
+                </a>
+
+                <div class="card-content">
+                  <h3 class="h3">
+                    <a href="#" class="card-title">Bed</a>
+                  </h3>
+
+                  <div class="card-price">
+                    <data class="price" value="90">51999</data>
+                  </div>
+                </div>
+                <div class="card-price">
+                  <data class="price" value="30">Product ID:- 113</data>
+                </div>
+
+
+              </div>
+            </li>
+
+            <li class="furniture">
+              <div class="product-card">
+
+                <a href="https://vishwakarmaartorder.pythonanywhere.com/app1/login" class="card-banner img-holder has-before" style="--width: 300; --height: 300;">
+                  <img src="./assets/images/b14.jpg" width="300" height="300" loading="lazy" alt="Nancy Chair"
+                    class="img-cover">
+
+                  <ul class="card-action-list">
+
+                    <!-- <li>
+                      <button class="card-action-btn" aria-label="add to cart" title="add to cart">
+                        <ion-icon name="add-outline" aria-hidden="true"></ion-icon>
+                      </button>
+                    </li> -->
+
+                    <li>
+                      <button class="card-action-btn" aria-label="add to cart" title="add to cart">
+                        <ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>
+                      </button>
+                    </li>
+
+                    <!-- <li>
+                      <button class="card-action-btn" aria-label="add to whishlist" title="add to whishlist">
+                        <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
+                      </button>
+                    </li> -->
+
+                  </ul>
+                </a>
+
+                <div class="card-content">
+                  <h3 class="h3">
+                    <a href="#" class="card-title">Bed</a>
+                  </h3>
+
+                  <div class="card-price">
+                    <data class="price" value="90">19999</data>
+                  </div>
+                </div>
+                <div class="card-price">
+                  <data class="price" value="30">Product ID:- 114</data>
+                </div>
+
+
+              </div>
+            </li>
+
+            <li class="furniture">
+              <div class="product-card">
+
+                <a href="https://vishwakarmaartorder.pythonanywhere.com/app1/login" class="card-banner img-holder has-before" style="--width: 300; --height: 300;">
+                  <img src="./assets/images/b15.jpg" width="300" height="300" loading="lazy" alt="Nancy Chair"
+                    class="img-cover">
+
+                  <ul class="card-action-list">
+
+                    <!-- <li>
+                      <button class="card-action-btn" aria-label="add to cart" title="add to cart">
+                        <ion-icon name="add-outline" aria-hidden="true"></ion-icon>
+                      </button>
+                    </li> -->
+
+                    <li>
+                      <button class="card-action-btn" aria-label="add to cart" title="add to cart">
+                        <ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>
+                      </button>
+                    </li>
+
+                    <!-- <li>
+                      <button class="card-action-btn" aria-label="add to whishlist" title="add to whishlist">
+                        <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
+                      </button>
+                    </li> -->
+
+                  </ul>
+                </a>
+
+                <div class="card-content">
+                  <h3 class="h3">
+                    <a href="#" class="card-title">Bed</a>
+                  </h3>
+
+                  <div class="card-price">
+                    <data class="price" value="90">21999</data>
+                  </div>
+                </div>
+                <div class="card-price">
+                  <data class="price" value="30">Product ID:- 115</data>
+                </div>
+
+
+              </div>
+            </li>
+           
+            
+
+            <li class="accessory">
+              <div class="product-card">
+
+                <a href="https://vishwakarmaartorder.pythonanywhere.com/app1/login" class="card-banner img-holder has-before" style="--width: 300; --height: 300;">
+                  <img src="./assets/images/1d.jpg" width="300" height="300" loading="lazy"
+                    alt="Teapot with black tea" class="img-cover">
+
+                  <ul class="card-action-list">
+
+                    <!-- <li>
+                      <button class="card-action-btn" aria-label="add to cart" title="add to cart">
+                        <ion-icon name="add-outline" aria-hidden="true"></ion-icon>
+                      </button>
+                    </li> -->
+
+                    <li>
+                      <button class="card-action-btn" aria-label="add to cart" title="add to cart">
+                        <ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>
+                      </button>
+                    </li>
+
+                    <!-- <li>
+                      <button class="card-action-btn" aria-label="add to whishlist" title="add to whishlist">
+                        <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
+                      </button>
+                    </li> -->
+
+                  </ul>
+                </a>
+
+                <div class="card-content">
+                  <h3 class="h3">
+                    <a href="#" class="card-title">Dining Table</a>
+                  </h3>
+
+                  <div class="card-price">
+                    <data class="price" value="25">Rs 51999</data>
+                  </div>
+                </div>
+
+                <div class="card-price">
+                  <data class="price" value="30">Product ID:- 106</data>
+                </div>
+
+              </div>
+            </li>
+
+
+            <li class="accessory">
+              <div class="product-card">
+
+                <a href="https://vishwakarmaartorder.pythonanywhere.com/app1/login" class="card-banner img-holder has-before" style="--width: 300; --height: 300;">
+                  <img src="./assets/images/dt6.jpg" width="300" height="300" loading="lazy"
+                    alt="Teapot with black tea" class="img-cover">
+
+                  <ul class="card-action-list">
+
+                    <!-- <li>
+                      <button class="card-action-btn" aria-label="add to cart" title="add to cart">
+                        <ion-icon name="add-outline" aria-hidden="true"></ion-icon>
+                      </button>
+                    </li> -->
+
+                    <li>
+                      <button class="card-action-btn" aria-label="add to cart" title="add to cart">
+                        <ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>
+                      </button>
+                    </li>
+
+                    <!-- <li>
+                      <button class="card-action-btn" aria-label="add to whishlist" title="add to whishlist">
+                        <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
+                      </button>
+                    </li> -->
+
+                  </ul>
+                </a>
+
+                <div class="card-content">
+                  <h3 class="h3">
+                    <a href="#" class="card-title">Dining Table</a>
+                  </h3>
+
+                  <div class="card-price">
+                    <data class="price" value="25">Rs 13999</data>
+                  </div>
+                </div>
+
+                <div class="card-price">
+                  <data class="price" value="30">Product ID:- 107</data>
+                </div>
+
+              </div>
+            </li>
+
+
+            <li class="accessory">
+              <div class="product-card">
+
+                <a href="https://vishwakarmaartorder.pythonanywhere.com/app1/login" class="card-banner img-holder has-before" style="--width: 300; --height: 300;">
+                  <img src="./assets/images/dt7.jpg" width="300" height="300" loading="lazy"
+                    alt="Teapot with black tea" class="img-cover">
+
+                  <ul class="card-action-list">
+
+                    <!-- <li>
+                      <button class="card-action-btn" aria-label="add to cart" title="add to cart">
+                        <ion-icon name="add-outline" aria-hidden="true"></ion-icon>
+                      </button>
+                    </li> -->
+
+                    <li>
+                      <button class="card-action-btn" aria-label="add to cart" title="add to cart">
+                        <ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>
+                      </button>
+                    </li>
+
+                    <!-- <li>
+                      <button class="card-action-btn" aria-label="add to whishlist" title="add to whishlist">
+                        <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
+                      </button>
+                    </li> -->
+
+                  </ul>
+                </a>
+
+                <div class="card-content">
+                  <h3 class="h3">
+                    <a href="#" class="card-title">Dining Table</a>
+                  </h3>
+
+                  <div class="card-price">
+                    <data class="price" value="25">Rs 35999</data>
+                  </div>
+                </div>
+
+                <div class="card-price">
+                  <data class="price" value="30">Product ID:- 108</data>
+                </div>
+
+              </div>
+            </li>
+
+
+            <li class="accessory">
+              <div class="product-card">
+
+                <a href="https://vishwakarmaartorder.pythonanywhere.com/app1/login" class="card-banner img-holder has-before" style="--width: 300; --height: 300;">
+                  <img src="./assets/images/dt8.jpg" width="300" height="300" loading="lazy"
+                    alt="Teapot with black tea" class="img-cover">
+
+                  <ul class="card-action-list">
+
+                    <!-- <li>
+                      <button class="card-action-btn" aria-label="add to cart" title="add to cart">
+                        <ion-icon name="add-outline" aria-hidden="true"></ion-icon>
+                      </button>
+                    </li> -->
+
+                    <li>
+                      <button class="card-action-btn" aria-label="add to cart" title="add to cart">
+                        <ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>
+                      </button>
+                    </li>
+
+                    <!-- <li>
+                      <button class="card-action-btn" aria-label="add to whishlist" title="add to whishlist">
+                        <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
+                      </button>
+                    </li> -->
+
+                  </ul>
+                </a>
+
+                <div class="card-content">
+                  <h3 class="h3">
+                    <a href="#" class="card-title">Dining Table</a>
+                  </h3>
+
+                  <div class="card-price">
+                    <data class="price" value="25">Rs 28999</data>
+                  </div>
+                </div>
+
+                <div class="card-price">
+                  <data class="price" value="30">Product ID:- 109</data>
+                </div>
+
+              </div>
+            </li>
+
+            <li class="accessory">
+              <div class="product-card">
+
+                <a href="https://vishwakarmaartorder.pythonanywhere.com/app1/login" class="card-banner img-holder has-before" style="--width: 300; --height: 300;">
+                  <img src="./assets/images/dt9.jpg" width="300" height="300" loading="lazy"
+                    alt="Teapot with black tea" class="img-cover">
+
+                  <ul class="card-action-list">
+
+                    <!-- <li>
+                      <button class="card-action-btn" aria-label="add to cart" title="add to cart">
+                        <ion-icon name="add-outline" aria-hidden="true"></ion-icon>
+                      </button>
+                    </li> -->
+
+                    <li>
+                      <button class="card-action-btn" aria-label="add to cart" title="add to cart">
+                        <ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>
+                      </button>
+                    </li>
+
+                    <!-- <li>
+                      <button class="card-action-btn" aria-label="add to whishlist" title="add to whishlist">
+                        <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
+                      </button>
+                    </li> -->
+
+                  </ul>
+                </a>
+
+                <div class="card-content">
+                  <h3 class="h3">
+                    <a href="#" class="card-title">Dining Table</a>
+                  </h3>
+
+                  <div class="card-price">
+                    <data class="price" value="25">Rs 91999</data>
+                  </div>
+                </div>
+
+                <div class="card-price">
+                  <data class="price" value="30">Product ID:- 110</data>
+                </div>
+
+              </div>
+            </li>
+
+            <li class="accessory">
+              <div class="product-card">
+
+                <a href="https://vishwakarmaartorder.pythonanywhere.com/app1/login" class="card-banner img-holder has-before" style="--width: 300; --height: 300;">
+                  <img src="./assets/images/dt10.jpg" width="300" height="300" loading="lazy"
+                    alt="Teapot with black tea" class="img-cover">
+
+                  <ul class="card-action-list">
+
+                    <!-- <li>
+                      <button class="card-action-btn" aria-label="add to cart" title="add to cart">
+                        <ion-icon name="add-outline" aria-hidden="true"></ion-icon>
+                      </button>
+                    </li> -->
+
+                    <li>
+                      <button class="card-action-btn" aria-label="add to cart" title="add to cart">
+                        <ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>
+                      </button>
+                    </li>
+
+                    <!-- <li>
+                      <button class="card-action-btn" aria-label="add to whishlist" title="add to whishlist">
+                        <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
+                      </button>
+                    </li> -->
+
+                  </ul>
+                </a>
+
+                <div class="card-content">
+                  <h3 class="h3">
+                    <a href="#" class="card-title">Dining Table</a>
+                  </h3>
+
+                  <div class="card-price">
+                    <data class="price" value="25">Rs 23099</data>
+                  </div>
+                </div>
+
+                <div class="card-price">
+                  <data class="price" value="30">Product ID:- 111</data>
+                </div>
+
+              </div>
+            </li>
+
+            <li class="accessory">
+              <div class="product-card">
+
+                <a href="https://vishwakarmaartorder.pythonanywhere.com/app1/login" class="card-banner img-holder has-before" style="--width: 300; --height: 300;">
+                  <img src="./assets/images/dt11.jpg" width="300" height="300" loading="lazy"
+                    alt="Teapot with black tea" class="img-cover">
+
+                  <ul class="card-action-list">
+
+                    <!-- <li>
+                      <button class="card-action-btn" aria-label="add to cart" title="add to cart">
+                        <ion-icon name="add-outline" aria-hidden="true"></ion-icon>
+                      </button>
+                    </li> -->
+
+                    <li>
+                      <button class="card-action-btn" aria-label="add to cart" title="add to cart">
+                        <ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>
+                      </button>
+                    </li>
+
+                    <!-- <li>
+                      <button class="card-action-btn" aria-label="add to whishlist" title="add to whishlist">
+                        <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
+                      </button>
+                    </li> -->
+
+                  </ul>
+                </a>
+
+                <div class="card-content">
+                  <h3 class="h3">
+                    <a href="#" class="card-title">Dining Table</a>
+                  </h3>
+
+                  <div class="card-price">
+                    <data class="price" value="25">Rs 63099</data>
+                  </div>
+                </div>
+
+                <div class="card-price">
+                  <data class="price" value="30">Product ID:- 112</data>
+                </div>
+
+              </div>
+            </li>
+
+            <li class="accessory">
+              <div class="product-card">
+
+                <a href="https://vishwakarmaartorder.pythonanywhere.com/app1/login" class="card-banner img-holder has-before" style="--width: 300; --height: 300;">
+                  <img src="./assets/images/dt12.jpg" width="300" height="300" loading="lazy"
+                    alt="Teapot with black tea" class="img-cover">
+
+                  <ul class="card-action-list">
+
+                    <!-- <li>
+                      <button class="card-action-btn" aria-label="add to cart" title="add to cart">
+                        <ion-icon name="add-outline" aria-hidden="true"></ion-icon>
+                      </button>
+                    </li> -->
+
+                    <li>
+                      <button class="card-action-btn" aria-label="add to cart" title="add to cart">
+                        <ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>
+                      </button>
+                    </li>
+
+                    <!-- <li>
+                      <button class="card-action-btn" aria-label="add to whishlist" title="add to whishlist">
+                        <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
+                      </button>
+                    </li> -->
+
+                  </ul>
+                </a>
+
+                <div class="card-content">
+                  <h3 class="h3">
+                    <a href="#" class="card-title">Dining Table</a>
+                  </h3>
+
+                  <div class="card-price">
+                    <data class="price" value="25">Rs 49099</data>
+                  </div>
+                </div>
+
+                <div class="card-price">
+                  <data class="price" value="30">Product ID:- 113</data>
+                </div>
+
+              </div>
+            </li>
+            <li class="accessory">
+              <div class="product-card">
+
+                <a href="https://vishwakarmaartorder.pythonanywhere.com/app1/login" class="card-banner img-holder has-before" style="--width: 300; --height: 300;">
+                  <img src="./assets/images/dt13.jpg" width="300" height="300" loading="lazy"
+                    alt="Teapot with black tea" class="img-cover">
+
+                  <ul class="card-action-list">
+
+                    <!-- <li>
+                      <button class="card-action-btn" aria-label="add to cart" title="add to cart">
+                        <ion-icon name="add-outline" aria-hidden="true"></ion-icon>
+                      </button>
+                    </li> -->
+
+                    <li>
+                      <button class="card-action-btn" aria-label="add to cart" title="add to cart">
+                        <ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>
+                      </button>
+                    </li>
+
+                    <!-- <li>
+                      <button class="card-action-btn" aria-label="add to whishlist" title="add to whishlist">
+                        <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
+                      </button>
+                    </li> -->
+
+                  </ul>
+                </a>
+
+                <div class="card-content">
+                  <h3 class="h3">
+                    <a href="#" class="card-title">Dining Table</a>
+                  </h3>
+
+                  <div class="card-price">
+                    <data class="price" value="25">Rs 29099</data>
+                  </div>
+                </div>
+
+                <div class="card-price">
+                  <data class="price" value="30">Product ID:- 114</data>
+                </div>
+
+              </div>
+            </li>
+
+            <li class="accessory">
+              <div class="product-card">
+
+                <a href="https://vishwakarmaartorder.pythonanywhere.com/app1/login" class="card-banner img-holder has-before" style="--width: 300; --height: 300;">
+                  <img src="./assets/images/dt14.jpg" width="300" height="300" loading="lazy"
+                    alt="Teapot with black tea" class="img-cover">
+
+                  <ul class="card-action-list">
+
+                    <!-- <li>
+                      <button class="card-action-btn" aria-label="add to cart" title="add to cart">
+                        <ion-icon name="add-outline" aria-hidden="true"></ion-icon>
+                      </button>
+                    </li> -->
+
+                    <li>
+                      <button class="card-action-btn" aria-label="add to cart" title="add to cart">
+                        <ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>
+                      </button>
+                    </li>
+
+                    <!-- <li>
+                      <button class="card-action-btn" aria-label="add to whishlist" title="add to whishlist">
+                        <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
+                      </button>
+                    </li> -->
+
+                  </ul>
+                </a>
+
+                <div class="card-content">
+                  <h3 class="h3">
+                    <a href="#" class="card-title">Dining Table</a>
+                  </h3>
+
+                  <div class="card-price">
+                    <data class="price" value="25">Rs 28099</data>
+                  </div>
+                </div>
+
+                <div class="card-price">
+                  <data class="price" value="30">Product ID:- 115</data>
+                </div>
+
+              </div>
+            </li>
+
+
+            <li class="accessory">
+              <div class="product-card">
+
+                <a href="https://vishwakarmaartorder.pythonanywhere.com/app1/login" class="card-banner img-holder has-before" style="--width: 300; --height: 300;">
+                  <img src="./assets/images/dt16.jpg" width="300" height="300" loading="lazy"
+                    alt="Teapot with black tea" class="img-cover">
+
+                  <ul class="card-action-list">
+
+                    <!-- <li>
+                      <button class="card-action-btn" aria-label="add to cart" title="add to cart">
+                        <ion-icon name="add-outline" aria-hidden="true"></ion-icon>
+                      </button>
+                    </li> -->
+
+                    <li>
+                      <button class="card-action-btn" aria-label="add to cart" title="add to cart">
+                        <ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>
+                      </button>
+                    </li>
+
+                    <!-- <li>
+                      <button class="card-action-btn" aria-label="add to whishlist" title="add to whishlist">
+                        <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
+                      </button>
+                    </li> -->
+
+                  </ul>
+                </a>
+
+                <div class="card-content">
+                  <h3 class="h3">
+                    <a href="#" class="card-title">Dining Table</a>
+                  </h3>
+
+                  <div class="card-price">
+                    <data class="price" value="25">Rs 40909</data>
+                  </div>
+                </div>
+
+                <div class="card-price">
+                  <data class="price" value="30">Product ID:- 116</data>
+                </div>
+
+              </div>
+            </li>
+            
+
+            <li class="accessory">
+              <div class="product-card">
+
+                <a href="https://vishwakarmaartorder.pythonanywhere.com/app1/login" class="card-banner img-holder has-before" style="--width: 300; --height: 300;">
+                  <img src="./assets/images/dt15.jpg" width="300" height="300" loading="lazy" alt="Wooden Cups"
+                    class="img-cover">
+
+                  <ul class="card-action-list">
+
+                    <!-- <li>
+                      <button class="card-action-btn" aria-label="add to cart" title="add to cart">
+                        <ion-icon name="add-outline" aria-hidden="true"></ion-icon>
+                      </button>
+                    </li> -->
+
+                    <li>
+                      <button class="card-action-btn" aria-label="add to cart" title="add to cart">
+                        <ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>
+                      </button>
+                    </li>
+
+                    <!-- <li>
+                      <button class="card-action-btn" aria-label="add to whishlist" title="add to whishlist">
+                        <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
+                      </button>
+                    </li> -->
+
+                  </ul>
+                </a>
+
+                <div class="card-content">
+                  <h3 class="h3">
+                    <a href="#" class="card-title">Dining Table</a>
+                  </h3>
+
+                  <div class="card-price">
+                    <data class="price" value="29">Rs 27099</data>
+                  </div>
+
+                  <div class="card-price">
+                    <data class="price" value="30">Product ID:- 117</data>
+                  </div>
+
+
+                </div>
+
+              </div>
+            </li>
+
+          </ul>
+
+        </div>
+      </section>
+
+
+
+
+
+      <!-- 
+        - #BLOG
+      -->
+
+      <section class="section blog" id="blog" aria-label="blog">
+        <div class="container">
+
+          <div class="title-wrapper">
+            <h2 class="h2 section-title">Special Product</h2>
+
+            <a href="#" class="btn-link">
+              <span class="span">View All</span>
+
+              <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
+            </a>
+          </div>
+
+          <ul class="grid-list">
+
+            <li>
+              <div class="blog-card">
+
+                <div class="card-banner img-holder" style="--width: 374; --height: 243;">
+                  <img src="./assets/images/product-10.jpg" width="374" height="243" loading="lazy"
+                    alt="Unique products that will impress your home in 2022." class="img-cover">
+
+                  <a href="#" class="card-btn">
+                    <span class="span">Read more</span>
+
+                    <ion-icon name="add-outline" aria-hidden="true"></ion-icon>
+                  </a>
+                </div>
+
+                <div class="card-content">
+
+                  <h3 class="h3">
+                    <a href="#" class="card-title">wooden chair</a>
+                  </h3>
+
+                  <ul class="card-meta-list">
+
+                    <!-- <li class="card-meta-item">
+                      <time class="card-meta-text" datetime="2022-09-27">November 27, 2022</time>
+                    </li> -->
+
+                    <!-- <li class="card-meta-item">
+                      <a href="#" class="card-meta-text">Admin</a>
+                    </li>
+
+                    <li class="card-meta-item">
+                      in <a href="#" class="card-meta-text">deco</a>
+                    </li> -->
+
+                  </ul>
+
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="blog-card">
+
+                <div class="card-banner img-holder" style="--width: 374; --height: 243;">
+                  <img src="./assets/images/product-6.jpg" width="374" height="243" loading="lazy"
+                    alt="Navy Blue & White Striped Area Rugs" class="img-cover">
+
+                  <a href="#" class="card-btn">
+                    <span class="span">Read more</span>
+
+                    <ion-icon name="add-outline" aria-hidden="true"></ion-icon>
+                  </a>
+                </div>
+
+                <div class="card-content">
+
+                  <h3 class="h3">
+                    <a href="#" class="card-title">Wooden chair</a>
+                  </h3>
+
+                  <ul class="card-meta-list">
+
+                    <!-- <li class="card-meta-item">
+                      <time class="card-meta-text" datetime="2022-09-25">November 25, 2022</time>
+                    </li>
+
+                    <li class="card-meta-item">
+                      <a href="#" class="card-meta-text">Admin</a>
+                    </li>
+
+                    <li class="card-meta-item">
+                      in <a href="#" class="card-meta-text">deco</a>
+                    </li> -->
+
+                  </ul>
+
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="blog-card">
+
+                <div class="card-banner img-holder" style="--width: 374; --height: 243;">
+                  <img src="./assets/images/product-19.jpg" width="374" height="243" loading="lazy"
+                    alt="Woodex White Coated Staircase Floating" class="img-cover">
+
+                  <a href="#" class="card-btn">
+                    <span class="span">Read more</span>
+
+                    <ion-icon name="add-outline" aria-hidden="true"></ion-icon>
+                  </a>
+                </div>
+
+                <div class="card-content">
+
+                  <h3 class="h3">
+                    <a href="#" class="card-title">Wooden cup</a>
+                  </h3>
+
+                  <!-- <ul class="card-meta-list">
+
+                    <li class="card-meta-item">
+                      <time class="card-meta-text" datetime="2022-09-18">November 18, 2022</time>
+                    </li>
+
+                    <li class="card-meta-item">
+                      <a href="#" class="card-meta-text">Admin</a>
+                    </li>
+
+                    <li class="card-meta-item">
+                      in <a href="#" class="card-meta-text">deco</a>
+                    </li>
+
+                  </ul> -->
+
+                </div>
+
+              </div>
+            </li>
+
+          </ul>
+
+        </div>
+      </section>
+
+
+
+
+
+      <!-- 
+        - #NEWSLETTER
+      -->
+
+      <section class="section newsletter" aria-label="newsletter">
+        <div class="container">
+
+          <div class="newsletter-card">
+
+            <div class="card-content">
+              <h2 class="h2 section-title">Welcome to Vishwakarma Art
+
+              </h2>
+
+              <p class="section-text">
+                
+               Subscribe Here.
+
+                
+              </p>
+            </div>
+
+            <form action="" class="card-form">
+              <input type="email" name="email_address" placeholder="Your email ID " required class="email-field">
+
+              <button type="submit" class="newsletter-btn" aria-label="subscribe">
+                <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
+              </button>
+            </form>
+
+          </div>
+
+        </div>
+      </section>
+
+    </article>
+  </main>
+
+
+
+
+
+  <!-- 
+    - #FOOTER
+  -->
+
+  <footer class="footer">
+    <div class="container">
+
+      <div class="footer-top section">
+
+        <div class="footer-brand">
+
+          <a href="#" class="logo">Vishwakarma Art</a>
+
+          <ul>
+
+            <li class="footer-list-item">
+              <ion-icon name="location-sharp" aria-hidden="true"></ion-icon>
+
+              <address class="address">
+                Indira Nagar,Sangariya jodhpur(Raj)
+              </address>
+            </li>
+
+            <li class="footer-list-item">
+              <ion-icon name="call-sharp" aria-hidden="true"></ion-icon>
+
+              <a href="tel:+91 9588938688" class="footer-link">+91 9588938688</a>
+              <a href="tel:+91 9251628649" class="footer-link">+91 9251628649</a>
+
+            </li>
+
+            <li>
+              <ul class="social-list">
+
+                <li>
+                  <a href="#" class="social-link">
+                    <ion-icon name="logo-facebook"></ion-icon>
+                  </a>
+                </li>
+
+                <li>
+                  <a href="#" class="social-link">
+                    <ion-icon name="logo-twitter"></ion-icon>
+                  </a>
+                </li>
+
+                <li>
+                  <a href="#" class="social-link">
+                    <ion-icon name="logo-tumblr"></ion-icon>
+                  </a>
+                </li>
+
+              </ul>
+            </li>
+
+          </ul>
+
+        </div>
+
+        <ul class="footer-list">
+
+          <li>
+            <p class="footer-list-title">Help & Information</p>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Help & Contact Us</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Returns & Refunds</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Online Stores</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Terms & Conditions</a>
+          </li>
+
+        </ul>
+
+        <ul class="footer-list">
+
+          <li>
+            <p class="footer-list-title">About Us</p>
+          </li>
+
+          <li>
+            <a href="about.html" class="footer-link">About Us</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">What We Do</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">FAQ Page</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Contact Us</a>
+          </li>
+
+        </ul>
+
+        <div class="footer-list">
+
+          <p class="footer-list-title">Subscribe</p>
+
+          <form action="" class="footer-form">
+            <input type="email" name="email_address" placeholder="Your email address" required class="email-field">
+
+            <button type="submit" class="footer-form-btn">
+              <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
+            </button>
+          </form>
+
+          <div class="wrapper">
+
+            <a href="#" class="footer-link">Term & Condition</a>
+            <a href="#" class="footer-link">Policy</a>
+            <a href="https://maps.app.goo.gl/MxQytnycyveRYhGk9" class="footer-link">Map</a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+
+        <p class="copyright">
+          &copy; 2023 All Rights Reserved by <a href="#" class="copyright-link">Vishwakarma Art</a>.
+        </p>
+
+      </div>
+
+    </div>
+  </footer>
+
+
+
+
+
+  <!-- 
+    - #BACK TO TOP
+  -->
+
+  <a href="#top" class="back-top-btn" aria-label="back to top" data-back-top-btn>
+    <ion-icon name="arrow-up" aria-hidden="true"></ion-icon>
+  </a>
+
+
+
+
+
+  <!-- 
+    - custom js link
+  -->
+  <script src="./assets/js/script.js" defer></script>
+
+  <!-- 
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
 </body>
+
 </html>
