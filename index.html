@@ -5,6 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome to Our Website</title>
     <style>
+      @keyframes waveAnimation {
+          0%, 100% {
+              transform: translateY(0);
+          }
+          50% {
+              transform: translateY(-20px);
+          }
+      }
+
+      @keyframes colorAnimation {
+          0% {
+              color: rgb(12, 12, 12);
+          }
+          25% {
+              color: rgb(0, 0, 0);
+          }
+          50% {
+              color: rgb(0, 255, 17);
+          }
+          55% {
+              color: rgb(24, 186, 204);
+          }
+          60% {
+              color: rgb(228, 163, 13);
+          }
+      }
+
+      #animated-text {
+          display: inline-block;
+          font-size: 2em;
+          animation: waveAnimation 2s ease-in-out infinite, colorAnimation 4s ease-in-out infinite;
+      }
+  </style>
+    <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -346,7 +380,7 @@
           <!-- <h1 class="section-title">About</h1> -->
 
 
-          <h2 class="section-title">Vishwakarma Art</h2>
+          <h2 class="section-title" id="animated-text"  style="font-size: 400% ;" >Vishwakarma Art</h2>
 
           <p class="section-text">
         
