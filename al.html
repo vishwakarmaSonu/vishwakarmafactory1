@@ -39,7 +39,47 @@
   <link rel="preload" as="image" href="./assets/images/hero-product-3.jpg">
   <link rel="preload" as="image" href="./assets/images/hero-product-4.jpg">
   <link rel="preload" as="image" href="./assets/images/hero-product-5.jpg">
-
+ <style>
+      /* body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+    } */
+    
+    .image-container {
+        width: 200px;
+        height: 200px;
+        overflow: hidden;
+        border-radius: 50%;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        animation: scaleAndFade 1s ease-in-out;
+    }
+    
+    img {
+        width: 100%;
+        height: auto;
+        display: block;
+        opacity: 0;
+        transform: scale(0.8);
+        animation: scaleAndFade 1s ease-in-out forwards;
+    }
+    
+    @keyframes scaleAndFade {
+        from {
+            opacity: 0;
+            transform: scale(0.8);
+        }
+        to {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+    </style>
 </head>
 
 <body id="top">
