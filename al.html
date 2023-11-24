@@ -113,7 +113,41 @@
           <span class="btn-badge">0</span>
         </button> -->
         
+<select style="color: #000000; width: 600%; font-weight: bold ;" id="dropdown"  onchange="redirectToLink()" >
+         
+      
+          <option  value="product.html"> Products </option> 
+            <option value="product.html">Chair</option>
+            <option value="product.html">Dining Chairs</option>
+            <option value="product.html">Dining Table</option>
+            <option value="product.html">Beds</option>
+            <option value="product.html">Sideboards</option>
+            <option value="product.html">Study Tables</option>
+            <option value="product.html">Living Room</option>
+            <option value="product.html">Wall Art</option>
+            <option value="product.html">Mirror</option>
+            <option value="product.html">Photo Frame</option>
+            <option value="product.html">Dressing Tables</option>
+            <option value="product.html">Bookshelves</option>
+            <option value="product.html">Coffee Tables</option>
+            <option value="product.html">Computer Tables</option>
+            <option value="product.html">Shoe Racks</option> -->
 
+          
+
+            <!-- Add more options as needed -->
+          
+       </select>
+        <script>
+          function redirectToLink() {
+              var dropdown = document.getElementById("dropdown");
+              var selectedLink = dropdown.options[dropdown.selectedIndex].value;
+  
+              if (selectedLink !== "#") {
+                  window.location.href = selectedLink;
+              }
+          }
+      </script>
         
         <a class="nav-link "  style="color: #000000;  font-weight: bold ;  font-size: 15px;" href="whatsapp://send?text= Nice to contact you !&phone=+919588938688">Contact</a>
 
