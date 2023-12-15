@@ -330,7 +330,7 @@
               <div class="hero-card">
 
                 <figure class="card-banner img-holder" style="--width: 285; --height: 396;">
-                  <img src="./assets/images/1w.jpg" width="285" height="396" alt="Art Deco Home"
+                  <img id="randomso" src="" width="285" height="396" alt="Art Deco Home"
                     class="img-cover">
                 </figure>
 
@@ -349,7 +349,7 @@
               <div class="hero-card">
 
                 <figure class="card-banner img-holder" style="--width: 568; --height: 389;">
-                  <img src="./assets/images/dt2.jpg" width="568" height="389" alt="Helen Chair"
+                  <img id="randomsoi" src="" width="568" height="389" alt="Helen Chair"
                     class="img-cover">
                 </figure>
 
@@ -368,7 +368,7 @@
               <div class="hero-card">
 
                 <figure class="card-banner img-holder" style="--width: 285; --height: 396;">
-                  <img src="./assets/images/10chair.jpg" width="285" height="396" alt="Vase Of Flowers"
+                  <img id="randomsoie" src="" width="285" height="396" alt="Vase Of Flowers"
                     class="img-cover">
                 </figure>
 
@@ -4575,6 +4575,106 @@
   -->
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <!-- //randomsonu -->
+
+
+
+
+  <script>
+    var imageArray = [
+    './assets/images/ran6.jpg',
+  './assets/images/ran11.jpg',
+  './assets/images/ran9.jpg',
+  // './assets/images/hero-product-5.jpg'
+        // Add more image URLs as needed
+    ];
+  
+    function getRandomImage() {
+        var randomIndex = Math.floor(Math.random() * imageArray.length);
+        return imageArray[randomIndex];
+    }
+  
+    function setRandomImage() {
+        var randomImageElement = document.getElementById('randomsoie');
+        var randomImageUrl = getRandomImage();
+        randomImageElement.src = randomImageUrl;
+    }
+  
+    // Set an initial image on page load
+    setRandomImage();
+  
+    // Set a new random image every 5000 milliseconds (5 seconds)
+    setInterval(function() {
+        setRandomImage();
+    }, 4000); // Change the interval as needed
+  </script>
+  
+
+
+
+<!-- 2 -->
+
+<script>
+  var imageArray = [
+  './assets/images/10chair.jpg',
+'./assets/images/dt2.jpg',
+// './assets/images/1w.jpg',
+'./assets/images/ran2.jpg'
+      // Add more image URLs as needed
+  ];
+
+  function getRandomImage() {
+      var randomIndex = Math.floor(Math.random() * imageArray.length);
+      return imageArray[randomIndex];
+  }
+
+  function setRandomImage() {
+      var randomImageElement = document.getElementById('randomsoi');
+      var randomImageUrl = getRandomImage();
+      randomImageElement.src = randomImageUrl;
+  }
+
+  // Set an initial image on page load
+  setRandomImage();
+
+  // Set a new random image every 5000 milliseconds (5 seconds)
+  setInterval(function() {
+      setRandomImage();
+  }, 4000); // Change the interval as needed
+</script>
+
+
+
+
+<!-- 3 -->
+<script>
+  var imageArray = [
+  './assets/images/1w.jpg',
+// './assets/images/ran13.jpg',
+'./assets/images/ran5.jpg',
+// './assets/images/hero-product-5.jpg'
+      // Add more image URLs as needed
+  ];
+
+  function getRandomImage() {
+      var randomIndex = Math.floor(Math.random() * imageArray.length);
+      return imageArray[randomIndex];
+  }
+
+  function setRandomImage() {
+      var randomImageElement = document.getElementById('randomso');
+      var randomImageUrl = getRandomImage();
+      randomImageElement.src = randomImageUrl;
+  }
+
+  // Set an initial image on page load
+  setRandomImage();
+
+  // Set a new random image every 5000 milliseconds (5 seconds)
+  setInterval(function() {
+      setRandomImage();
+  }, 4000); // Change the interval as needed
+</script>
 
 </body>
 
