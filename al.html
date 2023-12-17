@@ -79,10 +79,25 @@
             transform: scale(1);
         }
     }
+
+   #message {
+      display: none;
+      padding: 10px;
+      background-color: #4bca4f;
+      color: rgb(255, 255, 255);
+      position: fixed;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 1000;
+      border-radius: 25px;
+    }
     </style>
 </head>
 
 <body id="top">
+    <div id="message" >Welcome to Vishwakarma Art!</div>
+
 
   <!-- 
     - #HEADER
@@ -4675,6 +4690,33 @@
   setInterval(function() {
       setRandomImage();
   }, 4000); // Change the interval as needed
+</script>
+
+  <script>
+  // Function to display the welcome message followed by a help message
+  function displayWelcomeMessage() {
+    var message = document.getElementById('message');
+    
+    // Display the welcome message after 2 seconds
+    setTimeout(function () {
+      message.style.display = 'block';
+      
+      // Display the help message after another 3 seconds
+      setTimeout(function () {
+        message.textContent = 'How can I help you?';
+        
+        // Hide the message after 3 seconds
+        setTimeout(function () {
+          message.style.display = 'none';
+        }, 3000);
+      }, 3000);
+    }, 2000);
+  }
+
+  // Call the function to display the messages when the page loads
+  window.onload = function () {
+    displayWelcomeMessage();
+  };
 </script>
 
 </body>
