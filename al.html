@@ -92,6 +92,25 @@
       z-index: 1000;
       border-radius: 25px;
     }
+    /* Styling for the message container */
+      #messageContainer {
+          overflow: hidden;
+          position: relative;
+          height: 50px; /* Adjust the height as needed */
+      }
+
+      /* Styling for the sliding message */
+      .slidingMessage {
+          position: absolute;
+          white-space: nowrap;
+          animation: slideMessage 30s linear infinite;
+      }
+
+      /* CSS animation keyframes */
+      @keyframes slideMessage {
+          0% { transform: translateX(100%); }
+          100% { transform: translateX(-100%); }
+      }
     </style>
 </head>
 
@@ -473,6 +492,9 @@
               <ion-icon name="play-circle-outline" aria-hidden="true"></ion-icon>
             </button>
           </div>
+           <div id="messageContainer" >
+          <div class="slidingMessage" style="color: rgb(0, 89, 255) ;">Greetings to everyone. Vishwakarma Art is always ready to help the customers. If you are facing any problem while booking the product then you can contact us directly on this number 9251628649.</div>
+      </div>
 
         </div>
       </section>
