@@ -22,6 +22,8 @@
     - custom css link
   -->
   <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/styless.css">
+
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -114,6 +116,16 @@
           100% { transform: translateX(-100%); }
       }
     </style>
+
+  <div class="popup" style="z-index: 2;">
+  <div class="popup-content">
+    <h1>X</h1>
+    <h2>Vishwakarma Art</h2>
+    <p>MANUFACTURER & SUPPLIERS ALL TYPES OF HANDICRAFT ITEMS</p>
+    <hr>
+    
+</div>
+</div>
 </head>
 
 <body id="top">
@@ -4928,6 +4940,20 @@
   window.onload = function () {
     displayWelcomeMessage();
   };
+</script>
+
+  <script>
+  const popup = document.querySelector('.popup');
+  const x = document.querySelector('.popup-content h1')
+
+  window.addEventListener('load', () => {
+      popup.classList.add('showPopup');
+      popup.childNodes[1].classList.add('showPopup');
+  })
+  x.addEventListener('click', () => {
+      popup.classList.remove('showPopup');
+      popup.childNodes[1].classList.remove('showPopup');
+  })
 </script>
 
 </body>
