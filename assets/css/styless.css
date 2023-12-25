@@ -23,7 +23,7 @@
     width: clamp(300px, 90vw, 500px);
     background-color: #fff;
     padding: clamp(1.5rem, 100vw, 3rem);
-    box-shadow: 0 0 .5em rgba(0, 0, 0, .5);
+    box-shadow: 0 0 .5em rgba(244, 2, 2, 0.5);
     border-radius: .5em;
     opacity: 0;
     transform: translateY(20%);
