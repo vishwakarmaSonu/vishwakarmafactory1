@@ -4894,18 +4894,31 @@
   };
 </script>
 
-  <script>
+ <script>
   const popup = document.querySelector('.popup');
-  const x = document.querySelector('.popup-content h1')
+  const x = document.querySelector('.popup-content h1');
 
-  window.addEventListener('load', () => {
-      popup.classList.add('showPopup');
-      popup.childNodes[1].classList.add('showPopup');
-  })
-  x.addEventListener('click', () => {
-      popup.classList.remove('showPopup');
-      popup.childNodes[1].classList.remove('showPopup');
-  })
+  // Function to show the popup
+  const showPopup = () => {
+    popup.classList.add('showPopup');
+    popup.childNodes[1].classList.add('showPopup');
+  };
+
+  // Function to hide the popup
+  const hidePopup = () => {
+    popup.classList.remove('showPopup');
+    popup.childNodes[1].classList.remove('showPopup');
+  };
+
+  // Run the script after a delay (e.g., 2000 milliseconds or 2 seconds)
+  setTimeout(() => {
+    showPopup();
+
+    // Add click event listener to the 'h1' element
+    x.addEventListener('click', () => {
+      hidePopup();
+    });
+  }, 3000); // Adjust the delay as needed
 </script>
 
 </body>
