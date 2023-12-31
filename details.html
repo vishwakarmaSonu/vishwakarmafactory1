@@ -466,8 +466,12 @@ background-color: #808080;
 <div class="image-details" style="margin-top: 100px;">
     <img src="" alt="Image" id="details-image">
     <div class="details-content">
-        <p id="details-title" class="rating">Image Title</p>
+       <p id="details-title" class="rating">Image name</p>
+        <p id="details-productid" class="rating">image id</p>
+
         <p id="details-description" class="rating">Image Description</p>
+        <p id="details-amount" class="rating">Image price</p>
+
         <div class="rating" id="star-rating"></div>
         <div class="buttons">
             <a href="#" class="button" id="book-button">Book Now</a>
@@ -485,16 +489,16 @@ background-color: #808080;
         // Set details based on the id (you can fetch details from a database or another source)
         switch (id) {
             case '1':
-                setDetails('./assets/images/side1.jpg', 'Sideboard', 'Size is not decided yet', 4);
+                setDetails('./assets/images/side1.jpg', 'Sideboard Cabinet','Product id 105', 'Size is not decided yet','Amount 15999/-', 4);
                 break;
             case '2':
-                setDetails('./assets/images/side2.jpg', 'Sideboard', 'Size is not decided yet', 4);
+                setDetails('./assets/images/side2.jpg', 'Sideboard','Product id 101', 'Size is not decided yet','Amount 20499/-', 4);
                 break;
             case '3':
-                setDetails('./assets/images/side3.jpg', 'Sideboard', 'Size is not decided yet', 5);
+                setDetails('./assets/images/side3.jpg', 'Sideboard','Product id 102', 'Size is not decided yet','Amount 25499/-', 5);
                 break;
             case '4':
-                setDetails('./assets/images/side4.jpg', 'sideboard', 'Size is not decided yet', 4);
+                setDetails('./assets/images/side4.jpg', 'sideboard','Product id 103', 'Size is not decided yet','Amount 13999/-', 4);
                 break;
             default:
                 // Handle invalid id or redirect to a default page
@@ -518,10 +522,13 @@ background-color: #808080;
         });
     };
 
-    function setDetails(imageSrc, title, description, rating) {
+    function setDetails(imageSrc, title,productid, description,amount, rating) {
         document.getElementById('details-image').src = imageSrc;
         document.getElementById('details-title').innerText = title;
+        document.getElementById('details-productid').innerText = productid;
         document.getElementById('details-description').innerText = description;
+        document.getElementById('details-amount').innerText = amount;
+
 
         // Create star rating
         const starRatingContainer = document.getElementById('star-rating');
