@@ -550,8 +550,28 @@ background-color: #808080;
                 <input type="text" id="address" name="address" required style="background-color: #fff; color: blue;">
     
                 <button type="submit">Submit</button>
+               <label>
+                  <input type="checkbox" id="acceptTerms" required>
+                   <h6><a href="javascript:void(0);" onclick="openTermsModal()" style="color: blue;">terms and conditions</a>.</h6>
+              </label>
                 <hr>
             </form>
+           <div class="terms-modal" id="termsModal">
+              <div class="terms-modal-content">
+                <h2>Vishwakarma Art</h2>
+                <hr>
+                <h3><u>Terms and Conditions</u></h3>
+                <ol type="1">
+                    <li>Goods once sold will not be taken back.</li>
+                    <li>Interest will be charged 24% per annum if the bill is not paid within seven days.</li>
+                    <li style="color: blue;">18% advance on the product price.</li>
+                </ol>
+            
+                <!-- Add your terms and conditions content here -->
+            
+                <button onclick="closeTermsModal()">Close</button>
+                <hr>
+            </div>
             <div id="confirmation-message" class="confirmation-message"></div>
             <button onclick="closeModal()" style="background-color: red;">Close</button>
         </div>
@@ -1037,6 +1057,17 @@ background-color: #808080;
                 window.location.href = 'index.html';
             }, 3000);
         }
+    </script>
+  <script>
+        function openTermsModal() {
+            document.getElementById('termsModal').style.display = 'flex';
+        }
+
+        function closeTermsModal() {
+            document.getElementById('termsModal').style.display = 'none';
+        }
+
+        // Add or modify your scripts here
     </script>
 
 </body>
