@@ -1087,10 +1087,10 @@ background-color: #808080;
                 document.getElementById('confirmation-message').innerText = confirmationMessage;
             })
             .catch(error => {
-                console.error('Error:', error);
+                window.location.href = 'https://vishwakarmaart.in/error.html';
             });
             setTimeout(function () {
-                window.location.href = 'index.html';
+                window.location.href = 'https://vishwakarmaart.in/confirm.html';
             }, 3000);
         }
     </script>
