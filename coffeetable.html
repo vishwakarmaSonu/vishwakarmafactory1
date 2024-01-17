@@ -82,7 +82,21 @@
       }
   }
   </style>
-  
+  <style>
+    @keyframes colorChange {
+        0% { color: red; }
+        25% { color: blue; }
+        50% { color: green; }
+        75% { color: orange; }
+        100% { color: red; }
+    }
+
+    .animated-text {
+        font-size: 24px;
+        font-weight: bold;
+        animation: colorChange 4s infinite; /* Adjust the duration as needed */
+    }
+</style>
    
 </head>
 
@@ -206,25 +220,31 @@
 
       <p class="social-list-title">Follow US On Socials</p>
 
-      <ul class="social-list">
+     <ul class="social-list">
 
         <li>
-          <a href="#" class="social-link">
+          <a href="https://www.facebook.com/profile.php?id=61555298892002" class="social-link">
             <ion-icon name="logo-facebook"></ion-icon>
           </a>
         </li>
 
         <li>
-          <a href="#" class="social-link">
+          <a href="https://twitter.com/VishwakarmaArt3" class="social-link">
             <ion-icon name="logo-twitter"></ion-icon>
           </a>
         </li>
 
         <li>
-          <a href="#" class="social-link">
-            <ion-icon name="logo-tumblr"></ion-icon>
+          <a href="https://www.instagram.com/vishwakarma_art21/" class="social-link">
+            <ion-icon name="logo-instagram"></ion-icon>
           </a>
         </li>
+
+         <li>
+                  <a href="https://www.linkedin.com/in/vishwakarma-art-a22b79292/" class="social-link">
+                    <ion-icon name="logo-linkedin"></ion-icon>
+                  </a>
+                </li>
 
       </ul>
 
@@ -257,31 +277,8 @@
       <section class="section product" id="product" aria-label="product">
         <div class="container">
 
-          <div class="title-wrapper">
-            <!-- <h2 class="section-title">Vishwakarma Art</h2> -->
-
-            <!-- <h2  style="text-align: center;">Chair</h2> -->
-
-            <!-- <ul class="filter-btn-list">
-
-              <li class="filter-btn-item">
-                <button class="filter-btn active" data-filter-btn="all">All Products</button>
-              </li>
-
-              <li class="filter-btn-item">
-                <button class="filter-btn" data-filter-btn="accessory">Dining Table</button>
-              </li>
-
-              <li class="filter-btn-item">
-                <button class="filter-btn" data-filter-btn="decoration">Chair</button>
-              </li>
-
-              <li class="filter-btn-item">
-                <button class="filter-btn" data-filter-btn="furniture">Bed</button>
-              </li>
-
-            </ul> -->
-          </div>
+         <h2   class="animated-text"  style="color: #42ed09; text-align: center; margin-top: 15px; margin-bottom: 8px;">Wooden Coffee Tables</h2>
+          <hr style="margin-bottom: 10px;">
 
           <ul class="grid-list product-list" data-filter="all">
 
@@ -558,8 +555,7 @@
   <!-- 
     - #FOOTER
   -->
-
-  <footer class="footer">
+<footer class="footer">
     <div class="container">
 
       <div class="footer-top section">
@@ -590,20 +586,26 @@
               <ul class="social-list">
 
                 <li>
-                  <a href="#" class="social-link">
+                  <a href="https://www.facebook.com/profile.php?id=61555298892002" class="social-link">
                     <ion-icon name="logo-facebook"></ion-icon>
                   </a>
                 </li>
 
                 <li>
-                  <a href="#" class="social-link">
+                  <a href="https://twitter.com/VishwakarmaArt3" class="social-link">
                     <ion-icon name="logo-twitter"></ion-icon>
                   </a>
                 </li>
 
                 <li>
-                  <a href="#" class="social-link">
-                    <ion-icon name="logo-tumblr"></ion-icon>
+                  <a href="https://www.instagram.com/vishwakarma_art21/" class="social-link">
+                    <ion-icon name="logo-instagram"></ion-icon>
+                  </a>
+                </li>
+
+                 <li>
+                  <a href="https://www.linkedin.com/in/vishwakarma-art-a22b79292/" class="social-link">
+                    <ion-icon name="logo-linkedin"></ion-icon>
                   </a>
                 </li>
 
