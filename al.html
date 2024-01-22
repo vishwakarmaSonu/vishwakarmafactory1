@@ -115,6 +115,31 @@
           0% { transform: translateX(100%); }
           100% { transform: translateX(-100%); }
       }
+
+    .cookie-consent {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 5px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+}
+
+.cookie-consent a {
+    color: #4CAF50;
+    text-decoration: underline;
+}
+
+.cookie-consent button {
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    padding: 2px 10px;
+    cursor: pointer;
+    text-align: center;
+}
     </style>
 
   <div class="popup" style="z-index: 2;">
@@ -519,6 +544,11 @@
 
         </div>
       </section>
+
+       <div id="cookieConsent" class="cookie-consent" style="z-index: 2;">
+        <p>This website uses cookies to ensure you get the best experience on our website. <a >Learn more</a></p>
+        <button onclick="acceptCookies()">Got it!</button>
+    </div>
 
 
 
@@ -3518,6 +3548,26 @@
     });
   }, 3000); // Adjust the delay as needed
 </script>
+  <script>
+
+     function getCookie(name) {
+    const value = "; " + document.cookie;
+    const parts = value.split("; " + name + "=");
+    if (parts.length === 2) return parts.pop().split(";").shift();
+}
+
+function acceptCookies() {
+    document.getElementById('cookieConsent').style.display = 'none';
+    document.cookie = 'cookieConsent=true; expires=' + new Date(Date.now() + 365 * 24 * 60 * 60 * 1000).toUTCString() + '; path=/';
+}
+
+window.onload = function () {
+    if (!getCookie('cookieConsent')) {
+        document.getElementById('cookieConsent').style.display = 'block';
+    }
+};
+
+  </script>
 
 </body>
 
