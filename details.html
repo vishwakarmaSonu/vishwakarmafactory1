@@ -667,7 +667,7 @@ background-color: #808080;
                 <!-- Add your terms and conditions content here -->
             
                 <button   id="book-buttons" onclick="payments()">Ok</button>
-                <button onclick="closeTermsModal()">Cancel</button>
+                <button onclick="closeTermsModal()" style="background-color: red;">Cancel</button>
 
                 <hr>
             </div>
@@ -1206,7 +1206,7 @@ background-color: #808080;
         }
 
         function payments() {
-          alert("Are you Sure you want to move further")
+          // alert("Are you Sure you want to move further")
             document.getElementById('qrpayment').style.display = 'flex';
 
                 document.getElementById('itemamount').innerText = document.getElementById('details-amount').innerText;
