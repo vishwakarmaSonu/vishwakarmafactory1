@@ -1240,6 +1240,8 @@ background-color: #808080;
        
         function submitBookingForm(event) {
             event.preventDefault();
+              document.getElementById("loadingPage").style.display = "flex";
+
 
                // Check if the terms and conditions checkbox is checked
                const acceptTermsCheckbox = document.getElementById('acceptTerms');
@@ -1286,6 +1288,8 @@ background-color: #808080;
             });
             setTimeout(function () {
                 window.location.href = 'https://vishwakarmaart.in/confirm.html';
+                    document.getElementById("loadingPage").style.display = "none";
+
             }, 3000);
         }
     </script>
