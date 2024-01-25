@@ -346,7 +346,7 @@
             <!-- Add more options as needed -->
           
        </select>
-        <script>
+<!--         <script>
           function redirectToLink() {
               var dropdown = document.getElementById("dropdown");
               var selectedLink = dropdown.options[dropdown.selectedIndex].value;
@@ -355,7 +355,7 @@
                   window.location.href = selectedLink;
               }
           }
-      </script>
+      </script> -->
         
 <!--         <a class="nav-link "  style="color: #000000;  font-weight: bold ;  font-size: 15px;" href="https://vishwakarmaartorder.pythonanywhere.com/app1/login">Login</a> -->
 
@@ -3677,6 +3677,8 @@ window.onload = function () {
                     if (selectedLink !== "#") {
                         window.location.href = selectedLink;
                     }
+                                  document.getElementById("loadingPage").style.display = "none";
+
                 }, 3000); // Adjust the duration of the animation
             }
 
@@ -3693,6 +3695,8 @@ window.onload = function () {
                     if (selectedLink !== "#") {
                         window.location.href = selectedLink;
                     }
+                document.getElementById("loadingPage").style.display = "none";
+
                 }, 3000); // Adjust the duration of the animation
             }
 
