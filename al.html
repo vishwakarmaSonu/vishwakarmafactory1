@@ -43,6 +43,45 @@
   <link rel="preload" as="image" href="./assets/images/hero-product-3.jpg">
   <link rel="preload" as="image" href="./assets/images/hero-product-4.jpg">
   <link rel="preload" as="image" href="./assets/images/hero-product-5.jpg">
+
+    <style>
+
+
+.notification {
+  position: relative;
+  display: inline-block;
+  padding-right: 20px; /* Add padding to make space for the dot */
+}
+
+.pop-dot {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  width: 10px;
+  height: 10px;
+  background-color: rgb(20, 245, 31); /* Change color as needed */
+  border-radius: 50%;
+  animation: pop 0.5s ease infinite alternate; /* Add animation */
+}
+
+@keyframes pop {
+  0% {
+    transform: scale(1); /* Initial size */
+  }
+  100% {
+    transform: scale(1.5); /* Size when popped */
+  }
+}
+
+@media (max-width: 768px) {
+  .notification {
+    padding-right: 10px; /* Adjust padding for smaller screens */
+  }
+}
+
+
+
+    </style>
  <style>
       /* body {
         font-family: Arial, sans-serif;
@@ -305,7 +344,10 @@
         </button> -->
 
          
-        
+   <div class="notification">
+        <div class="pop-dot"></div>
+       
+      </div>     
 <select style="color: #000000; width: 600%; font-weight: bold ;" id="dropdown"  onchange="redirectToLink()" >
          
       
