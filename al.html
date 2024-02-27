@@ -55,22 +55,31 @@
 
 .pop-dot {
   position: absolute;
-  top: -5px;
-  right: -5px;
-  width: 10px;
-  height: 10px;
-  background-color: rgb(20, 245, 31); /* Change color as needed */
+  top: 0;
+  right: 0;
+  width: 12px;
+  height: 12px;
+  background-color: #ff6347; /* Coral color */
   border-radius: 50%;
-  animation: pop 0.5s ease infinite alternate; /* Add animation */
+  transform: scale(1);
+  opacity: 1;
+  animation: pulse 1s ease infinite alternate; /* Add animation */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
 }
 
-@keyframes pop {
+@keyframes pulse {
   0% {
-    transform: scale(1); /* Initial size */
+    transform: scale(1);
   }
   100% {
-    transform: scale(1.5); /* Size when popped */
+    transform: scale(1.2);
   }
+}
+
+.notification span {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  color: #333; /* Text color */
 }
 
 @media (max-width: 768px) {
@@ -78,6 +87,7 @@
     padding-right: 10px; /* Adjust padding for smaller screens */
   }
 }
+
 
 
 
