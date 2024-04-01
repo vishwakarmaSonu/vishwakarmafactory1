@@ -264,6 +264,32 @@
                 </div>
             </form>
         </div>
+
+         <script>
+        $(document).ready(function() {
+            $("#registrationForm").submit(function(event) {
+                event.preventDefault();
+                var formData = $(this).serialize();
+
+                // Send AJAX request to login API endpoint
+                $.ajax({
+                    type: "POST",
+                    url: "http://127.0.0.1:8000/api/login/",
+                    data: formData,
+                    success: function(response) {
+                        console.log(response);
+                        alert("Sign in successful!");
+                        // Redirect to the restricted page after successful login
+                        window.location.href = "http://127.0.0.1:8000/api/restricted-page"; // Specify the Django restricted page URL
+                    },
+                    error: function(xhr, status, error) {
+                        console.error(xhr.responseText);
+                        alert("Sign in failed! Please check your credentials.");
+                    }
+                });
+            });
+        });
+    </script>
     </main>
 
     <!-- 
