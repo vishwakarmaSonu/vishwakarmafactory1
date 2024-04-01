@@ -42,7 +42,7 @@
         $("#signin-form").submit(function(event) {
             event.preventDefault();
             var formData = $(this).serialize();
-            $.post("http://127.0.0.1:8000/api/login/", formData, function(response) {
+            $.post("https://vishwakarmaartspaymentapi.pythonanywhere.com/login/", formData, function(response) {
                 console.log(response);
                 alert("Sign in successful!");
                 window.location.href ="co.html"
