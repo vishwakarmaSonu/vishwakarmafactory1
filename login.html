@@ -266,29 +266,33 @@
         </div>
 
          <script>
-        $(document).ready(function() {
-            $("#registrationForm").submit(function(event) {
-                event.preventDefault();
-                var formData = $(this).serialize();
-
-                // Send AJAX request to login API endpoint
-                $.ajax({
-                    type: "POST",
-                    url: "http://127.0.0.1:8000/api/login/",
-                    data: formData,
-                    success: function(response) {
-                        console.log(response);
-                        alert("Sign in successful!");
-                        // Redirect to the restricted page after successful login
-                        window.location.href = "http://127.0.0.1:8000/api/restricted-page"; // Specify the Django restricted page URL
-                    },
-                    error: function(xhr, status, error) {
-                        console.error(xhr.responseText);
-                        alert("Sign in failed! Please check your credentials.");
-                    }
-                });
-            });
+        document.getElementById('registrationForm').addEventListener('submit', async function(event) {
+    event.preventDefault(); // Prevent the default form submission
+    
+    // Gather form data
+    const formData = new FormData(this);
+    
+    try {
+        // Send login data to API endpoint
+        const response = await fetch('https://vishwakarmaartspaymentapi.pythonanywhere.com/login/', {
+            method: 'POST',
+            body: formData
         });
+        
+        if (!response.ok) {
+            throw new Error('Login failed');
+        }
+        
+        // Login successful, redirect user or perform other actions
+        alert('Login successful!');
+        window.location.href = '/dashboard.html'; // Redirect to dashboard
+    } catch (error) {
+        // Handle errors (e.g., display error message)
+        alert('Login failed. Please check your credentials and try again.');
+        console.error(error);
+    }
+});
+
     </script>
     </main>
 
