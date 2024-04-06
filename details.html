@@ -467,7 +467,7 @@ background-color: #808080;
             background-color: #808080;
         }
 
-        .modal {
+       .modal {
             display: none;
             position: fixed;
             top: 0;
@@ -478,21 +478,25 @@ background-color: #808080;
             justify-content: center;
             align-items: center;
         }
-    
+  
         .modal-content {
             background-color: #b8ee8f;
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             width: 70%;
+            animation: slideIn 0.9s ease-in-out forwards;
         }
+        @keyframes slideIn {
+    from {
+        transform: translateY(-100px);
+    }
+    to {
+        transform: translateY(10px);
+    }
+}
     
-        .modal-content input {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 10px;
-            box-sizing: border-box;
-        }
+       
     
         .modal-content button {
             background-color: #4CAF50;
@@ -505,6 +509,7 @@ background-color: #808080;
             border-radius: 4px;
             cursor: pointer;
         }
+    
     
         .confirmation-message {
             font-weight: bold;
