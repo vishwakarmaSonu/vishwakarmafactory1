@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Product Search</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f0f0f0;
+    }
+
+    .container {
+        max-width: 600px;
+        margin: 50px auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    input[type="text"] {
+        width: 70%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        outline: none;
+    }
+
+    button {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        background-color: #007bff;
+        color: #fff;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+        background-color: #0056b3;
+    }
+
+    @media screen and (max-width: 768px) {
+        input[type="text"] {
+            width: 60%;
+        }
+    }
+
+    @media screen and (max-width: 576px) {
+        .container {
+            padding: 10px;
+        }
+
+        input[type="text"] {
+            width: 50%;
+        }
+    }
+
+    /* Animation */
+    @keyframes fadeInDown {
+        from {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .container {
+        animation: fadeInDown 0.5s ease;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <input type="text" id="productNameInput" placeholder="Enter product name" style="background-color: antiquewhite;">
+    <button onclick="searchProduct()" style="background-color: greenyellow; text-align: center;">Search</button>
+</div>
+
+<script>
+function searchProduct() {
+    var productName = document.getElementById('productNameInput').value;
+    // Capitalize the first character of the product name
+    productName = productName.charAt(0).toUpperCase() + productName.slice(1);
+    // Assuming you have a function to fetch product page URL by product name
+    var productPage = fetchProductPage(productName);
+    if (productPage !== undefined && productPage !== null) {
+        // Redirect to product page URL
+        window.location.href = productPage;
+    } else {
+        // Redirect to error page if product not found
+        window.location.href = 'productnotfound.html';
+    }
+}
+
+function fetchProductPage(productName) {
+    // Here you would implement logic to fetch product page URL by product name
+    var productMap = {
+        'Mirror': 'mirror.html',
+        'Mirror with Cabinet': 'chair.html',
+        'Chair': 'chair.html',
+        'Coffee Table': 'coffeetable.html',
+        'Shoe Racks': 'shoeracks.html',
+        'Side Board': 'sideboards.html',
+        'Study Tables': 'studytables.html',
+        'Wooden Temple': 'woodentemple.html',
+        // Add more mappings as needed
+    };
+    return productMap[productName];
+}
+</script>
+
+</body>
+</html>
