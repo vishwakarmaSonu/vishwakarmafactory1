@@ -284,14 +284,12 @@ function searchProduct() {
     productName = productName.charAt(0).toUpperCase() + productName.slice(1);
 
     var productId = fetchProductId(productName);
-    if (productId !== null) {
-
-
-
-        // Redirect to product details page with product ID as query parameter
-        window.location.href =  productId;
+     if (productPage !== undefined && productPage !== null) {
+        // Redirect to product page URL
+        window.location.href = productPage;
     } else {
-        alert('Product not found!');
+        // Redirect to error page if product not found
+        window.location.href = 'productnotfound.html';
     }
 }
 
