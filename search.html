@@ -263,60 +263,48 @@
   <main>
     
 
-      <section class="section about" id="about" aria-label="about">
+    <section class="section about" id="about" aria-label="about">
         <div class="container">
-          <!-- <h1 class="section-title">About</h1> -->
+            <h2 class="section-title" style="margin-top: 40px;">Vishwakarma Art</h2>
+            <div class="container">
+                <input type="text" id="productNameInput" placeholder="Enter product name" style="background-color: antiquewhite;">
+                <button onclick="searchProduct()" style="background-color: greenyellow; text-align: center;">Search</button>
+            </div>
+        </div>
+    </section>
 
+    <script>
+        function searchProduct() {
+            var productName = document.getElementById('productNameInput').value.trim(); // Trim any leading or trailing whitespace
+            productName = productName.charAt(0).toUpperCase() + productName.slice(1); // Capitalize the first letter
+            
+            var productPage = fetchProductId(productName);
+            
+            if (productPage) {
+                // Redirect to product page URL if found
+                window.location.href = productPage;
+            } else {
+                // Redirect to error page if product not found
+                window.location.href = 'productnotfound.html';
+            }
+        }
 
-          <h2 class="section-title" style="margin-top: 40px;">Vishwakarma Art</h2>
-
-        
-<div class="container">
-    <input type="text" id="productNameInput" placeholder="Enter product name" style="background-color: antiquewhite;">
-    <button onclick="searchProduct()" style="background-color: greenyellow; text-align: center;">Search</button>
-</div>
-
-<script>
-function searchProduct() {
-    var productName = document.getElementById('productNameInput').value;
-    // Assuming you have a function to fetch product ID by product name
-
-    productName = productName.charAt(0).toUpperCase() + productName.slice(1);
-
-    var productId = fetchProductId(productName);
-     if (productPage !== undefined && productPage !== null) {
-        // Redirect to product page URL
-        window.location.href = productPage;
-    } else {
-        // Redirect to error page if product not found
-        window.location.href = 'productnotfound.html';
-    }
-}
-
-function fetchProductId(productName) {
-    // Here you would implement logic to fetch product ID by product name
-    // This could be an AJAX call to a server or fetching from a local database
-    // For demonstration purposes, let's assume a simple mapping
-    var productMap = {
-        'Mirror': 'mirror.html',
-        'Mirror with Cabinet': 'mirror.html',
-        'Chair':'chair.html',
-        'Coffee Table':'coffeetable.html',
-        'Shoe Racks':'shoeracks.html',
-        'Side Board':'sideboards.html',
-        'Study Tables':'studytables.html',
-        'Wooden Temple':'woodentemple.html',
-        'Chair':'chair.html',
-        'Coffee table':'coffeetable.html',
-        'Shoe racks':'shoeracks.html',
-        'Side board':'sideboards.html',
-        'Study tables':'studytables.html',
-        'Wooden temple':'woodentemple.html',
-        // Add more mappings as needed
-    };
-    return productMap[productName];
-}
-</script>
+        function fetchProductId(productName) {
+            // Mapping of product names to their respective page URLs
+            var productMap = {
+                'Mirror': 'mirror.html',
+                'Mirror with Cabinet': 'mirror.html',
+                'Chair':'chair.html',
+                'Coffee Table':'coffeetable.html',
+                'Shoe Racks':'shoeracks.html',
+                'Side Board':'sideboards.html',
+                'Study Tables':'studytables.html',
+                'Wooden Temple':'woodentemple.html',
+                // Add more mappings as needed
+            };
+            return productMap[productName];
+        }
+    </script>
          
           </div>
 
