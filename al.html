@@ -232,6 +232,21 @@
     color: #09f211;
   }
 
+    .bottom-left-icon {
+            position: fixed;
+            bottom: 10px;
+            right: 20px;
+            z-index: 1000; /* Ensure it's above other content */
+            background-color: #06b824;
+            padding: 10px;
+            border-radius: 45%;
+            font-size: 15px;
+            color: #fff;
+            text-align: center;
+            text-decoration: none;
+            margin-right: 10px; /* Optional: Add some space between icons */
+        }
+
   .letter {
     display: inline-block;
     opacity: 0;
@@ -3705,8 +3720,15 @@
     - #BACK TO TOP
   -->
 
-   <a  href="whatsapp://send?text= Nice to contact you !&phone=+919588938688" class="back-top-btn" aria-label="back to top"  style="background-color: #42ed09; font-size:5px;  " data-back-top-btn>
-    <i class="fa fa-whatsapp" style="font-size:30px;color:rgb(255, 253, 253)"></i>  </a>
+<a style="margin-bottom: 80px;" href="whatsapp://send?text=Nice to contact you!&phone=+919588938688" class="bottom-left-icon" aria-label="WhatsApp">
+      <i class="fa fa-whatsapp" style="font-size:30px;color:rgb(255, 253, 253)"></i>  </a>
+    </a>
+
+    <!-- Chat Icon at Bottom Left -->
+    <a href="https://vishwakarmaart.in/chat.html" class="bottom-left-icon" aria-label="Chat">
+      <i class="fa fa-comment" style="font-size:30px;color:rgb(255, 253, 253)"></i>  </a>
+    </a>
+
 
 
 
