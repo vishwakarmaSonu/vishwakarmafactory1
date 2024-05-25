@@ -237,6 +237,33 @@
 
   <style>
 
+    .footer-link {
+    color: rgb(250, 147, 2);
+}
+.footer-link:hover {
+    color: rgb(10, 237, 40); /* Change color on hover */
+    font-size: 20px; /* Increase font size on hover */
+    font-weight: bold; /* Add underline on hover */
+}
+
+@keyframes scaleAnimation {
+  0% {
+    transform: scale(1); /* Initial scale */
+  }
+  50% {
+    transform: scale(1.1); /* Scale up to 110% at 50% of the animation */
+  }
+  100% {
+    transform: scale(1); /* Return to the original scale at the end */
+  }
+}
+
+/* Apply the animation to the .ard-title class */
+.card-title {
+  animation: scaleAnimation 2s infinite;
+  color: #333; /* Play the animation continuously for 2 seconds */
+}
+
      .slideshow-container {
       max-width: 1000px;
       position: relative;
