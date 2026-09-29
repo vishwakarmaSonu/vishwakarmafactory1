@@ -24,6 +24,7 @@
   -->
   <link rel="stylesheet" href="./assets/css/style.css">
 
+  <link rel="stylesheet" href="./assets/css/product-ui.css">
   <!-- 
     - google font link
   -->
@@ -99,6 +100,7 @@
 </style>
   
    
+  <link rel="stylesheet" href="./assets/css/site-assistant.css">
 </head>
 
 <body id="top">
@@ -110,38 +112,46 @@
   <header class="header" data-header>
     <div class="container">
 
-      <!-- <div class="input-wrapper">
-        <input type="search" name="search" placeholder="Search Anything..." class="input-field">
+      <a href="/" class="logo" style="display:flex; align-items:center; gap:12px; text-decoration:none; color:#111; font-weight:700; line-height:1.1; font-size:185%;">
+        <img src="./assets/images/1.png" style="width:52px; height:auto; display:block; flex-shrink:0;">
+        <span style="display:flex; flex-direction:column; align-items:flex-start;">
+          <span style="font-size:1.05em; letter-spacing:0.04em;">Vishwakarma Arts</span>
+          <small style="font-size:0.42em; font-weight:600; letter-spacing:0.08em; color:#6d5632; text-transform:uppercase;">Handcrafted Wooden Furniture</small>
+        </span>
+      </a>
 
-        <ion-icon name="search-outline" aria-hidden="true"></ion-icon>
-      </div> -->
-
-      <a href="/" class="logo" style="font-size:185% ;"><img src="./assets/images/1.png" style=" width: 23%;"></a>
-     
       <div class="header-action">
-
-        <!-- <button class="header-action-btn" aria-label="user">
-          <ion-icon name="person-outline" aria-hidden="true"></ion-icon>
-        </button> -->
-
-        <!-- <button class="header-action-btn" aria-label="favorite list">
-          <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
-
-          <span class="btn-badge">0</span>
-        </button> -->
-        
-
-        <!-- <label or="dropdown">Select an option:</label> -->
-       
-        
-      
-    
-        <a class="nav-link "  style="color: #000000;  font-weight: bold ;  font-size: 15px;" href="whatsapp://send?text= Nice to contact you !&phone=+919588938688">Contact</a>
-
-
-        
-
-        
+        <div class="notification"></div>
+        <select style="color: #000000; width: min(190px, 32vw); max-width: 100%; font-weight: 700; border: 1px solid rgba(17,17,17,0.14); border-radius: 999px; background: #f8f6f1; padding: 0.55rem 0.9rem; appearance: none; transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease, background-color 0.25s ease;" id="dropdown" onchange="if (this.value) window.location.href = this.value;" onfocus="this.style.transform='translateY(-1px)'; this.style.boxShadow='0 8px 20px rgba(49, 91, 69, 0.12)'; this.style.borderColor='rgba(49, 91, 69, 0.45)'; this.style.backgroundColor='#fffdf8';" onblur="this.style.transform=''; this.style.boxShadow=''; this.style.borderColor='rgba(17,17,17,0.14)'; this.style.backgroundColor='#f8f6f1';" onmouseenter="this.style.transform='translateY(-1px)'; this.style.boxShadow='0 8px 20px rgba(49, 91, 69, 0.12)'; this.style.borderColor='rgba(49, 91, 69, 0.45)';" onmouseleave="this.style.transform=''; this.style.boxShadow=''; this.style.borderColor='rgba(17,17,17,0.14)';">
+          <option value="al.html">Collections</option>
+          <option value="woodentemple.html">Wooden Temple</option>
+          <option value="chair.html">Chair</option>
+          <option value="diningtable.html">Dining Table</option>
+          <option value="beds.html">Beds</option>
+          <option value="sideboards.html">Sideboards</option>
+          <option value="studytables.html">Study Tables</option>
+          <option value="mirror.html">Mirror</option>
+          <option value="bookshelves.html">Bookshelves</option>
+          <option value="coffeetable.html">Coffee Tables</option>
+          <option value="shoeracks.html">Shoe Racks</option>
+        </select>
+        <script>
+          (function () {
+            const dropdown = document.getElementById('dropdown');
+            if (!dropdown) return;
+            const currentPath = (window.location.pathname.split('/').pop() || '').toLowerCase();
+            const currentPage = currentPath || 'al.html';
+            const productId = new URLSearchParams(window.location.search).get('id');
+            const productList = window.VISHWAKARMA_PRODUCTS || [];
+            const matchedProduct = productId ? productList.find((item) => String(item.id) === String(productId)) : null;
+            const categoryPage = matchedProduct ? `${matchedProduct.category}.html` : null;
+            const matchingOption = Array.from(dropdown.options).find((option) => {
+              const optionValue = option.value.toLowerCase();
+              return optionValue === categoryPage || optionValue === currentPage || (optionValue === '/' && ['al.html', 'index.html', ''].includes(currentPage));
+            });
+            if (matchingOption) dropdown.value = matchingOption.value;
+          })();
+        </script>
 
         <button class="header-action-btn" aria-label="open menu" data-nav-toggler>
           <ion-icon name="menu-outline" aria-hidden="true"></ion-icon>
@@ -179,11 +189,10 @@
         </li>
 
         <li class="navbar-item">
-          <a href="about.html" class="navbar-link" data-nav-link>About</a>
         </li>
         <li class="navbar-item">
 
-        <a class="nav-link "  style="color: #000000;  font-weight: bold ;  font-size: 15px;" href="whatsapp://send?text= Nice to contact you !&phone=+919588938688">Contact</a>
+        <a class="nav-link "  style="color: #000000;  font-weight: bold ;  font-size: 15px;" href="https://wa.me/919588938688?text=Hi%20Vishwakarma%20Art%2C%20I%27d%20like%20to%20know%20more.">Contact</a>
       </li>
 
 
@@ -282,490 +291,37 @@
         <h2   class="animated-text"  style="color: #42ed09; text-align: center; margin-top: 15px; margin-bottom: 8px;">Wooden Bookshelves</h2>
           <hr style="margin-bottom: 10px;">
 
-          <ul class="grid-list product-list" data-filter="all">
+          <ul class="grid-list product-list" data-filter="all" data-product-list data-product-category="bookshelves">
 
-            <li class="decoration">
-              <div class="product-card">
-
-                <a href="details.html?id=9" class="card-banner img-holder has-before" style="--width: 300; --height: 300;">
-                  <img src="./assets/images/bk.jpg" width="300" height="300" loading="lazy"
-                    alt="Animi Dolor Pariatur" class="img-cover">
-
-                  <ul class="card-action-list">
-
-                    <!-- <li>
-                      <button class="card-action-btn" aria-label="add to cart" title="add to cart">
-                        <ion-icon name="add-outline" aria-hidden="true"></ion-icon>
-                      </button>
-                    </li> -->
-
-                    <li>
-                      <button class="card-action-btn" aria-label="add to cart" title="add to cart">
-                       <ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>
-                      </button>
-                    </li>
-
-                    <!-- <li>
-                      <button class="card-action-btn" aria-label="add to whishlist" title="add to whishlist">
-                        <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
-                      </button>
-                    </li> -->
-
-                  </ul>
-
-                  <!-- <ul class="badge-list">
-
-                    <li>
-                      <div class="badge orange">Sale</div>
-                    </li>
-
-                    <li>
-                      <div class="badge cyan">-10%</div>
-                    </li>
-
-                  </ul> -->
-                </a>
-
-                <div class="card-content">
-                  <h3 class="h3">
-                    <a href="#" class="card-title">Bookshelves</a>
-                  </h3>
-                  <div class="card-price">
-                    <data class="price">Item id:-105 </data>
-<h1>|</h1>
-                    <data class="price" value="10">Rs 13999</data>
-                  </div>
-                </div>
-
-                <div class="card-price">
-                  
-                    <!-- <ion-icon name="call-sharp" aria-hidden="true"></ion-icon> -->
-      
-                    <a href="tel:+91 9588938688" class="footer-link"> <ion-icon name="call-sharp" style="color: rgb(150, 248, 2);" aria-hidden="true"> </ion-icon>
-                    </a>
-                    <!-- <a href="tel:+91 9251628649" class="footer-link">+91 9251628649</a> -->
-      
-                  
-
-                    <a href="tel:+91 9588938688" class="footer-link" style="color: rgb(154, 255, 2);">Contact</a>
-                </div>
-
-              </div>
-            </li>
+            
 
             
 
 
-            <li class="decoration">
-              <div class="product-card">
-
-                <a href="details.html?id=10" class="card-banner img-holder has-before" style="--width: 300; --height: 300;">
-                  <img src="./assets/images/bk1.jpg" width="300" height="300" loading="lazy"
-                    alt="Artificial potted plant" class="img-cover">
-
-                  <ul class="card-action-list">
-
-                    <!-- <li>
-                      <button class="card-action-btn" aria-label="add to cart" title="add to cart">
-                        <ion-icon name="add-outline" aria-hidden="true"></ion-icon>
-                      </button>
-                    </li> -->
-
-                    <li>
-                      <button class="card-action-btn" aria-label="add to cart" title="add to cart">
-                        <ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>
-                      </button>
-                    </li>
-
-                    <!-- <li>
-                      <button class="card-action-btn" aria-label="add to whishlist" title="add to whishlist">
-                        <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
-                      </button>
-                    </li> -->
-
-                  </ul>
-                </a>
-
-                <div class="card-content">
-                  <h3 class="h3">
-                    <a href="#" class="card-title">Bookshelves</a>
-                  </h3>
-                  <div class="card-price">
-                    <data class="price">Item id:-101 </data>
-<h1>|</h1>
-                    <data class="price" value="10">Rs 15999</data>
-                  </div>
-                </div>
-
-                <div class="card-price">
-                  
-                    <!-- <ion-icon name="call-sharp" aria-hidden="true"></ion-icon> -->
-      
-                    <a href="tel:+91 9588938688" class="footer-link"> <ion-icon name="call-sharp" style="color: rgb(150, 248, 2);" aria-hidden="true"> </ion-icon>
-                    </a>
-                    <!-- <a href="tel:+91 9251628649" class="footer-link">+91 9251628649</a> -->
-      
-                  
-
-                    <a href="tel:+91 9588938688" class="footer-link" style="color: rgb(154, 255, 2);">Contact</a>
-                </div>
-
-              </div>
-            </li>
+            
 
                   
 
-            <li class="decoration">
-              <div class="product-card">
-
-                <a href="details.html?id=11" class="card-banner img-holder has-before" style="--width: 300; --height: 300;">
-                  <img src="./assets/images/bk2.jpg" width="300" height="300" loading="lazy"
-                    alt="Artificial potted plant" class="img-cover">
-
-                  <ul class="card-action-list">
-
-                    <!-- <li>
-                      <button class="card-action-btn" aria-label="add to cart" title="add to cart">
-                        <ion-icon name="add-outline" aria-hidden="true"></ion-icon>
-                      </button>
-                    </li> -->
-
-                    <li>
-                      <button class="card-action-btn" aria-label="add to cart" title="add to cart">
-                        <ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>
-                      </button>
-                    </li>
-
-                    <!-- <li>
-                      <button class="card-action-btn" aria-label="add to whishlist" title="add to whishlist">
-                        <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
-                      </button>
-                    </li> -->
-
-                  </ul>
-                </a>
-
-                <div class="card-content">
-                  <h3 class="h3">
-                    <a href="#" class="card-title">Bookshelves</a>
-                  </h3>
-                  <div class="card-price">
-                    <data class="price">Item id:-102 </data>
-<h1>|</h1>
-                    <data class="price" value="10">Rs 15039</data>
-                  </div>
-                </div>
-
-                <div class="card-price">
-                  
-                    <!-- <ion-icon name="call-sharp" aria-hidden="true"></ion-icon> -->
-      
-                    <a href="tel:+91 9588938688" class="footer-link"> <ion-icon name="call-sharp" style="color: rgb(150, 248, 2);" aria-hidden="true"> </ion-icon>
-                    </a>
-                    <!-- <a href="tel:+91 9251628649" class="footer-link">+91 9251628649</a> -->
-      
-                  
-
-                    <a href="tel:+91 9588938688" class="footer-link" style="color: rgb(154, 255, 2);">Contact</a>
-                </div>
-
-              </div>
-            </li>
+            
 
                  
-            <li class="decoration">
-              <div class="product-card">
-
-                <a href="details.html?id=12" class="card-banner img-holder has-before" style="--width: 300; --height: 300;">
-                  <img src="./assets/images/bk3.jpg" width="300" height="300" loading="lazy"
-                    alt="Artificial potted plant" class="img-cover">
-
-                  <ul class="card-action-list">
-
-                    <!-- <li>
-                      <button class="card-action-btn" aria-label="add to cart" title="add to cart">
-                        <ion-icon name="add-outline" aria-hidden="true"></ion-icon>
-                      </button>
-                    </li> -->
-
-                    <li>
-                      <button class="card-action-btn" aria-label="add to cart" title="add to cart">
-                        <ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>
-                      </button>
-                    </li>
-
-                    <!-- <li>
-                      <button class="card-action-btn" aria-label="add to whishlist" title="add to whishlist">
-                        <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
-                      </button>
-                    </li> -->
-
-                  </ul>
-                </a>
-
-                <div class="card-content">
-                  <h3 class="h3">
-                    <a href="#" class="card-title">Bookshelves</a>
-                  </h3>
-                  <div class="card-price">
-                    <data class="price">Item id:-103 </data>
-<h1>|</h1>
-                    <data class="price" value="10">Rs 11999</data>
-                  </div>
-                </div>
-
-                <div class="card-price">
-                  
-                    <!-- <ion-icon name="call-sharp" aria-hidden="true"></ion-icon> -->
-      
-                    <a href="tel:+91 9588938688" class="footer-link"> <ion-icon name="call-sharp" style="color: rgb(150, 248, 2);" aria-hidden="true"> </ion-icon>
-                    </a>
-                    <!-- <a href="tel:+91 9251628649" class="footer-link">+91 9251628649</a> -->
-      
-                  
-
-                    <a href="tel:+91 9588938688" class="footer-link" style="color: rgb(154, 255, 2);">Contact</a>
-                </div>
-
-              </div>
-            </li>
+            
 
                   
 
 
-            <li class="decoration">
-              <div class="product-card">
-
-                <a href="details.html?id=13" class="card-banner img-holder has-before" style="--width: 300; --height: 300;">
-                  <img src="./assets/images/bk4.jpg" width="300" height="300" loading="lazy"
-                    alt="Artificial potted plant" class="img-cover">
-
-                  <ul class="card-action-list">
-
-                    <!-- <li>
-                      <button class="card-action-btn" aria-label="add to cart" title="add to cart">
-                        <ion-icon name="add-outline" aria-hidden="true"></ion-icon>
-                      </button>
-                    </li> -->
-
-                    <li>
-                      <button class="card-action-btn" aria-label="add to cart" title="add to cart">
-                        <ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>
-                      </button>
-                    </li>
-
-                    <!-- <li>
-                      <button class="card-action-btn" aria-label="add to whishlist" title="add to whishlist">
-                        <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
-                      </button>
-                    </li> -->
-
-                  </ul>
-                </a>
-
-                <div class="card-content">
-                  <h3 class="h3">
-                    <a href="#" class="card-title">Bookshelves</a>
-                  </h3>
-
-                  <div class="card-price">
-                    <data class="price">Item id:-104 </data>
-<h1>|</h1>
-                    <data class="price" value="10">Rs 14999</data>
-                  </div>
-                </div>
-
-                <div class="card-price">
-                  
-                    <!-- <ion-icon name="call-sharp" aria-hidden="true"></ion-icon> -->
-      
-                    <a href="tel:+91 9588938688" class="footer-link"> <ion-icon name="call-sharp" style="color: rgb(150, 248, 2);" aria-hidden="true"> </ion-icon>
-                    </a>
-                    <!-- <a href="tel:+91 9251628649" class="footer-link">+91 9251628649</a> -->
-      
-                  
-
-                    <a href="tel:+91 9588938688" class="footer-link" style="color: rgb(154, 255, 2);">Contact</a>
-                </div>
-
-              </div>
-            </li>
+            
                   
 
 
-            <li class="decoration">
-              <div class="product-card">
-
-                <a href="details.html?id=14" class="card-banner img-holder has-before" style="--width: 300; --height: 300;">
-                  <img src="./assets/images/bk5.jpg" width="300" height="300" loading="lazy"
-                    alt="Artificial potted plant" class="img-cover">
-
-                  <ul class="card-action-list">
-
-                    <!-- <li>
-                      <button class="card-action-btn" aria-label="add to cart" title="add to cart">
-                        <ion-icon name="add-outline" aria-hidden="true"></ion-icon>
-                      </button>
-                    </li> -->
-
-                    <li>
-                      <button class="card-action-btn" aria-label="add to cart" title="add to cart">
-                        <ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>
-                      </button>
-                    </li>
-
-                    <!-- <li>
-                      <button class="card-action-btn" aria-label="add to whishlist" title="add to whishlist">
-                        <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
-                      </button>
-                    </li> -->
-
-                  </ul>
-                </a>
-
-                <div class="card-content">
-                  <h3 class="h3">
-                    <a href="#" class="card-title">Bookshelves</a>
-                  </h3>
-                  <div class="card-price">
-                    <data class="price">Item id:-106 </data>
-<h1>|</h1>
-                    <data class="price" value="10">Rs 15999</data>
-                  </div>
-                </div>
-
-                <div class="card-price">
-                  
-                    <!-- <ion-icon name="call-sharp" aria-hidden="true"></ion-icon> -->
-      
-                    <a href="tel:+91 9588938688" class="footer-link"> <ion-icon name="call-sharp" style="color: rgb(150, 248, 2);" aria-hidden="true"> </ion-icon>
-                    </a>
-                    <!-- <a href="tel:+91 9251628649" class="footer-link">+91 9251628649</a> -->
-      
+            
                   
 
-                    <a href="tel:+91 9588938688" class="footer-link" style="color: rgb(154, 255, 2);">Contact</a>
-                </div>
-
-              </div>
-            </li>
-                  
-
-            <li class="decoration">
-              <div class="product-card">
-
-                <a href="details.html?id=15" class="card-banner img-holder has-before" style="--width: 300; --height: 300;">
-                  <img src="./assets/images/bk6.jpg" width="300" height="300" loading="lazy"
-                    alt="Artificial potted plant" class="img-cover">
-
-                  <ul class="card-action-list">
-
-                    <!-- <li>
-                      <button class="card-action-btn" aria-label="add to cart" title="add to cart">
-                        <ion-icon name="add-outline" aria-hidden="true"></ion-icon>
-                      </button>
-                    </li> -->
-
-                    <li>
-                      <button class="card-action-btn" aria-label="add to cart" title="add to cart">
-                        <ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>
-                      </button>
-                    </li>
-
-                    <!-- <li>
-                      <button class="card-action-btn" aria-label="add to whishlist" title="add to whishlist">
-                        <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
-                      </button>
-                    </li> -->
-
-                  </ul>
-                </a>
-
-                <div class="card-content">
-                  <h3 class="h3">
-                    <a href="#" class="card-title">Bookshelves</a>
-                  </h3>
-                  <div class="card-price">
-                    <data class="price">Item id:-107 </data>
-<h1>|</h1>
-                    <data class="price" value="10">Rs 17999</data>
-                  </div>
-                </div>
-
-                <div class="card-price">
-                  
-                    <!-- <ion-icon name="call-sharp" aria-hidden="true"></ion-icon> -->
-      
-                    <a href="tel:+91 9588938688" class="footer-link"> <ion-icon name="call-sharp" style="color: rgb(150, 248, 2);" aria-hidden="true"> </ion-icon>
-                    </a>
-                    <!-- <a href="tel:+91 9251628649" class="footer-link">+91 9251628649</a> -->
-      
-                  
-
-                    <a href="tel:+91 9588938688" class="footer-link" style="color: rgb(154, 255, 2);">Contact</a>
-                </div>
-
-              </div>
-            </li>
+            
 
                   
 
-            <li class="decoration">
-              <div class="product-card">
-
-                <a href="details.html?id=16" class="card-banner img-holder has-before" style="--width: 300; --height: 300;">
-                  <img src="./assets/images/bk7.jpg" width="300" height="300" loading="lazy"
-                    alt="Artificial potted plant" class="img-cover">
-
-                  <ul class="card-action-list">
-
-                    <!-- <li>
-                      <button class="card-action-btn" aria-label="add to cart" title="add to cart">
-                        <ion-icon name="add-outline" aria-hidden="true"></ion-icon>
-                      </button>
-                    </li> -->
-
-                    <li>
-                      <button class="card-action-btn" aria-label="add to cart" title="add to cart">
-                        <ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>
-                      </button>
-                    </li>
-
-                    <!-- <li>
-                      <button class="card-action-btn" aria-label="add to whishlist" title="add to whishlist">
-                        <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
-                      </button>
-                    </li> -->
-
-                  </ul>
-                </a>
-
-                <div class="card-content">
-                  <h3 class="h3">
-                    <a href="#" class="card-title">Bookshelves</a>
-                  </h3>
-                  <div class="card-price">
-                    <data class="price">Item id:-108 </data>
-<h1>|</h1>
-                    <data class="price" value="10">Rs 13999</data>
-                  </div>
-                </div>
-
-                <div class="card-price">
-                  
-                    <!-- <ion-icon name="call-sharp" aria-hidden="true"></ion-icon> -->
-      
-                    <a href="tel:+91 9588938688" class="footer-link"> <ion-icon name="call-sharp" style="color: rgb(150, 248, 2);" aria-hidden="true"> </ion-icon>
-                    </a>
-                    <!-- <a href="tel:+91 9251628649" class="footer-link">+91 9251628649</a> -->
-      
-                  
-
-                    <a href="tel:+91 9588938688" class="footer-link" style="color: rgb(154, 255, 2);">Contact</a>
-                </div>
-
-              </div>
-            </li>
+            
 
                  
 
@@ -931,7 +487,7 @@
       <div class="footer-bottom">
 
         <p class="copyright">
-          &copy; 2023 All Rights Reserved by <a href="#" class="copyright-link">Vishwakarma Art</a>.
+          &copy; 2026 All Rights Reserved by <a href="#" class="copyright-link">Vishwakarma Arts</a>.
         </p>
 
       </div>
@@ -958,6 +514,8 @@
   <!-- 
     - custom js link
   -->
+  <script src="./assets/js/products.js" defer></script>
+  <script src="./assets/js/catalog.js" defer></script>
   <script src="./assets/js/script.js" defer></script>
 
   <!-- 
@@ -966,6 +524,7 @@
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
+  <script src="./assets/js/site-assistant.js" defer></script>
 </body>
 
 </html>
