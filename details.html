@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,19 +9,20 @@
   <!-- 
     - primary meta tag
   -->
-  <title>Vishwakarma Art</title>
-  <meta name="title" content="Vishwakarma Art - Get Quality Furniture">
+  <title>Vishwakarma Arts</title>
+  <meta name="title" content="Vishwakarma Arts - Get Quality Furniture">
   <meta name="description" content="Manufacture and suppliers all type of Handicrafe items">
 
   <!-- 
     - favicon
   -->
-<!--   <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml"> -->
+  <link rel="shortcut icon" href="./favicon_io/favicon.ico" type="image/svg+xml">
 
   <!-- 
     - custom css link
   -->
   <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="./assets/css/product-ui.css">
 
   <!-- 
     - google font link
@@ -41,49 +41,153 @@
   <link rel="preload" as="image" href="./assets/images/hero-product-4.jpg">
   <link rel="preload" as="image" href="./assets/images/hero-product-5.jpg">
 
+  <!-- <script>
+    alert("Welcome To Vishwakarma Art \n Happy Diwali");
+
+  </script> -->
   <style>
-    /* body {
-      font-family: Arial, sans-serif;
-      background-color: #f4f4f4;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-  } */
-  
-  .image-container {
-      width: 200px;
-      height: 200px;
-      overflow: hidden;
-      border-radius: 50%;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      animation: scaleAndFade 1s ease-in-out;
-  }
-  
-  img {
+  /* body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+} */
+
+.image-container {
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: scaleAndFade 1s ease-in-out;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    display: block;
+    opacity: 0;
+    transform: scale(0.8);
+    animation: scaleAndFade 1s ease-in-out forwards;
+}
+
+@keyframes scaleAndFade {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+      
+
+    .image-details {
+        /* background-color: #fff; */
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .image-details img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+        margin-bottom: 20px;
+    }
+
+    .details-content {
+        text-align: left;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .rating {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 10px;
+    }
+
+    .star {
+        color: #FFD700; /* Gold color for stars */
+        font-size: 20px;
+        margin-right: 5px;
+    }
+
+    @media (min-width: 768px) {
+        .image-details {
+            flex-direction: row;
+            align-items: flex-start;
+        }
+
+        .image-details img {
+            margin-bottom: 0;
+            margin-right: 20px;
+        }
+    }
+
+
+.buttons {
+display: flex;
+justify-content: center;
+margin-top: 20px;
+}
+
+.button {
+background-color: #4CAF50;
+color: white;
+padding: 10px 20px;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+font-size: 16px;
+border-radius: 4px;
+cursor: pointer;
+margin: 0 10px;
+}
+
+.button-back {
+background-color: #808080;
+}
+</style>
+<style>
+  /* Add your styles here */
+  /* Styles for the modal */
+  .terms-modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
       width: 100%;
-      height: auto;
-      display: block;
-      opacity: 0;
-      transform: scale(0.8);
-      animation: scaleAndFade 1s ease-in-out forwards;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      justify-content: center;
+      align-items: center;
+      z-index: 2;
   }
-  
-  @keyframes scaleAndFade {
-      from {
-          opacity: 0;
-          transform: scale(0.8);
-      }
-      to {
-          opacity: 1;
-          transform: scale(1);
-      }
+
+  .terms-modal-content {
+      background-color: #b8ee8f;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      width: 70%;
+      max-height: 80%;
+      overflow-y: auto;
+      color: #000;
   }
-  </style>
-  
-   
+</style>
+ 
   <link rel="stylesheet" href="./assets/css/site-assistant.css">
 </head>
 
@@ -96,38 +200,46 @@
   <header class="header" data-header>
     <div class="container">
 
-      <!-- <div class="input-wrapper">
-        <input type="search" name="search" placeholder="Search Anything..." class="input-field">
+      <a href="/" class="logo" style="display:flex; align-items:center; gap:12px; text-decoration:none; color:#111; font-weight:700; line-height:1.1; font-size:185%;">
+        <img src="./assets/images/1.png" style="width:52px; height:auto; display:block; flex-shrink:0;">
+        <span style="display:flex; flex-direction:column; align-items:flex-start;">
+          <span style="font-size:1.05em; letter-spacing:0.04em;">Vishwakarma Arts</span>
+          <small style="font-size:0.42em; font-weight:600; letter-spacing:0.08em; color:#6d5632; text-transform:uppercase;">Handcrafted Wooden Furniture</small>
+        </span>
+      </a>
 
-        <ion-icon name="search-outline" aria-hidden="true"></ion-icon>
-      </div> -->
-
-      <a href="/" class="logo" style="font-size:185% ;"><img src="./assets/images/1.png" style=" width: 23%;"></a>
-     
       <div class="header-action">
-
-        <!-- <button class="header-action-btn" aria-label="user">
-          <ion-icon name="person-outline" aria-hidden="true"></ion-icon>
-        </button> -->
-
-        <!-- <button class="header-action-btn" aria-label="favorite list">
-          <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
-
-          <span class="btn-badge">0</span>
-        </button> -->
-        
-
-        <!-- <label or="dropdown">Select an option:</label> -->
-       
-        
-      
-    
-        <a class="nav-link "  style="color: #000000;  font-weight: bold ;  font-size: 15px;" href="https://wa.me/919588938688?text=Hi%20Vishwakarma%20Art%2C%20I%27d%20like%20to%20know%20more.">Contact</a>
-
-
-        
-
-        
+        <div class="notification"></div>
+        <select style="color: #000000; width: min(190px, 32vw); max-width: 100%; font-weight: 700; border: 1px solid rgba(17,17,17,0.14); border-radius: 999px; background: #f8f6f1; padding: 0.55rem 0.9rem; appearance: none; transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease, background-color 0.25s ease;" id="dropdown" onchange="if (this.value) window.location.href = this.value;" onfocus="this.style.transform='translateY(-1px)'; this.style.boxShadow='0 8px 20px rgba(49, 91, 69, 0.12)'; this.style.borderColor='rgba(49, 91, 69, 0.45)'; this.style.backgroundColor='#fffdf8';" onblur="this.style.transform=''; this.style.boxShadow=''; this.style.borderColor='rgba(17,17,17,0.14)'; this.style.backgroundColor='#f8f6f1';" onmouseenter="this.style.transform='translateY(-1px)'; this.style.boxShadow='0 8px 20px rgba(49, 91, 69, 0.12)'; this.style.borderColor='rgba(49, 91, 69, 0.45)';" onmouseleave="this.style.transform=''; this.style.boxShadow=''; this.style.borderColor='rgba(17,17,17,0.14)';">
+          <option value="al.html">Collections</option>
+          <option value="woodentemple.html">Wooden Temple</option>
+          <option value="chair.html">Chair</option>
+          <option value="diningtable.html">Dining Table</option>
+          <option value="beds.html">Beds</option>
+          <option value="sideboards.html">Sideboards</option>
+          <option value="studytables.html">Study Tables</option>
+          <option value="mirror.html">Mirror</option>
+          <option value="bookshelves.html">Bookshelves</option>
+          <option value="coffeetable.html">Coffee Tables</option>
+          <option value="shoeracks.html">Shoe Racks</option>
+        </select>
+        <script>
+          (function () {
+            const dropdown = document.getElementById('dropdown');
+            if (!dropdown) return;
+            const currentPath = (window.location.pathname.split('/').pop() || '').toLowerCase();
+            const currentPage = currentPath || 'al.html';
+            const productId = new URLSearchParams(window.location.search).get('id');
+            const productList = window.VISHWAKARMA_PRODUCTS || [];
+            const matchedProduct = productId ? productList.find((item) => String(item.id) === String(productId)) : null;
+            const categoryPage = matchedProduct ? `${matchedProduct.category}.html` : null;
+            const matchingOption = Array.from(dropdown.options).find((option) => {
+              const optionValue = option.value.toLowerCase();
+              return optionValue === categoryPage || optionValue === currentPage || (optionValue === '/' && ['al.html', 'index.html', ''].includes(currentPage));
+            });
+            if (matchingOption) dropdown.value = matchingOption.value;
+          })();
+        </script>
 
         <button class="header-action-btn" aria-label="open menu" data-nav-toggler>
           <ion-icon name="menu-outline" aria-hidden="true"></ion-icon>
@@ -142,11 +254,9 @@
 
 
 
-
+  <!-- 
     - #SIDEBAR
-
-
-  
+  -->
 
   <div class="sidebar" data-navbar>
 
@@ -154,8 +264,49 @@
       <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
     </button>
 
-     
-    
+    <!-- <div class="wrapper">
+
+      <ul class="sidebar-list">
+
+        <li>
+          <p class="sidebar-list-title">Language</p>
+        </li>
+
+        <li>
+          <a href="#" class="sidebar-link">English</a>
+        </li>
+
+        <li>
+          <a href="#" class="sidebar-link">French</a>
+        </li>
+
+        <li>
+          <a href="#" class="sidebar-link">Arabric</a>
+        </li>
+
+      </ul>
+
+      <ul class="sidebar-list">
+
+        <li>
+          <p class="sidebar-list-title">Currency</p>
+        </li>
+
+        <li>
+          <a href="#" class="sidebar-link">USD - US Dollar</a>
+        </li>
+
+        <li>
+          <a href="#" class="sidebar-link">Euro</a>
+        </li>
+
+        <li>
+          <a href="#" class="sidebar-link">Pound</a>
+        </li>
+
+      </ul>
+
+    </div> -->
 
     <nav class="navbar">
       <ul class="navbar-list">
@@ -168,9 +319,13 @@
         </li>
         <li class="navbar-item">
 
-        <a href="https://vishwakarmaartorder.pythonanywhere.com/app1/book"><span class="btn-badge">Booking</span> </a>
+<!--         <a href="https://vishwakarmaartorder.pythonanywhere.com/app1/book"><span class="btn-badge">Booking</span> </a> -->
       </li>
 
+
+        <li class="navbar-item">
+          <a href="https://vishwakarmaart.in/al.html" class="navbar-link" data-nav-link>Product</a>
+        </li>
 
        
 
@@ -190,7 +345,7 @@
       </li>
 
       <li class="contact-item">
-        <a href="mailto:support.vishwakarmaart91@gmail.com" class="contact-link">Vishwakarmaart91@gmail.com</a>
+        <a href="mailto:support@vishwakarmaart.in" class="contact-link">support@vishwakarmaart.in</a>
       </li>
 
       <li class="contact-item">
@@ -204,27 +359,33 @@
 
     <div class="social-wrapper">
 
-      <p class="social-list-title">Follow US On Socials</p>
+      <p class="social-list-title">Follow US On </p>
 
-      <ul class="social-list">
+     <ul class="social-list">
 
         <li>
-          <a href="#" class="social-link">
+          <a href="https://www.facebook.com/profile.php?id=61555298892002" class="social-link">
             <ion-icon name="logo-facebook"></ion-icon>
           </a>
         </li>
 
         <li>
-          <a href="#" class="social-link">
+          <a href="https://twitter.com/VishwakarmaArt3" class="social-link">
             <ion-icon name="logo-twitter"></ion-icon>
           </a>
         </li>
 
         <li>
-          <a href="#" class="social-link">
-            <ion-icon name="logo-tumblr"></ion-icon>
+          <a href="https://www.instagram.com/vishwakarma_art21/" class="social-link">
+            <ion-icon name="logo-instagram"></ion-icon>
           </a>
         </li>
+
+         <li>
+                  <a href="https://www.linkedin.com/in/vishwakarma-art-a22b79292/" class="social-link">
+                    <ion-icon name="logo-linkedin"></ion-icon>
+                  </a>
+                </li>
 
       </ul>
 
@@ -239,693 +400,529 @@
 
 
   <main>
-    <article>
+    
 
-      <!-- 
-        - #HERO
-      -->
+    
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50px;
+            padding: 20px;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
 
-     
+        .image-details {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
 
-      <!-- 
-        - #PRODUCTS
-      -->
+        .image-details img {
+            max-width: 30%; /* Adjusted for better responsiveness */
+            height: auto;
+            border-radius: 8px;
+            margin-right: 20px;
+            margin-bottom: 20px;
+        }
+
+        .details-content {
+            text-align: left;
+            max-width: 100%;
+            flex: 1;
+        }
+
+        .rating {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        .star {
+            color: #FFD700;
+            font-size: 20px;
+            margin-right: 5px;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 0 10px;
+        }
+
+        .button-back {
+            background-color: #808080;
+        }
+
+       .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            justify-content: center;
+            align-items: center;
+        }
+  
+        .modal-content {
+            background-color: #b8ee8f;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 70%;
+            animation: slideIn 0.9s ease-in-out forwards;
+        }
+        @keyframes slideIn {
+    from {
+        transform: translateY(-100px);
+    }
+    to {
+        transform: translateY(10px);
+    }
+}
+    
+       
+    
+        .modal-content button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    
+    
+        .confirmation-message {
+            font-weight: bold;
+            color: green;
+            margin-top: 20px;
+        }
+        /* Media queries for responsiveness */
+        @media screen and (max-width: 768px) {
+            .image-details {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+            .image-details img {
+                max-width: 100%;
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+
+            .details-content {
+                margin-top: 20px;
+            }
+            .modal-content {
+                z-index: 3;
+                margin-top: 80px;
+                width: 80%;
+            }
+        }
+    </style>
+  <style>
+      /* body {
+        font-family: 'Arial', sans-serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      } */
+  
+      .payment-modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        justify-content: center;
+        align-items: center;
+      }
+  
+      .payment-modal-content {
+        background-color: #e7e7e7;
+        padding: 20px;
+        max-width: 400px; /* Set a maximum width for the modal */
+        width: 100%;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      }
+  
+      h2, h3, h4 {
+        margin: 0;
+      }
+  
+      img {
+        max-width: 100%;
+        height: auto;
+        margin-left: 0; /* Reset margin-left for responsiveness */
+      }
+  
+      /* button {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+      } */
+  
+      @media screen and (max-width: 600px) {
+        .payment-modal-content {
+          max-width: none; /* Remove max-width for smaller screens */
+        }
+      }
+    </style>
+  <style>
+  #loadingPage {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      text-align: center;
+
+      justify-content: center;
+      align-items: center;
+      /* display: flex; */
+    }
+
+  #loadingText {
+    color: white;
+    margin-top: 10px;
+  }
+
+  #vishwakarmaArt {
+    font-family: 'Arial', sans-serif;
+    font-size: 24px;
+    display: inline-block;
+    color: #09f211;
+  }
+
+  .letter {
+    display: inline-block;
+    opacity: 0;
+    animation: fadeIn 0.8s ease-out forwards;
+  }
+
+  @keyframes fadeIn {
+    0%, 100% {
+        opacity: 0.5;
+        color: #515050;
+      }
+      10%, 90% {
+        opacity: 1;
+        color: #09f211;
+      }
+      20%, 90% {
+        opacity: 1;
+        color: #0091ff;
+      }
+      30%, 90% {
+        opacity: 1;
+      }
+  }
 
 
-      <section class="section product" id="product" aria-label="product">
-        <div class="container">
 
-          <div class="title-wrapper">
-            <!-- <h2 class="section-title">Vishwakarma Art</h2> -->
+  /* Apply animation delay to each letter */
+  #vishwakarmaArt .letter:nth-child(1) { animation-delay: 0.2s; }
+  #vishwakarmaArt .letter:nth-child(2) { animation-delay: 0.4s; }
+  #vishwakarmaArt .letter:nth-child(3) { animation-delay: 0.6s; }
+  #vishwakarmaArt .letter:nth-child(4) { animation-delay: 0.8s; }
+  #vishwakarmaArt .letter:nth-child(5) { animation-delay: 1.0s; }
+  #vishwakarmaArt .letter:nth-child(6) { animation-delay: 1.2s; }
+  #vishwakarmaArt .letter:nth-child(7) { animation-delay: 1.4s; }
+  #vishwakarmaArt .letter:nth-child(8) { animation-delay: 1.6s; }
+  #vishwakarmaArt .letter:nth-child(9) { animation-delay: 1.8s; }
+  #vishwakarmaArt .letter:nth-child(10) { animation-delay: 2.0s; }
+  #vishwakarmaArt .letter:nth-child(11) { animation-delay: 2.2s; }
+  #vishwakarmaArt .letter:nth-child(12) { animation-delay: 2.4s; }
+  #vishwakarmaArt .letter:nth-child(13) { animation-delay: 2.6s; }
+  #vishwakarmaArt .letter:nth-child(14) { animation-delay: 2.8s; }
+  #vishwakarmaArt .letter:nth-child(15) { animation-delay: 3.0s; }
+</style>
+</head>
+<body>
 
-            <!-- <h2  style="text-align: center;">Chair</h2> -->
+    <div class="image-details" data-product-details>
+        <img src="" alt="Image" id="details-image" onclick="openModal()">
+        <div class="details-content">
+            <p id="details-title" class="rating">Image Title</p>
+            <p id="details-productid" class="rating">Image Title</p>
+      
+            <p id="details-description" class="rating">Image Description</p>
+            <p id="details-amount" class="rating">Image Title</p>
+              <div class="rating" id="star-rating"></div>
+            <div class="buttons">
+                <a href="#booking" class="button" id="book-button" onclick="openModal()">Book Now</a>
+                <a href="tel:+919588938688" class="button" id="details-contact">Call us</a>
+                <a href="index.html" class="button button-back">Home</a>
+            </div>
+        </div>
+    </div>
+    
+   <div class="modal" id="bookingModal" >
+        <div class="modal-content" >
+            <p style="color: rgb(253, 255, 255);">VISHWAKARMA ART</p>
+            <hr>
 
-            <!-- <ul class="filter-btn-list">
 
-              <li class="filter-btn-item">
-                <button class="filter-btn active" data-filter-btn="all">All Products</button>
-              </li>
 
-              <li class="filter-btn-item">
-                <button class="filter-btn" data-filter-btn="accessory">Dining Table</button>
-              </li>
 
-              <li class="filter-btn-item">
-                <button class="filter-btn" data-filter-btn="decoration">Chair</button>
-              </li>
 
-              <li class="filter-btn-item">
-                <button class="filter-btn" data-filter-btn="furniture">Bed</button>
-              </li>
+            
+            <h3>Booking Form</h3>
+            <div id="booking-image-container">
+                <p id="booking-image"  style="color: chocolate;"></p>
+                <p id="itemid" style="color: chocolate;"> </p>       
+             </div>
 
-            </ul> -->
+          <div id="loadingPage" >
+              <div id="vishwakarmaArt" >
+                <span class="letter">V</span>
+                <span class="letter">i</span>
+                <span class="letter">s</span>
+                <span class="letter">h</span>
+                <span class="letter">w</span>
+                <span class="letter">a</span>
+                <span class="letter">k</span>
+                <span class="letter">a</span>
+                <span class="letter">r</span>
+                <span class="letter">m</span>
+                <span class="letter">a</span>
+                <span class="letter"> </span>
+                <span class="letter">A</span>
+                <span class="letter">r</span>
+                <span class="letter">t</span>
+              </div>
+            </div>
+           
+            <form id="bookingForm" onsubmit="submitBookingForm(event)">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required style="background-color: #fff; color: blue;" >
+    
+                <label for="phone">Phone No:</label>
+                <input type="number" id="phone" name="phone" required style="background-color: #fff; color: blue;">
+    
+    
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required style="background-color: #fff; color: blue;">
+    
+                <label for="address">Address:</label>
+                <input type="text" id="address" name="address" required style="background-color: #fff; color: blue;">
+      
+                <label>
+                  <input type="checkbox" id="acceptTerms" required href="javascript:void(0);" onclick="openTermsModal()">
+                   <h6><a href="javascript:void(0);" onclick="openTermsModal()" style="color: blue;">terms and conditions</a>.</h6>
+              </label>
+
+                <button type="submit">Submit</button>
+                <hr>
+            </form>
+
+
+            <div class="terms-modal" id="termsModal">
+              <div class="terms-modal-content">
+                <h2>Vishwakarma Art</h2>
+                <hr>
+                <h3><u>Terms and Conditions</u></h3>
+                <ol type="1">
+                    <li>Goods once sold will not be taken back.</li>
+                  <li>If found defective from our side, it can be replaced.</li>
+                    <li>Interest will be charged 24% per annum if the bill is not paid within seven days.</li>
+                    <li style="color: blue;">Advance payment equivalent to 40% of the total product price to initiate the booking.</li>
+                </ol>
+            
+                <!-- Add your terms and conditions content here -->
+            
+<!--                 <button   id="book-buttons" onclick="payments()">Pay Now</button> -->
+                <button onclick="closeTermsModal()" style="background-color: red;">Cancel</button>
+
+                <hr>
+            </div>
+
+
+            
           </div>
 
-          <ul class="grid-list product-list" data-filter="all">
+          <div class="payment-modal" id="qrpayment" style="z-index: 5;" >
+            <div class="payment-modal-content" id="prices">
+              <h2>Vishwakarma Art</h2>
+              <hr>
+              <p > Payment Method does not work!</p>
+              <h3 style="color:red;">Error!</h3>
+              <hr>
+              <p id="itemamount" style="color: chocolate;">  </p>
+              <p>Pay 40% of the above amount</p>
+
+
+              <button onclick="closepayment()">Close</button>
+            </div>
+          </div>
+          
+            <div id="confirmation-message" class="confirmation-message"></div>
+            <button onclick="closeModal()" style="background-color: red;">Close</button>
+        </div>
+    </div>
+    
+    <script>
+        function openModal() {
+            document.getElementById('book-button').classList.add('hidden');
+    
+    document.getElementById('bookingModal').style.display = 'flex';
+    // Copy image details to the booking modal
+    document.getElementById('booking-image').innerText = document.getElementById('details-title').innerText;
+    document.getElementById('itemid').innerText = document.getElementById('details-productid').innerText;
+    }
+    
+        function closeModal() {
+            document.getElementById('bookingModal').style.display = 'none';
+            document.getElementById('bookingForm').reset();
+            document.getElementById('confirmation-message').innerText = '';
+            document.getElementById('book-button').classList.remove('hidden');
+        }
+    
+       
+        function submitBookingForm(event) {
+            event.preventDefault();
+              document.getElementById("loadingPage").style.display = "flex";
+
+
+
+
+
+               // Check if the terms and conditions checkbox is checked
+               const acceptTermsCheckbox = document.getElementById('acceptTerms');
+            if (!acceptTermsCheckbox.checked) {
+                alert('Please accept the terms and conditions before submitting.');
+                return;
+            }
+    
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const email = document.getElementById('email').value;
+            const address = document.getElementById('address').value;
+    
+            // Modify this to include image details
+            const imageDetails = {
+                title: document.getElementById('details-title').innerText,
+                productid: document.getElementById('details-productid').innerText,
+                // Add other image details...
+            };
+    
+            const formData = {
+                name: name,
+                phone: phone,
+                email: email,
+                address: address,
+                image_details: JSON.stringify(imageDetails),
+            };
+    
+            // Make an AJAX request to the Django API
+            fetch('https://vishwakarmaartspaymentapi.pythonanywhere.com/api/booking/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
+            })
+            .then(response => response.json())
+            .then(data => {
+                const confirmationMessage = `Booking confirmed for ${data.name} with email ${data.email}!`;
+                document.getElementById('confirmation-message').innerText = confirmationMessage;
+            })
+            .catch(error => {
+                window.location.href = 'https://vishwakarmaart.in/error.html';
+                            document.getElementById("loadingPage").style.display = "none";
+
+            });
+            setTimeout(function () {
+                window.location.href = 'https://vishwakarmaart.in/confirm.html';
+                            document.getElementById("loadingPage").style.display = "none";
+
+                    // document.getElementById("loadingPage").style.display = "none";
+
+            }, 3000);
+        }
+    </script>
+      <!-- Your existing script tags... -->
+      <script>
+        function openTermsModal() {
+            document.getElementById('termsModal').style.display = 'flex';
+        }
 
-            <li class="decoration">
-              <div class="product-card">
+        function payments() {
+          // alert("Are you Sure you want to move further")
+            document.getElementById('qrpayment').style.display = 'flex';
 
-                <a href="https://vishwakarmaartorder.pythonanywhere.com/app1/book" class="card-banner img-holder has-before" style="--width: 300; --height: 300;">
-                  <img src="./assets/images/b1.jpg" width="300" height="300" loading="lazy"
-                    alt="Animi Dolor Pariatur" class="img-cover">
+                document.getElementById('itemamount').innerText = document.getElementById('details-amount').innerText;
 
-                  <ul class="card-action-list">
+        }
 
-                    <!-- <li>
-                      <button class="card-action-btn" aria-label="add to cart" title="add to cart">
-                        <ion-icon name="add-outline" aria-hidden="true"></ion-icon>
-                      </button>
-                    </li> -->
+        function closeTermsModal() {
+            document.getElementById('termsModal').style.display = 'none';
+        }
 
-                    <li>
-                      <button class="card-action-btn" aria-label="add to cart" title="add to cart">
-                       <ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>
-                      </button>
-                    </li>
+        function closepayment() {
+            document.getElementById('qrpayment').style.display = 'none';
+        }
 
-                    <!-- <li>
-                      <button class="card-action-btn" aria-label="add to whishlist" title="add to whishlist">
-                        <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
-                      </button>
-                    </li> -->
+        // Add or modify your scripts here
+    </script>
 
-                  </ul>
 
-                  <ul class="badge-list">
+</body>
+</html>
 
-                    <li>
-                      <div class="badge orange">Sale</div>
-                    </li>
 
-                    <li>
-                      <div class="badge cyan">-10%</div>
-                    </li>
+    
 
-                  </ul>
-                </a>
 
-                <div class="card-content">
-                  <h3 class="h3">
-                    <a href="#" class="card-title">Bed</a>
-                  </h3>
+    
 
-                  <div class="card-price">
-                    <del class="del">Rs 34999</del>
 
-                    <data class="price" value="10">Rs 31499</data>
-                  </div>
-                </div>
-
-                <div class="card-price">
-                  <data class="price" value="30">Product ID:- 105</data>
-                </div>
-
-              </div>
-            </li>
-
-            
-
-
-            <li class="decoration">
-              <div class="product-card">
-
-                <a href="https://vishwakarmaartorder.pythonanywhere.com/app1/book" class="card-banner img-holder has-before" style="--width: 300; --height: 300;">
-                  <img src="./assets/images/b2.jpg" width="300" height="300" loading="lazy"
-                    alt="Artificial potted plant" class="img-cover">
-
-                  <ul class="card-action-list">
-
-                    <!-- <li>
-                      <button class="card-action-btn" aria-label="add to cart" title="add to cart">
-                        <ion-icon name="add-outline" aria-hidden="true"></ion-icon>
-                      </button>
-                    </li> -->
-
-                    <li>
-                      <button class="card-action-btn" aria-label="add to cart" title="add to cart">
-                        <ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>
-                      </button>
-                    </li>
-
-                    <!-- <li>
-                      <button class="card-action-btn" aria-label="add to whishlist" title="add to whishlist">
-                        <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
-                      </button>
-                    </li> -->
-
-                  </ul>
-                </a>
-
-                <div class="card-content">
-                  <h3 class="h3">
-                    <a href="#" class="card-title">Bed</a>
-                  </h3>
-
-                  <div class="card-price">
-                    <data class="price" value="40">Rs 22999</data>
-                  </div>
-
-                  <div class="card-price">
-                    <data class="price" value="30">Product ID:- 101</data>
-                  </div>
-                </div>
-
-              </div>
-            </li>
-
-            <li class="decoration">
-              <div class="product-card">
-
-                <a href="https://vishwakarmaartorder.pythonanywhere.com/app1/book" class="card-banner img-holder has-before" style="--width: 300; --height: 300;">
-                  <img src="./assets/images/b3.jpg" width="300" height="300" loading="lazy"
-                    alt="Artificial potted plant" class="img-cover">
-
-                  <ul class="card-action-list">
-
-                    <!-- <li>
-                      <button class="card-action-btn" aria-label="add to cart" title="add to cart">
-                        <ion-icon name="add-outline" aria-hidden="true"></ion-icon>
-                      </button>
-                    </li> -->
-
-                    <li>
-                      <button class="card-action-btn" aria-label="add to cart" title="add to cart">
-                        <ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>
-                      </button>
-                    </li>
-
-                    <!-- <li>
-                      <button class="card-action-btn" aria-label="add to whishlist" title="add to whishlist">
-                        <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
-                      </button>
-                    </li> -->
-
-                  </ul>
-                </a>
-
-                <div class="card-content">
-                  <h3 class="h3">
-                    <a href="#" class="card-title">Bed</a>
-                  </h3>
-
-                  <div class="card-price">
-                    <data class="price" value="40">Rs 31999</data>
-                  </div>
-
-                  <div class="card-price">
-                    <data class="price" value="30">Product ID:- 102</data>
-                  </div>
-                </div>
-
-              </div>
-            </li>
-            <li class="decoration">
-              <div class="product-card">
-
-                <a href="https://vishwakarmaartorder.pythonanywhere.com/app1/book" class="card-banner img-holder has-before" style="--width: 300; --height: 300;">
-                  <img src="./assets/images/b4.jpg" width="300" height="300" loading="lazy"
-                    alt="Artificial potted plant" class="img-cover">
-
-                  <ul class="card-action-list">
-
-                    <!-- <li>
-                      <button class="card-action-btn" aria-label="add to cart" title="add to cart">
-                        <ion-icon name="add-outline" aria-hidden="true"></ion-icon>
-                      </button>
-                    </li> -->
-
-                    <li>
-                      <button class="card-action-btn" aria-label="add to cart" title="add to cart">
-                        <ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>
-                      </button>
-                    </li>
-
-                    <!-- <li>
-                      <button class="card-action-btn" aria-label="add to whishlist" title="add to whishlist">
-                        <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
-                      </button>
-                    </li> -->
-
-                  </ul>
-                </a>
-
-                <div class="card-content">
-                  <h3 class="h3">
-                    <a href="#" class="card-title">Bed</a>
-                  </h3>
-
-                  <div class="card-price">
-                    <data class="price" value="40">Rs 21999</data>
-                  </div>
-
-                  <div class="card-price">
-                    <data class="price" value="30">Product ID:- 103</data>
-                  </div>
-                </div>
-
-              </div>
-            </li>
-
-
-            <li class="decoration">
-              <div class="product-card">
-
-                <a href="https://vishwakarmaartorder.pythonanywhere.com/app1/book" class="card-banner img-holder has-before" style="--width: 300; --height: 300;">
-                  <img src="./assets/images/b5.jpg" width="300" height="300" loading="lazy"
-                    alt="Artificial potted plant" class="img-cover">
-
-                  <ul class="card-action-list">
-
-                    <!-- <li>
-                      <button class="card-action-btn" aria-label="add to cart" title="add to cart">
-                        <ion-icon name="add-outline" aria-hidden="true"></ion-icon>
-                      </button>
-                    </li> -->
-
-                    <li>
-                      <button class="card-action-btn" aria-label="add to cart" title="add to cart">
-                        <ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>
-                      </button>
-                    </li>
-
-                    <!-- <li>
-                      <button class="card-action-btn" aria-label="add to whishlist" title="add to whishlist">
-                        <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
-                      </button>
-                    </li> -->
-
-                  </ul>
-                </a>
-
-                <div class="card-content">
-                  <h3 class="h3">
-                    <a href="#" class="card-title">Bed</a>
-                  </h3>
-
-                  <div class="card-price">
-                    <data class="price" value="40">Rs 30999</data>
-                  </div>
-
-                  <div class="card-price">
-                    <data class="price" value="30">Product ID:- 104</data>
-                  </div>
-                </div>
-
-              </div>
-            </li>
-
-            <li class="decoration">
-              <div class="product-card">
-
-                <a href="https://vishwakarmaartorder.pythonanywhere.com/app1/book" class="card-banner img-holder has-before" style="--width: 300; --height: 300;">
-                  <img src="./assets/images/b8.jpg" width="300" height="300" loading="lazy"
-                    alt="Artificial potted plant" class="img-cover">
-
-                  <ul class="card-action-list">
-
-                    <!-- <li>
-                      <button class="card-action-btn" aria-label="add to cart" title="add to cart">
-                        <ion-icon name="add-outline" aria-hidden="true"></ion-icon>
-                      </button>
-                    </li> -->
-
-                    <li>
-                      <button class="card-action-btn" aria-label="add to cart" title="add to cart">
-                        <ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>
-                      </button>
-                    </li>
-
-                    <!-- <li>
-                      <button class="card-action-btn" aria-label="add to whishlist" title="add to whishlist">
-                        <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
-                      </button>
-                    </li> -->
-
-                  </ul>
-                </a>
-
-                <div class="card-content">
-                  <h3 class="h3">
-                    <a href="#" class="card-title">Bed</a>
-                  </h3>
-
-                  <div class="card-price">
-                    <data class="price" value="40">Rs 33999</data>
-                  </div>
-
-                  <div class="card-price">
-                    <data class="price" value="30">Product ID:- 108</data>
-                  </div>
-                </div>
-
-              </div>
-            </li>
-
-            <li class="decoration">
-              <div class="product-card">
-
-                <a href="https://vishwakarmaartorder.pythonanywhere.com/app1/book" class="card-banner img-holder has-before" style="--width: 300; --height: 300;">
-                  <img src="./assets/images/b9.jpg" width="300" height="300" loading="lazy"
-                    alt="Artificial potted plant" class="img-cover">
-
-                  <ul class="card-action-list">
-
-                    <!-- <li>
-                      <button class="card-action-btn" aria-label="add to cart" title="add to cart">
-                        <ion-icon name="add-outline" aria-hidden="true"></ion-icon>
-                      </button>
-                    </li> -->
-
-                    <li>
-                      <button class="card-action-btn" aria-label="add to cart" title="add to cart">
-                        <ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>
-                      </button>
-                    </li>
-
-                    <!-- <li>
-                      <button class="card-action-btn" aria-label="add to whishlist" title="add to whishlist">
-                        <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
-                      </button>
-                    </li> -->
-
-                  </ul>
-                </a>
-
-                <div class="card-content">
-                  <h3 class="h3">
-                    <a href="#" class="card-title">Bed</a>
-                  </h3>
-
-                  <div class="card-price">
-                    <data class="price" value="40">Rs 27999</data>
-                  </div>
-
-                  <div class="card-price">
-                    <data class="price" value="30">Product ID:- 109</data>
-                  </div>
-                </div>
-
-              </div>
-            </li>
-
-            <li class="decoration">
-              <div class="product-card">
-
-                <a href="https://vishwakarmaartorder.pythonanywhere.com/app1/book" class="card-banner img-holder has-before" style="--width: 300; --height: 300;">
-                  <img src="./assets/images/b10.jpg" width="300" height="300" loading="lazy"
-                    alt="Artificial potted plant" class="img-cover">
-
-                  <ul class="card-action-list">
-
-                    <!-- <li>
-                      <button class="card-action-btn" aria-label="add to cart" title="add to cart">
-                        <ion-icon name="add-outline" aria-hidden="true"></ion-icon>
-                      </button>
-                    </li> -->
-
-                    <li>
-                      <button class="card-action-btn" aria-label="add to cart" title="add to cart">
-                        <ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>
-                      </button>
-                    </li>
-
-                    <!-- <li>
-                      <button class="card-action-btn" aria-label="add to whishlist" title="add to whishlist">
-                        <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
-                      </button>
-                    </li> -->
-
-                  </ul>
-                </a>
-
-                <div class="card-content">
-                  <h3 class="h3">
-                    <a href="#" class="card-title">Bed</a>
-                  </h3>
-
-                  <div class="card-price">
-                    <data class="price" value="40">Rs 31999</data>
-                  </div>
-
-                  <div class="card-price">
-                    <data class="price" value="30">Product ID:- 110</data>
-                  </div>
-                </div>
-
-              </div>
-            </li>
-
-            <li class="decoration">
-              <div class="product-card">
-
-                <a href="https://vishwakarmaartorder.pythonanywhere.com/app1/book" class="card-banner img-holder has-before" style="--width: 300; --height: 300;">
-                  <img src="./assets/images/b11.jpg" width="300" height="300" loading="lazy"
-                    alt="Artificial potted plant" class="img-cover">
-
-                  <ul class="card-action-list">
-
-                    <!-- <li>
-                      <button class="card-action-btn" aria-label="add to cart" title="add to cart">
-                        <ion-icon name="add-outline" aria-hidden="true"></ion-icon>
-                      </button>
-                    </li> -->
-
-                    <li>
-                      <button class="card-action-btn" aria-label="add to cart" title="add to cart">
-                        <ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>
-                      </button>
-                    </li>
-
-                    <!-- <li>
-                      <button class="card-action-btn" aria-label="add to whishlist" title="add to whishlist">
-                        <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
-                      </button>
-                    </li> -->
-
-                  </ul>
-                </a>
-
-                <div class="card-content">
-                  <h3 class="h3">
-                    <a href="#" class="card-title">Bed</a>
-                  </h3>
-
-                  <div class="card-price">
-                    <data class="price" value="40">Rs 20999</data>
-                  </div>
-
-                  <div class="card-price">
-                    <data class="price" value="30">Product ID:- 111</data>
-                  </div>
-                </div>
-
-              </div>
-            </li>
-
-
-            <li class="decoration">
-              <div class="product-card">
-
-                <a href="https://vishwakarmaartorder.pythonanywhere.com/app1/book" class="card-banner img-holder has-before" style="--width: 300; --height: 300;">
-                  <img src="./assets/images/b12.jpg" width="300" height="300" loading="lazy"
-                    alt="Artificial potted plant" class="img-cover">
-
-                  <ul class="card-action-list">
-
-                    <!-- <li>
-                      <button class="card-action-btn" aria-label="add to cart" title="add to cart">
-                        <ion-icon name="add-outline" aria-hidden="true"></ion-icon>
-                      </button>
-                    </li> -->
-
-                    <li>
-                      <button class="card-action-btn" aria-label="add to cart" title="add to cart">
-                        <ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>
-                      </button>
-                    </li>
-
-                    <!-- <li>
-                      <button class="card-action-btn" aria-label="add to whishlist" title="add to whishlist">
-                        <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
-                      </button>
-                    </li> -->
-
-                  </ul>
-                </a>
-
-                <div class="card-content">
-                  <h3 class="h3">
-                    <a href="#" class="card-title">Bed</a>
-                  </h3>
-
-                  <div class="card-price">
-                    <data class="price" value="40">Rs 35999</data>
-                  </div>
-
-                  <div class="card-price">
-                    <data class="price" value="30">Product ID:- 112</data>
-                  </div>
-                </div>
-
-              </div>
-            </li>
-
-            <li class="decoration">
-              <div class="product-card">
-
-                <a href="https://vishwakarmaartorder.pythonanywhere.com/app1/book" class="card-banner img-holder has-before" style="--width: 300; --height: 300;">
-                  <img src="./assets/images/b13.jpg" width="300" height="300" loading="lazy"
-                    alt="Artificial potted plant" class="img-cover">
-
-                  <ul class="card-action-list">
-
-                    <!-- <li>
-                      <button class="card-action-btn" aria-label="add to cart" title="add to cart">
-                        <ion-icon name="add-outline" aria-hidden="true"></ion-icon>
-                      </button>
-                    </li> -->
-
-                    <li>
-                      <button class="card-action-btn" aria-label="add to cart" title="add to cart">
-                        <ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>
-                      </button>
-                    </li>
-
-                    <!-- <li>
-                      <button class="card-action-btn" aria-label="add to whishlist" title="add to whishlist">
-                        <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
-                      </button>
-                    </li> -->
-
-                  </ul>
-                </a>
-
-                <div class="card-content">
-                  <h3 class="h3">
-                    <a href="#" class="card-title">Bed</a>
-                  </h3>
-
-                  <div class="card-price">
-                    <data class="price" value="40">Rs 51999</data>
-                  </div>
-
-                  <div class="card-price">
-                    <data class="price" value="30">Product ID:- 113</data>
-                  </div>
-                </div>
-
-              </div>
-            </li>
-            
-            <li class="decoration">
-              <div class="product-card">
-
-                <a href="https://vishwakarmaartorder.pythonanywhere.com/app1/book" class="card-banner img-holder has-before" style="--width: 300; --height: 300;">
-                  <img src="./assets/images/b14.jpg" width="300" height="300" loading="lazy"
-                    alt="Artificial potted plant" class="img-cover">
-
-                  <ul class="card-action-list">
-
-                    <!-- <li>
-                      <button class="card-action-btn" aria-label="add to cart" title="add to cart">
-                        <ion-icon name="add-outline" aria-hidden="true"></ion-icon>
-                      </button>
-                    </li> -->
-
-                    <li>
-                      <button class="card-action-btn" aria-label="add to cart" title="add to cart">
-                        <ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>
-                      </button>
-                    </li>
-
-                    <!-- <li>
-                      <button class="card-action-btn" aria-label="add to whishlist" title="add to whishlist">
-                        <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
-                      </button>
-                    </li> -->
-
-                  </ul>
-                </a>
-
-                <div class="card-content">
-                  <h3 class="h3">
-                    <a href="#" class="card-title">Bed</a>
-                  </h3>
-
-                  <div class="card-price">
-                    <data class="price" value="40">Rs 19999</data>
-                  </div>
-
-                  <div class="card-price">
-                    <data class="price" value="30">Product ID:- 114</data>
-                  </div>
-                </div>
-
-              </div>
-            </li>
-
-            <li class="decoration">
-              <div class="product-card">
-
-                <a href="https://vishwakarmaartorder.pythonanywhere.com/app1/book" class="card-banner img-holder has-before" style="--width: 300; --height: 300;">
-                  <img src="./assets/images/b15.jpg" width="300" height="300" loading="lazy"
-                    alt="Artificial potted plant" class="img-cover">
-
-                  <ul class="card-action-list">
-
-                    <!-- <li>
-                      <button class="card-action-btn" aria-label="add to cart" title="add to cart">
-                        <ion-icon name="add-outline" aria-hidden="true"></ion-icon>
-                      </button>
-                    </li> -->
-
-                    <li>
-                      <button class="card-action-btn" aria-label="add to cart" title="add to cart">
-                        <ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>
-                      </button>
-                    </li>
-
-                    <!-- <li>
-                      <button class="card-action-btn" aria-label="add to whishlist" title="add to whishlist">
-                        <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
-                      </button>
-                    </li> -->
-
-                  </ul>
-                </a>
-
-                <div class="card-content">
-                  <h3 class="h3">
-                    <a href="#" class="card-title">Bed</a>
-                  </h3>
-
-                  <div class="card-price">
-                    <data class="price" value="40">Rs 21999</data>
-                  </div>
-
-                  <div class="card-price">
-                    <data class="price" value="30">Product ID:- 115</data>
-                  </div>
-                </div>
-
-              </div>
-            </li>
-
-
-
-
-
-
-
-
-
-      <!-- 
-        - #NEWSLETTER
-      -->
-
-  </main>
-
+      
 
 
 
@@ -965,20 +962,26 @@
               <ul class="social-list">
 
                 <li>
-                  <a href="#" class="social-link">
+                  <a href="https://www.facebook.com/profile.php?id=61555298892002" class="social-link">
                     <ion-icon name="logo-facebook"></ion-icon>
                   </a>
                 </li>
 
                 <li>
-                  <a href="#" class="social-link">
+                  <a href="https://twitter.com/VishwakarmaArt3" class="social-link">
                     <ion-icon name="logo-twitter"></ion-icon>
                   </a>
                 </li>
 
                 <li>
-                  <a href="#" class="social-link">
-                    <ion-icon name="logo-tumblr"></ion-icon>
+                  <a href="https://www.instagram.com/vishwakarma_art21/" class="social-link">
+                    <ion-icon name="logo-instagram"></ion-icon>
+                  </a>
+                </li>
+
+                 <li>
+                  <a href="https://www.linkedin.com/in/vishwakarma-art-a22b79292/" class="social-link">
+                    <ion-icon name="logo-linkedin"></ion-icon>
                   </a>
                 </li>
 
@@ -1091,6 +1094,8 @@
   <!-- 
     - custom js link
   -->
+  <script src="./assets/js/products.js" defer></script>
+  <script src="./assets/js/product-details.js" defer></script>
   <script src="./assets/js/script.js" defer></script>
 
   <!-- 
@@ -1099,7 +1104,6 @@
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
-  <script src="./assets/js/products.js" defer></script>
   <script src="./assets/js/site-assistant.js" defer></script>
 </body>
 
