@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f7f2">
+  <title>Booking Status | Vishwakarma Art</title>
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <style>
+    :root {
+      color-scheme: light;
+      --status-ink: #183b35;
+      --status-muted: #566660;
+      --status-paper: #f7f7f2;
+      --status-green: #26734d;
+      --status-red: #b33b32;
+    }
+
+    body {
+      min-height: 100vh;
+      margin: 0;
+      background: var(--status-paper);
+      color: var(--status-ink);
+      font-family: Arial, sans-serif;
+    }
+
+    .status-page {
+      min-height: 100vh;
+      display: grid;
+      grid-template-rows: auto 1fr;
+      padding: 24px clamp(20px, 6vw, 80px);
+      box-sizing: border-box;
+    }
+
+    .status-brand {
+      display: flex;
+      width: fit-content;
+      align-items: center;
+      gap: 12px;
+      color: var(--status-ink);
+      font-size: 20px;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .status-brand img {
+      display: block;
+      width: 52px;
+      height: 52px;
+      flex: none;
+      object-fit: contain;
+    }
+
+    .status-brand-copy {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .status-brand-tagline {
+      margin-top: 3px;
+      color: #6d5632;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .status-content {
+      width: min(100%, 560px);
+      align-self: center;
+      justify-self: center;
+      padding: 48px 0;
+      text-align: center;
+    }
+
+    .status-icon {
+      width: 76px;
+      height: 76px;
+      margin: 0 auto 24px;
+    }
+
+    .status-icon svg {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+
+    .status-kicker {
+      margin: 0 0 10px;
+      color: var(--status-muted);
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .status-content h1 {
+      margin: 0 0 14px;
+      color: var(--status-ink);
+      font-size: clamp(28px, 6vw, 42px);
+      line-height: 1.15;
+    }
+
+    .status-message {
+      margin: 0 auto 28px;
+      max-width: 460px;
+      color: var(--status-muted);
+      font-size: 17px;
+      line-height: 1.6;
+    }
+
+    .status-action {
+      display: inline-flex;
+      min-height: 46px;
+      align-items: center;
+      justify-content: center;
+      padding: 0 22px;
+      border-radius: 4px;
+      background: var(--status-ink);
+      color: #fff;
+      font-size: 15px;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    [hidden] {
+      display: none !important;
+    }
+  </style>
+</head>
+<body>
+  <main class="status-page">
+    <a class="status-brand" href="./index.html">
+      <img src="./assets/images/1.png" alt="Vishwakarma Art logo">
+      <span class="status-brand-copy">
+        <span>Vishwakarma Arts</span>
+        <small class="status-brand-tagline">Handcrafted Wooden Furniture</small>
+      </span>
+    </a>
+    <section class="status-content" aria-live="polite" aria-atomic="true">
+      <div class="status-icon" id="success-icon" aria-hidden="true" hidden>
+        <svg viewBox="0 0 76 76" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="38" cy="38" r="35" stroke="#26734d" stroke-width="3" />
+          <path d="M21 38.5 32 49l23-24" stroke="#26734d" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </div>
+      <div class="status-icon" id="cancel-icon" aria-hidden="true" hidden>
+        <svg viewBox="0 0 76 76" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="38" cy="38" r="35" stroke="#b33b32" stroke-width="3" />
+          <path d="m27 27 22 22m0-22L27 49" stroke="#b33b32" stroke-width="4" stroke-linecap="round" />
+        </svg>
+      </div>
+      <p class="status-kicker" id="status-kicker"></p>
+      <h1 id="status-title"></h1>
+      <p class="status-message" id="status-message"></p>
+      <a class="status-action" href="./index.html">Back to home</a>
+    </section>
+  </main>
+  <script>
+    const outcomes = {
+      success: {
+        icon: 'success-icon',
+        kicker: 'Booking submitted',
+        title: 'Thank you for your information',
+        message: 'Vishwakarma Art will reach out to you within 24 hours.'
+      },
+      failed: {
+        icon: 'cancel-icon',
+        kicker: 'Submission not confirmed',
+        title: 'Information not saved yet',
+        message: 'Please try again later.'
+      },
+      cancelled: {
+        icon: 'cancel-icon',
+        kicker: 'Booking cancelled',
+        title: 'Your information was not submitted',
+        message: 'You can return to the home page and start again whenever you are ready.'
+      }
+    };
+    const status = new URLSearchParams(window.location.search).get('status');
+    const outcome = outcomes[status] || outcomes.cancelled;
+
+    document.getElementById(outcome.icon).hidden = false;
+    document.getElementById('status-kicker').textContent = outcome.kicker;
+    document.getElementById('status-title').textContent = outcome.title;
+    document.getElementById('status-message').textContent = outcome.message;
+  </script>
+</body>
+</html>
