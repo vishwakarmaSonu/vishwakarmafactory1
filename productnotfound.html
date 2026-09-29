@@ -123,6 +123,7 @@
       background-color: #03f443;
     }
     </style>
+  <link rel="stylesheet" href="./assets/css/site-assistant.css">
 </head>
 
 <body id="top">
@@ -134,35 +135,46 @@
   <header class="header" data-header>
     <div class="container">
 
-      <!-- <div class="input-wrapper">
-        <input type="search" name="search" placeholder="Search Anything..." class="input-field">
+      <a href="/" class="logo" style="display:flex; align-items:center; gap:12px; text-decoration:none; color:#111; font-weight:700; line-height:1.1; font-size:185%;">
+        <img src="./assets/images/1.png" style="width:52px; height:auto; display:block; flex-shrink:0;">
+        <span style="display:flex; flex-direction:column; align-items:flex-start;">
+          <span style="font-size:1.05em; letter-spacing:0.04em;">Vishwakarma Arts</span>
+          <small style="font-size:0.42em; font-weight:600; letter-spacing:0.08em; color:#6d5632; text-transform:uppercase;">Handcrafted Wooden Furniture</small>
+        </span>
+      </a>
 
-        <ion-icon name="search-outline" aria-hidden="true"></ion-icon>
-      </div> -->
-
-      <!-- <a href="#" class="logo" style="font-size:185% ;">Vishwakarma Art</a> -->
-      <a href="/" class="logo" style="font-size:185% ;"><img src="./assets/images/1.png" style=" width: 23%;"></a>
-     
       <div class="header-action">
-
-        <!-- <button class="header-action-btn" aria-label="user">
-          <ion-icon name="person-outline" aria-hidden="true"></ion-icon>
-        </button> -->
-
-        <!-- <button class="header-action-btn" aria-label="favorite list">
-          <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
-
-          <span class="btn-badge">0</span>
-        </button> -->
-        
-
-        
-        <a class="nav-link "  style="color: #000000;  font-weight: bold ;  font-size: 15px;" href="whatsapp://send?text= Nice to contact you !&phone=+919588938688">Contact</a>
-
-
-        
-
-        
+        <div class="notification"></div>
+        <select style="color: #000000; width: min(190px, 32vw); max-width: 100%; font-weight: 700; border: 1px solid rgba(17,17,17,0.14); border-radius: 999px; background: #f8f6f1; padding: 0.55rem 0.9rem; appearance: none; transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease, background-color 0.25s ease;" id="dropdown" onchange="if (this.value) window.location.href = this.value;" onfocus="this.style.transform='translateY(-1px)'; this.style.boxShadow='0 8px 20px rgba(49, 91, 69, 0.12)'; this.style.borderColor='rgba(49, 91, 69, 0.45)'; this.style.backgroundColor='#fffdf8';" onblur="this.style.transform=''; this.style.boxShadow=''; this.style.borderColor='rgba(17,17,17,0.14)'; this.style.backgroundColor='#f8f6f1';" onmouseenter="this.style.transform='translateY(-1px)'; this.style.boxShadow='0 8px 20px rgba(49, 91, 69, 0.12)'; this.style.borderColor='rgba(49, 91, 69, 0.45)';" onmouseleave="this.style.transform=''; this.style.boxShadow=''; this.style.borderColor='rgba(17,17,17,0.14)';">
+          <option value="al.html">Collections</option>
+          <option value="woodentemple.html">Wooden Temple</option>
+          <option value="chair.html">Chair</option>
+          <option value="diningtable.html">Dining Table</option>
+          <option value="beds.html">Beds</option>
+          <option value="sideboards.html">Sideboards</option>
+          <option value="studytables.html">Study Tables</option>
+          <option value="mirror.html">Mirror</option>
+          <option value="bookshelves.html">Bookshelves</option>
+          <option value="coffeetable.html">Coffee Tables</option>
+          <option value="shoeracks.html">Shoe Racks</option>
+        </select>
+        <script>
+          (function () {
+            const dropdown = document.getElementById('dropdown');
+            if (!dropdown) return;
+            const currentPath = (window.location.pathname.split('/').pop() || '').toLowerCase();
+            const currentPage = currentPath || 'al.html';
+            const productId = new URLSearchParams(window.location.search).get('id');
+            const productList = window.VISHWAKARMA_PRODUCTS || [];
+            const matchedProduct = productId ? productList.find((item) => String(item.id) === String(productId)) : null;
+            const categoryPage = matchedProduct ? `${matchedProduct.category}.html` : null;
+            const matchingOption = Array.from(dropdown.options).find((option) => {
+              const optionValue = option.value.toLowerCase();
+              return optionValue === categoryPage || optionValue === currentPage || (optionValue === '/' && ['al.html', 'index.html', ''].includes(currentPage));
+            });
+            if (matchingOption) dropdown.value = matchingOption.value;
+          })();
+        </script>
 
         <button class="header-action-btn" aria-label="open menu" data-nav-toggler>
           <ion-icon name="menu-outline" aria-hidden="true"></ion-icon>
@@ -239,7 +251,6 @@
         </li>
 
         <li class="navbar-item">
-          <a href="about.html" class="navbar-link" data-nav-link>About</a>
         </li>
         <li class="navbar-item">
 
@@ -485,7 +496,7 @@
       <div class="footer-bottom">
 
         <p class="copyright">
-          &copy; 2023 All Rights Reserved by <a href="#" class="copyright-link">Vishwakarma Art</a>.
+          &copy; 2026 All Rights Reserved by <a href="#" class="copyright-link">Vishwakarma Arts</a>.
         </p>
 
       </div>
@@ -520,6 +531,8 @@
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
+  <script src="./assets/js/products.js" defer></script>
+  <script src="./assets/js/site-assistant.js" defer></script>
 </body>
 
 </html>
