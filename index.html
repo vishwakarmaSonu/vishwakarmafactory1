@@ -5,122 +5,161 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome to Our Website</title>
     <style>
-      @keyframes waveAnimation {
-          0%, 100% {
-              transform: translateY(0);
-          }
-          50% {
-              transform: translateY(-20px);
-          }
+      @keyframes brand-mark-arrive {
+        from { opacity: 0; transform: scale(0.94); }
+        to { opacity: 1; transform: scale(1); }
       }
 
-     @keyframes colorAnimation {
-         0% {
-              color: rgb(26, 239, 62);
-          }
-          25% {
-              color: rgb(33, 166, 238);
-          }
-          50% {
-              color: rgb(0, 255, 17);
-          }
-          55% {
-              color: rgb(24, 186, 204);
-          }
-          60% {
-              color: rgb(13, 228, 34);
-          }
-          65% {
-              color: rgb(52, 150, 255);
-          }
+      @keyframes brand-copy-arrive {
+        from { opacity: 0; transform: translateY(8px); }
+        to { opacity: 1; transform: translateY(0); }
       }
+
+      @keyframes brand-piece-arrive {
+        from { opacity: 0; scale: 0.7; }
+        to { opacity: 1; scale: 1; }
+      }
+
+      .brand-splash {
+        box-sizing: border-box;
+        display: grid;
+        min-height: 100vh;
+        min-height: 100svh;
+        place-items: center;
+        padding: 32px 16px;
+        background: #f8f6f0;
+        text-align: center;
+      }
+
+      .brand-splash__content {
+        display: flex;
+        width: min(100%, 540px);
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .brand-splash__mark {
+        position: relative;
+        flex: none;
+        width: 270px;
+        max-width: 70vw;
+        height: 190px;
+      }
+
+      .brand-mark__piece {
+        position: absolute;
+        display: block;
+        box-sizing: border-box;
+        border: 2px solid #d7b65c;
+        box-shadow: 0 2px 0 rgba(37, 39, 31, 0.08);
+        opacity: 1;
+        scale: 1;
+      }
+
+      .brand-splash__mark.is-animated .brand-mark__piece {
+        animation: brand-piece-arrive 520ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+        animation-delay: var(--piece-delay, 0ms);
+      }
+
+      .brand-mark__bar {
+        top: 24px;
+        width: 56px;
+        height: 142px;
+        border-radius: 999px;
+        transform: rotate(-28deg);
+      }
+
+      .brand-mark__bar--blue {
+        left: 34px;
+        background: #1598f2;
+        --piece-delay: 0ms;
+      }
+
+      .brand-mark__bar--green {
+        right: 34px;
+        background: #16a85e;
+        --piece-delay: 240ms;
+      }
+
+      .brand-mark__dot {
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+      }
+
+      .brand-mark__dot--blue {
+        left: calc(50% - 44px);
+        top: 14px;
+        background: #1598f2;
+        --piece-delay: 120ms;
+      }
+
+      .brand-mark__dot--green {
+        left: calc(50% - 12px);
+        bottom: 14px;
+        background: #16a85e;
+        --piece-delay: 360ms;
+      }
+
       #animated-text {
-          display: inline-block;
-          font-size: 2em;
-          animation: waveAnimation 2s ease-in-out infinite, colorAnimation 4s ease-in-out infinite;
+        margin: 0;
+        color: #315b45;
+        font-family: 'Mr De Haviland', cursive;
+        font-size: 52px;
+        font-weight: 500;
+        line-height: 1;
+        animation: brand-copy-arrive 600ms 100ms ease-out both;
       }
-  </style>
+
+      .brand-splash__divider {
+        width: 44px;
+        height: 2px;
+        margin: 2px 0;
+        background: #bd8d4b;
+      }
+
+      .brand-splash__tagline,
+      .brand-splash__welcome {
+        margin: 0;
+        color: #72746b;
+        font-family: Arial, sans-serif;
+      }
+
+      .brand-splash__tagline {
+        font-size: 12px;
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+
+      .brand-splash__welcome {
+        margin-top: 6px;
+        color: #25271f;
+        font-size: 16px;
+        font-weight: 600;
+      }
+
+      @media (max-width: 600px) {
+        #animated-text { font-size: 36px; }
+        .brand-splash__mark { width: 220px; height: 155px; }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .brand-mark__piece {
+          opacity: 1;
+          scale: 1;
+          animation: none !important;
+        }
+
+        #animated-text { animation: none; }
+      }
+    </style>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height:100vh;
-            background-color: rgba(229, 239, 218, 0.5);
+          margin: 0;
+          padding: 0;
+          background: #f8f6f0;
         }
-
-        #popup {
-            display: none;
-            background-color: rgba(229, 239, 218, 0.5);
-            border: 6px solid rgba(229, 239, 218, 0.5);
-            padding: 20px;
-            border-radius: 90px;
-            box-shadow: 55px 5px 80px rgba(0, 0, 0, 0.1);
-            text-align: center;
-        }
-       #diw{
-        border-radius: 30px;
-
-       }
-        #overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(229, 239, 218, 0.5);
-        }
-
-        #closeBtn {
-            cursor: pointer;
-            color: #4CAF50;
-            font-weight: bold;
-        }
-    </style>
-     <style>
-      /* body {
-        font-family: Arial, sans-serif;
-        background-color: #f4f4f4;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 100vh;
-    } */
-    
-    .image-container {
-        width: 200px;
-        height: 200px;
-        overflow: hidden;
-        border-radius: 50%;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        animation: scaleAndFade 1s ease-in-out;
-    }
-    
-    img {
-        width: 100%;
-        height: auto;
-        display: block;
-        opacity: 0;
-        transform: scale(0.8);
-        animation: scaleAndFade 1s ease-in-out forwards;
-    }
-    
-    @keyframes scaleAndFade {
-        from {
-            opacity: 0;
-            transform: scale(0.8);
-        }
-        to {
-            opacity: 1;
-            transform: scale(1);
-        }
-    }
     </style>
   <link rel="stylesheet" href="./assets/css/site-assistant.css">
 </head>
@@ -198,21 +237,26 @@
   <main>
     
 
-      <section class="section about" id="about" aria-label="about">
-        <div class="container">
-          <!-- <h1 class="section-title">About</h1> -->
-
-
-          <img src="./assets/images/1.png" width="300" height="200" loading="lazy">
-
-   
-          <h2 class="section-title" id="animated-text"  style="font-size: 400% ;" >Vishwakarma Art</h2>
-  <h3>Welcome </h3>
-          <p class="section-text">
-        
-         
+      <section class="brand-splash" id="about" aria-label="Vishwakarma Art">
+        <div class="brand-splash__content">
+          <div class="brand-splash__mark" aria-hidden="true">
+            <span class="brand-mark__piece brand-mark__bar brand-mark__bar--blue"></span>
+            <span class="brand-mark__piece brand-mark__dot brand-mark__dot--blue"></span>
+            <span class="brand-mark__piece brand-mark__bar brand-mark__bar--green"></span>
+            <span class="brand-mark__piece brand-mark__dot brand-mark__dot--green"></span>
           </div>
-
+          <script>
+            (function() {
+              const mark = document.querySelector('.brand-splash__mark');
+              if (mark) {
+                mark.classList.add('is-animated');
+              }
+            })();
+          </script>
+          <h1 id="animated-text">Vishwakarma Art</h1>
+          <span class="brand-splash__divider" aria-hidden="true"></span>
+          <p class="brand-splash__tagline">Handcrafted Wooden Furniture</p>
+          <p class="brand-splash__welcome">Welcome</p>
         </div>
       </section>
 
@@ -220,59 +264,15 @@
 
 
 
-      <div id="overlay"></div>
-
-      <div id="popup">
-<!--           <p>Welcome to Vishwakarma Art!</p> -->
-<!--           <h2 class="section-title">Happy Diwali to all</h2> -->
-          <!-- <img id="diw" src="./assets/images/diwali2.jpg" style="width: 30%;"> -->
-          <!-- <p id="closeBtn" onclick="closePopup()">Close</p> -->
-      </div>
-  
       <script>
-          document.addEventListener("DOMContentLoaded", function() {
-              // Display the pop-up after 2 seconds (adjust the time as needed)
-              setTimeout(function() {
-                  showPopup();
-              }, 100);
-          });
-  
-          function showPopup() {
-              var popup = document.getElementById('popup');
-              var overlay = document.getElementById('overlay');
-  
-              popup.style.display = 'block';
-              overlay.style.display = 'block';
-  
-              // Close the pop-up after 5 seconds (adjust the time as needed)
-              setTimeout(function() {
-                  closePopup();
-                  // Redirect to the next page after 2 seconds (adjust the time as needed)
-                  setTimeout(function() {
-                      window.location.href = 'al.html';
-                  }, 2000);
-              }, 10);
-          }
-  
-          function closePopup() {
-              var popup = document.getElementById('popup');
-              var overlay = document.getElementById('overlay');
-  
-              popup.style.display = 'none';
-              overlay.style.display = 'none';
-          }
+          window.setTimeout(function() {
+            window.location.href = 'al.html';
+          }, 2100);
       </script>
 
   <!-- 
     - #FOOTER
   -->
-
-  <!-- <footer class="footer">
-    <div class="container">
-
-      <div class="footer-top section">
-
-        <div class="footer-brand">
 
           <a href="#" class="logo">Vishwakarma Art</a>
 
