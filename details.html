@@ -656,6 +656,29 @@ background-color: #808080;
           color: #a12d27;
         }
 
+        @media screen and (min-width: 769px) {
+          .image-details {
+            display: grid;
+            grid-template-columns: minmax(0, 0.9fr) minmax(0, 1fr);
+            gap: clamp(1.5rem, 4vw, 3rem);
+            align-items: center;
+          }
+
+          .image-details img {
+            width: 100%;
+            max-width: 100%;
+            height: min(62vh, 500px);
+            object-fit: contain;
+            margin: 0;
+            justify-self: center;
+          }
+
+          .details-content {
+            max-width: none;
+            min-width: 0;
+          }
+        }
+
         @media screen and (max-width: 768px) {
             .image-details {
                 flex-direction: column;
