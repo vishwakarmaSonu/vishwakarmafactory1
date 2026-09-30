@@ -26,9 +26,47 @@
   document.querySelector('meta[name="description"]').content =
     `${product.name} handmade furniture by Vishwakarma Art. Item ${product.itemId}.`;
 
-  const image = document.getElementById("details-image");
-  image.src = product.image;
-  image.alt = product.name;
+  document.querySelectorAll("[data-product-view]").forEach((image) => {
+    const view = image.dataset.productView;
+    image.src = product.images?.[view] || product.image;
+    image.alt = `${product.name} - ${view} view`;
+  });
+
+  const gallery = document.querySelector("[data-product-gallery]");
+  if (gallery) {
+    const track = gallery.querySelector("[data-product-track]");
+    const slides = Array.from(track.querySelectorAll(".details-gallery__item"));
+    const position = gallery.querySelector("[data-gallery-position]");
+    let currentSlide = 0;
+
+    const updatePosition = () => {
+      currentSlide = Math.min(slides.length - 1, Math.round(track.scrollLeft / track.clientWidth));
+      position.textContent = `${currentSlide + 1} / ${slides.length}`;
+    };
+
+    const showSlide = (index) => {
+      currentSlide = (index + slides.length) % slides.length;
+      position.textContent = `${currentSlide + 1} / ${slides.length}`;
+      track.scrollTo({
+        left: currentSlide * track.clientWidth,
+        behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth",
+      });
+    };
+
+    track.addEventListener("scroll", updatePosition, { passive: true });
+    track.addEventListener("keydown", (event) => {
+      if (event.key === "ArrowLeft") {
+        event.preventDefault();
+        showSlide(currentSlide - 1);
+      } else if (event.key === "ArrowRight") {
+        event.preventDefault();
+        showSlide(currentSlide + 1);
+      }
+    });
+    gallery.querySelector("[data-gallery-previous]").addEventListener("click", () => showSlide(currentSlide - 1));
+    gallery.querySelector("[data-gallery-next]").addEventListener("click", () => showSlide(currentSlide + 1));
+  }
+
   document.getElementById("details-title").textContent = product.name;
   document.getElementById("details-productid").textContent = `Item ID ${product.itemId}`;
 
