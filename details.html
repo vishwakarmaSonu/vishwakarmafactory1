@@ -170,6 +170,8 @@ background-color: #808080;
       left: 0;
       width: 100%;
       height: 100%;
+      box-sizing: border-box;
+      padding: 0.75rem;
       background-color: rgba(0, 0, 0, 0.7);
       justify-content: center;
       align-items: center;
@@ -177,14 +179,16 @@ background-color: #808080;
   }
 
   .terms-modal-content {
-      background-color: #b8ee8f;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      width: 70%;
-      max-height: 80%;
+      box-sizing: border-box;
+      width: min(100%, 560px);
+      max-height: min(80vh, 620px);
       overflow-y: auto;
-      color: #000;
+      padding: clamp(1rem, 4vw, 1.5rem);
+      border: 1px solid #e5e2d8;
+      border-radius: 10px;
+      background: #fbfaf6;
+      color: #25271f;
+      box-shadow: 0 24px 70px rgba(0, 0, 0, 0.28);
   }
 </style>
  
@@ -484,51 +488,174 @@ background-color: #808080;
             position: fixed;
             top: 0;
             left: 0;
+        box-sizing: border-box;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.7);
+          padding: 1rem;
+          background-color: rgba(24, 28, 23, 0.72);
             justify-content: center;
             align-items: center;
+          z-index: 1000;
         }
   
         .modal-content {
-            background-color: #b8ee8f;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            width: 70%;
-            animation: slideIn 0.9s ease-in-out forwards;
+          box-sizing: border-box;
+          width: min(100%, 640px);
+          max-height: min(88vh, 760px);
+          overflow-y: auto;
+          padding: clamp(1.25rem, 4vw, 2rem);
+          border: 1px solid #e5e2d8;
+          border-radius: 12px;
+          background: #fbfaf6;
+          color: #25271f;
+          box-shadow: 0 24px 70px rgba(0, 0, 0, 0.28);
+          animation: slideIn 220ms ease-out both;
         }
         @keyframes slideIn {
-    from {
-        transform: translateY(-100px);
-    }
-    to {
-        transform: translateY(10px);
-    }
-}
-    
-       
-    
-        .modal-content button {
-            background-color: #4CAF50;
-            color: white;
-            padding: 10px 20px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            border-radius: 4px;
-            cursor: pointer;
+          from { opacity: 0; transform: translateY(12px); }
+          to { opacity: 1; transform: translateY(0); }
         }
-    
-    
+
+        .modal-content > p:first-child {
+          margin: 0;
+          color: #315b45 !important;
+          font-size: 1rem;
+          font-weight: 700;
+          letter-spacing: 0.05em;
+          text-transform: uppercase;
+        }
+
+        .modal-content > hr,
+        #bookingForm > hr {
+          border: 0;
+          border-top: 1px solid #e5e2d8;
+        }
+
+        .modal-content > h3 {
+          margin: 1.25rem 0 0.35rem;
+          color: #25271f;
+          font-size: 1.65rem;
+        }
+
+        #booking-image-container {
+          margin-bottom: 1.25rem;
+          color: #72746b;
+          font-size: 0.95rem;
+        }
+
+        #booking-image-container p {
+          display: inline;
+          margin: 0;
+          color: #72746b !important;
+        }
+
+        #booking-image-container #itemid:not(:empty)::before {
+          content: " · ";
+        }
+
+        #bookingForm {
+          display: grid;
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: 0.85rem 1rem;
+          text-align: left;
+        }
+
+        #bookingForm .booking-field {
+          display: grid;
+          gap: 0.4rem;
+          min-width: 0;
+        }
+
+        #bookingForm .booking-field label {
+          color: #34372e;
+          font-size: 0.88rem;
+          font-weight: 600;
+        }
+
+        #bookingForm .booking-field input {
+          box-sizing: border-box;
+          width: 100%;
+          min-height: 46px;
+          padding: 0.7rem 0.8rem;
+          border: 1px solid #d5d4cb;
+          border-radius: 6px;
+          background: #fff !important;
+          color: #25271f !important;
+          font: inherit;
+        }
+
+        #bookingForm .booking-field input:focus-visible {
+          outline: 3px solid rgba(49, 91, 69, 0.2);
+          border-color: #315b45;
+        }
+
+        #bookingForm .booking-terms,
+        #bookingForm > button,
+        #bookingForm > hr {
+          grid-column: 1 / -1;
+        }
+
+        #bookingForm .booking-terms {
+          display: flex;
+          align-items: center;
+          gap: 0.6rem;
+          margin-top: 0.15rem;
+          color: #52564c;
+          font-size: 0.9rem;
+        }
+
+        #bookingForm .booking-terms input {
+          width: 18px;
+          height: 18px;
+          margin: 0;
+          accent-color: #315b45;
+        }
+
+        #bookingForm .booking-terms a {
+          color: #315b45 !important;
+          font-weight: 600;
+          text-underline-offset: 3px;
+        }
+
+        .modal-content button {
+          min-height: 44px;
+          padding: 0.7rem 1.15rem;
+          border: 1px solid #315b45;
+          border-radius: 6px;
+          background: #315b45;
+          color: #fff;
+          font: inherit;
+          font-weight: 600;
+          cursor: pointer;
+        }
+
+        #bookingForm button[type="submit"] {
+          justify-self: start;
+          min-width: 150px;
+        }
+
+        #bookingForm button:disabled {
+          cursor: wait;
+          opacity: 0.65;
+        }
+
+        #bookingModal > .modal-content > button:last-child {
+          margin-top: 0.25rem;
+          border-color: #c9c8bf;
+          background: transparent !important;
+          color: #34372e;
+        }
+
         .confirmation-message {
             font-weight: bold;
-            color: green;
-            margin-top: 20px;
+          color: #315b45;
+          margin-top: 1rem;
         }
-        /* Media queries for responsiveness */
+
+        .confirmation-message.is-error {
+          color: #a12d27;
+        }
+
         @media screen and (max-width: 768px) {
             .image-details {
                 flex-direction: column;
@@ -552,11 +679,40 @@ background-color: #808080;
                 margin-top: 20px;
             }
             .modal-content {
-                z-index: 3;
-                margin-top: 80px;
-                width: 80%;
+              width: min(100%, 560px);
             }
         }
+
+          @media screen and (max-width: 520px) {
+            .modal {
+              align-items: center;
+              padding: max(0.75rem, env(safe-area-inset-top)) 0.75rem max(0.75rem, env(safe-area-inset-bottom));
+            }
+
+            .modal-content {
+              width: 100%;
+              max-height: calc(100dvh - 1.5rem);
+              padding: 1.1rem;
+            }
+
+            #bookingForm {
+              grid-template-columns: minmax(0, 1fr);
+            }
+
+            #bookingForm .booking-terms,
+            #bookingForm > button,
+            #bookingForm > hr {
+              grid-column: 1;
+            }
+
+            #bookingForm button[type="submit"] {
+              width: 100%;
+            }
+          }
+
+          @media (prefers-reduced-motion: reduce) {
+            .modal-content { animation: none; }
+          }
     </style>
   <style>
       /* body {
@@ -739,22 +895,29 @@ background-color: #808080;
             </div>
            
             <form id="bookingForm" onsubmit="submitBookingForm(event)">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required style="background-color: #fff; color: blue;" >
-    
-                <label for="phone">Phone No:</label>
-                <input type="tel" id="phone" name="phone" autocomplete="tel" required style="background-color: #fff; color: blue;">
-    
-    
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required style="background-color: #fff; color: blue;">
-    
-                <label for="address">Address:</label>
-                <input type="text" id="address" name="address" required style="background-color: #fff; color: blue;">
-      
-                <label>
-                  <input type="checkbox" id="acceptTerms" required href="javascript:void(0);" onclick="openTermsModal()">
-                   <h6><a href="javascript:void(0);" onclick="openTermsModal()" style="color: blue;">terms and conditions</a>.</h6>
+              <div class="booking-field">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" autocomplete="name" required>
+              </div>
+
+              <div class="booking-field">
+                <label for="phone">Phone No</label>
+                <input type="tel" id="phone" name="phone" autocomplete="tel" required>
+              </div>
+
+              <div class="booking-field">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" autocomplete="email" required>
+              </div>
+
+              <div class="booking-field">
+                <label for="address">Address</label>
+                <input type="text" id="address" name="address" autocomplete="street-address" required>
+              </div>
+
+              <label class="booking-terms" for="acceptTerms">
+                <input type="checkbox" id="acceptTerms" required>
+                <span>I accept the <a href="javascript:void(0);" onclick="openTermsModal()">terms and conditions</a>.</span>
               </label>
 
                 <button type="submit">Submit</button>
@@ -801,7 +964,7 @@ background-color: #808080;
             </div>
           </div>
           
-            <div id="confirmation-message" class="confirmation-message"></div>
+            <div id="confirmation-message" class="confirmation-message" role="status" aria-live="polite"></div>
             <button onclick="closeModal()" style="background-color: red;">Close</button>
         </div>
     </div>
@@ -817,7 +980,15 @@ background-color: #808080;
     }
     
         function closeModal() {
-          window.location.href = 'ai.html?status=cancelled';
+          document.getElementById('bookingModal').style.display = 'none';
+          document.getElementById('termsModal').style.display = 'none';
+          document.getElementById('qrpayment').style.display = 'none';
+          const bookButton = document.getElementById('book-button');
+          bookButton.classList.remove('hidden');
+          if (window.location.hash === '#booking') {
+            window.history.replaceState(null, '', window.location.pathname + window.location.search);
+          }
+          bookButton.focus();
         }
     
        
@@ -852,13 +1023,16 @@ background-color: #808080;
             }),
             })
           .then(() => {
-            window.location.href = 'ai.html?status=success';
+            document.getElementById('loadingPage').style.display = 'none';
+            confirmationMessage.classList.remove('is-error');
+            confirmationMessage.innerText = 'Booking submitted! A confirmation was sent to your email, and Vishwakarma Art will contact you soon.';
             })
             .catch(error => {
             console.error('Booking submission failed:', error);
             document.getElementById('loadingPage').style.display = 'none';
             submitButton.disabled = false;
-            window.location.href = 'ai.html?status=failed';
+            confirmationMessage.classList.add('is-error');
+            confirmationMessage.innerText = 'Your information was not submitted. Please check your connection and try again.';
             });
         }
     </script>
