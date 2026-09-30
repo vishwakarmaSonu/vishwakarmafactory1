@@ -572,7 +572,8 @@ background-color: #808080;
           font-weight: 600;
         }
 
-        #bookingForm .booking-field input {
+        #bookingForm .booking-field input,
+        #bookingForm .booking-field select {
           box-sizing: border-box;
           width: 100%;
           min-height: 46px;
@@ -584,7 +585,8 @@ background-color: #808080;
           font: inherit;
         }
 
-        #bookingForm .booking-field input:focus-visible {
+        #bookingForm .booking-field input:focus-visible,
+        #bookingForm .booking-field select:focus-visible {
           outline: 3px solid rgba(49, 91, 69, 0.2);
           border-color: #315b45;
         }
@@ -654,6 +656,11 @@ background-color: #808080;
 
         .confirmation-message.is-error {
           color: #a12d27;
+        }
+
+        .confirmation-message a {
+          color: inherit;
+          text-underline-offset: 3px;
         }
 
         @media screen and (min-width: 769px) {
@@ -865,7 +872,31 @@ background-color: #808080;
 <body>
 
     <div class="image-details" data-product-details>
-        <img src="" alt="Image" id="details-image" onclick="openModal()">
+      <div class="details-gallery" role="group" aria-label="Product views" data-product-gallery>
+        <div class="details-gallery__track" data-product-track tabindex="0" aria-label="Swipe or use the arrow keys to view product angles">
+          <figure class="details-gallery__item">
+            <img data-product-view="front" alt="">
+            <figcaption>Front</figcaption>
+          </figure>
+          <figure class="details-gallery__item">
+            <img data-product-view="rear" alt="">
+            <figcaption>Rear</figcaption>
+          </figure>
+          <figure class="details-gallery__item">
+            <img data-product-view="left" alt="">
+            <figcaption>Left</figcaption>
+          </figure>
+          <figure class="details-gallery__item">
+            <img data-product-view="right" alt="">
+            <figcaption>Right</figcaption>
+          </figure>
+        </div>
+        <div class="details-gallery__controls">
+          <button type="button" data-gallery-previous aria-label="Previous product view">&larr;</button>
+          <span data-gallery-position aria-live="polite">1 / 4</span>
+          <button type="button" data-gallery-next aria-label="Next product view">&rarr;</button>
+        </div>
+      </div>
         <div class="details-content">
             <p id="details-title" class="rating">Image Title</p>
             <p id="details-productid" class="rating">Image Title</p>
@@ -936,6 +967,18 @@ background-color: #808080;
               <div class="booking-field">
                 <label for="address">Address</label>
                 <input type="text" id="address" name="address" autocomplete="street-address" required>
+              </div>
+
+              <div class="booking-field">
+                <label for="wood">Preferred wood</label>
+                <select id="wood" name="wood" required>
+                  <option value="" disabled selected>Select a wood type</option>
+                  <option value="Teak wood">Teak wood</option>
+                  <option value="Oak">Oak</option>
+                  <option value="Sheesham">Sheesham</option>
+                  <option value="Mango">Mango</option>
+                  <option value="Pine">Pine</option>
+                </select>
               </div>
 
               <label class="booking-terms" for="acceptTerms">
@@ -1032,8 +1075,8 @@ background-color: #808080;
           confirmationMessage.innerText = '';
 
           fetch('https://script.google.com/macros/s/AKfycbwWltB_eMch5bLYxO0hi0IKpCpSvYrISU51QDHSlF-1WYfAh9tfjN1pyQnzXnPsUGmABw/exec', {
-                method: 'POST',
-            mode: 'no-cors',
+            method: 'POST',
+            mode: 'cors',
             body: new URLSearchParams({
               'phone': document.getElementById('phone').value.trim(),
               'phone no': document.getElementById('phone').value.trim(),
@@ -1041,21 +1084,43 @@ background-color: #808080;
               'Name': document.getElementById('name').value.trim(),
               'Email id': document.getElementById('email').value.trim(),
               'address': document.getElementById('address').value.trim(),
+              'wood type': document.getElementById('wood').value,
               'product name': productName,
               'item id': itemId,
             }),
             })
-          .then(() => {
+          .then((response) => {
+            if (!response.ok) {
+              throw new Error(`Booking request failed with status ${response.status}`);
+            }
+            return response.text();
+          })
+          .then((responseText) => {
+            if (/^(error|failed|false)\b/i.test(responseText.trim())) {
+              throw new Error(responseText.trim());
+            }
             document.getElementById('loadingPage').style.display = 'none';
             confirmationMessage.classList.remove('is-error');
             confirmationMessage.innerText = 'Booking submitted! A confirmation was sent to your email, and Vishwakarma Art will contact you soon.';
+            window.setTimeout(() => {
+              document.getElementById('bookingForm').reset();
+              submitButton.disabled = false;
+              confirmationMessage.innerText = '';
+              closeModal();
+            }, 2500);
             })
             .catch(error => {
             console.error('Booking submission failed:', error);
             document.getElementById('loadingPage').style.display = 'none';
             submitButton.disabled = false;
             confirmationMessage.classList.add('is-error');
-            confirmationMessage.innerText = 'Your information was not submitted. Please check your connection and try again.';
+            confirmationMessage.textContent = 'Booking not submitted. Please try again later or contact us on ';
+            const whatsappLink = document.createElement('a');
+            whatsappLink.href = window.VISHWAKARMA_SETTINGS?.whatsappUrl || 'https://wa.me/919588938688';
+            whatsappLink.target = '_blank';
+            whatsappLink.rel = 'noopener noreferrer';
+            whatsappLink.textContent = 'WhatsApp';
+            confirmationMessage.append(whatsappLink, document.createTextNode('.'));
             });
         }
     </script>
