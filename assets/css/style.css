@@ -305,6 +305,10 @@ body.active { overflow: hidden; }
 }
 
 @media (max-width: 575px) {
+  .container {
+    padding-inline: 0 !important;
+  }
+
   .header .container { gap: 8px; }
 
   .header .logo img { width: clamp(32px, 9vw, 42px) !important; }
@@ -675,6 +679,75 @@ body.active { overflow: hidden; }
   width: 100%;
   height: 100%;
   flex-direction: column;
+}
+
+@media (max-width: 575px) {
+  .blog {
+    padding-top: 30px;
+  }
+
+  .blog .container {
+    width: 100%;
+    max-width: 100%;
+    padding-inline: 0;
+  }
+
+  .blog .title-wrapper {
+    width: 100%;
+    margin-block-end: 24px;
+    gap: 12px;
+    padding-inline: 0;
+  }
+
+  .blog .section-title {
+    margin-left: 0;
+    font-size: 2.2rem;
+    line-height: 1.1;
+  }
+
+  .blog .grid-list {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .blog .grid-list > li {
+    display: block;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 0 18px !important;
+  }
+
+  .blog .grid-list > li > .blog-card {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .animated-border {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 0 18px !important;
+    padding: 0 !important;
+    box-sizing: border-box;
+    border-left-width: 0 !important;
+    border-right-width: 0 !important;
+    outline-width: 0 !important;
+  }
+
+  .blog-card .card-banner {
+    min-height: 180px;
+  }
+
+  .blog-card .card-content {
+    padding: 10px 8px 12px;
+  }
+
+  .blog-card .card-title {
+    margin-block: 8px 0;
+    font-size: 1.6rem;
+  }
 }
 
 .blog .btn-link {
