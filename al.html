@@ -197,22 +197,11 @@
     font-weight: bold; /* Add underline on hover */
 }
 
-@keyframes scaleAnimation {
-  0% {
-    transform: scale(1); /* Initial scale */
-  }
-  50% {
-    transform: scale(1.1); /* Scale up to 110% at 50% of the animation */
-  }
-  100% {
-    transform: scale(1); /* Return to the original scale at the end */
-  }
-}
-
-/* Apply the animation to the .ard-title class */
+/* Disable the moving text effect on card titles in the Special Product section */
 .card-title {
-  animation: scaleAnimation 2s infinite;
-  color: #333; /* Play the animation continuously for 2 seconds */
+  animation: none;
+  transform: none;
+  color: #333;
 }
 
      .slideshow-container {
