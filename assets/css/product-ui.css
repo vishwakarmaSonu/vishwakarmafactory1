@@ -438,6 +438,18 @@
   display: none !important;
 }
 
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .product-list[data-product-list] {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1280px) {
+  .product-list[data-product-list] {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
 @media (max-width: 900px) {
   .product-list[data-product-list] {
     grid-template-columns: repeat(3, minmax(0, 1fr));
