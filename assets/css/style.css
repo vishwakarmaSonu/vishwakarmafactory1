@@ -666,6 +666,17 @@ body.active { overflow: hidden; }
   margin-block-end: 50px;
 }
 
+.blog .grid-list > li {
+  display: flex;
+}
+
+.blog .grid-list > li > .blog-card {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+}
+
 .blog .btn-link {
   display: flex;
   align-items: center;
@@ -676,7 +687,18 @@ body.active { overflow: hidden; }
 
 .blog .btn-link:is(:hover, :focus) { color: var(--tan-crayola); }
 
-.blog-card .card-banner { position: relative; }
+.blog-card .card-banner {
+  position: relative;
+  display: flex;
+  height: 100%;
+  min-height: 240px;
+}
+
+.blog-card .card-banner .img-cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
 .blog-card .card-btn {
   position: absolute;
@@ -692,6 +714,13 @@ body.active { overflow: hidden; }
 }
 
 .blog-card:is(:hover, :focus) .card-btn { transform: translateX(0); }
+
+.blog-card .card-content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+}
 
 .blog-card .card-title {
   margin-block: 20px 10px;
@@ -1045,11 +1074,42 @@ a.card-meta-text:is(:hover, :focus) { color: var(--tan-crayola); }
    * REUSED STYLE
    */
 
-  .container { max-width: 992px; }
+  .container { max-width: 1180px; }
 
   .grid-list > li:last-child { all: unset; }
 
-  .grid-list { grid-template-columns: repeat(3, 1fr); }
+  .grid-list { grid-template-columns: repeat(3, minmax(220px, 1fr)); }
+
+  .blog .grid-list {
+    gap: 28px;
+    align-items: stretch;
+  }
+
+  .blog-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background: var(--white);
+    border-radius: 18px;
+    overflow: hidden;
+  }
+
+  .blog-card .card-banner {
+    min-height: 260px;
+  }
+
+  .blog-card .card-banner .img-cover {
+    object-fit: cover;
+    height: 100%;
+  }
+
+  .blog-card .card-content {
+    padding: 0 16px 18px;
+  }
+
+  .blog-card .card-title {
+    margin-block: 18px 0;
+  }
 
 
 
@@ -1130,7 +1190,7 @@ a.card-meta-text:is(:hover, :focus) { color: var(--tan-crayola); }
    * REUSED STYLE
    */
 
-  .container { max-width: 1200px; }
+  .container { max-width: 1280px; }
 
 
 
