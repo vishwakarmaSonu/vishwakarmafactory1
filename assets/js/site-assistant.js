@@ -20,6 +20,21 @@
   launcher.innerHTML = '<span aria-hidden="true">✦</span><span class="site-assistant-launcher__label">Ask us</span>';
 
   const floatingControls = [launcher];
+  if (document.body.dataset.hideFloatingFeedback !== "true") {
+    const feedback = document.createElement("a");
+    feedback.className = "site-feedback-link";
+    feedback.href = "#feedback";
+    feedback.setAttribute("aria-label", "Share your feedback");
+    feedback.innerHTML = '<span class="site-feedback-link__icon" aria-hidden="true">★</span><span>Feedback</span>';
+    feedback.addEventListener("click", (event) => {
+      event.preventDefault();
+      if (typeof window.openVishwakarmaFeedbackModal === "function") {
+        window.openVishwakarmaFeedbackModal();
+      }
+    });
+    floatingControls.push(feedback);
+  }
+
   if (document.body.dataset.hideFloatingWhatsapp !== "true") {
     const whatsapp = document.createElement("a");
     whatsapp.className = "site-whatsapp-link";
@@ -64,6 +79,116 @@
   `;
 
   document.body.append(...floatingControls, panel);
+
+  const feedbackModal = document.createElement("div");
+  feedbackModal.className = "site-feedback-modal";
+  feedbackModal.hidden = true;
+  feedbackModal.setAttribute("aria-hidden", "true");
+  feedbackModal.innerHTML = `
+    <div class="site-feedback-modal__backdrop" data-feedback-close></div>
+    <div class="site-feedback-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="site-feedback-title">
+      <button class="site-feedback-modal__close" type="button" aria-label="Close feedback form">×</button>
+      <h3 id="site-feedback-title">Share your feedback</h3>
+      <p>Tell us how your experience was with Vishwakarma Art.</p>
+      <form class="site-feedback-modal__form">
+        <label>
+          <span>Name</span>
+          <input type="text" name="name" maxlength="80" placeholder="Your name">
+        </label>
+        <label>
+          <span>Rating</span>
+          <select name="rating">
+            <option value="5">5 - Excellent</option>
+            <option value="4">4 - Very good</option>
+            <option value="3">3 - Good</option>
+            <option value="2">2 - Fair</option>
+            <option value="1">1 - Poor</option>
+          </select>
+        </label>
+        <label>
+          <span>Feedback</span>
+          <textarea name="review" rows="4" maxlength="300" placeholder="Write your review here..." required></textarea>
+        </label>
+        <button type="submit">Submit feedback</button>
+      </form>
+    </div>
+  `;
+  document.body.append(feedbackModal);
+
+  const feedbackForm = feedbackModal.querySelector("form");
+  const feedbackCloseButton = feedbackModal.querySelector(".site-feedback-modal__close");
+  const feedbackBackdrop = feedbackModal.querySelector("[data-feedback-close]");
+
+  function closeFeedbackModal() {
+    feedbackModal.hidden = true;
+    feedbackModal.setAttribute("aria-hidden", "true");
+    feedbackForm.reset();
+  }
+
+  function openFeedbackModal() {
+    feedbackModal.hidden = false;
+    feedbackModal.setAttribute("aria-hidden", "false");
+    feedbackForm.querySelector('input[name="name"]').focus();
+  }
+
+  window.openVishwakarmaFeedbackModal = openFeedbackModal;
+
+  feedbackCloseButton.addEventListener("click", closeFeedbackModal);
+  feedbackBackdrop.addEventListener("click", closeFeedbackModal);
+
+  feedbackForm.addEventListener("submit", async (event) => {
+    event.preventDefault();
+    const formData = new FormData(feedbackForm);
+    const review = (formData.get("review") || "").toString().trim();
+    if (!review) {
+      return;
+    }
+
+    const payload = {
+      name: ((formData.get("name") || "Customer").toString().trim() || "Customer"),
+      rating: Number(formData.get("rating") || 5),
+      review,
+      createdAt: new Date().toISOString(),
+      source: "website"
+    };
+
+    const submitButton = feedbackForm.querySelector("button[type='submit']");
+    submitButton.disabled = true;
+    submitButton.textContent = "Sending...";
+
+    try {
+      const feedbackUrl = window.VISHWAKARMA_SETTINGS?.feedbackUrl || "";
+      if (!feedbackUrl) {
+        throw new Error("The Google Sheets feedback endpoint is not configured.");
+      }
+
+      const response = await fetch(feedbackUrl, {
+        method: "POST",
+        headers: { "Content-Type": "text/plain;charset=UTF-8", "Accept": "application/json" },
+        body: JSON.stringify(payload),
+        mode: "cors",
+        cache: "no-store"
+      });
+
+      const result = await response.json().catch(() => ({}));
+      if (!response.ok || result?.result !== "success") {
+        throw new Error(result?.error || `The Google Sheet request failed with status ${response.status}.`);
+      }
+
+      if (typeof window.renderCustomerReviews === "function") {
+        await window.renderCustomerReviews();
+      }
+
+      closeFeedbackModal();
+      alert("Thank you for your feedback.");
+    } catch (error) {
+      console.error("Feedback submission failed:", error);
+      alert(`Feedback was not saved. Please try again later. ${error.message || ""}`);
+    } finally {
+      submitButton.disabled = false;
+      submitButton.textContent = "Submit feedback";
+    }
+  });
 
   const messages = panel.querySelector(".site-assistant__messages");
   const input = panel.querySelector("input");
