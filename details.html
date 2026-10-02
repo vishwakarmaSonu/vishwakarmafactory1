@@ -902,6 +902,17 @@ background-color: #808080;
             <p id="details-productid" class="rating">Image Title</p>
       
             <p id="details-description" class="rating">Image Description</p>
+
+            <div class="wood-selector-group">
+              <label for="wood-type-selector">Type of wood</label>
+              <select id="wood-type-selector">
+                <option value="sheesham">Sheesham</option>
+                <option value="mango" selected>Mango</option>
+                <option value="babula">Babula</option>
+                <option value="shagman">Shagman</option>
+              </select>
+            </div>
+
             <p id="details-amount" class="rating">Image Title</p>
               <div class="rating" id="star-rating"></div>
             <div class="buttons">
@@ -970,15 +981,9 @@ background-color: #808080;
               </div>
 
               <div class="booking-field">
-                <label for="wood">Preferred wood</label>
-                <select id="wood" name="wood" required>
-                  <option value="" disabled selected>Select a wood type</option>
-                  <option value="Teak wood">Teak wood</option>
-                  <option value="Oak">Oak</option>
-                  <option value="Sheesham">Sheesham</option>
-                  <option value="Mango">Mango</option>
-                  <option value="Pine">Pine</option>
-                </select>
+                <label for="preferred-wood-display">Preferred wood</label>
+                <input type="text" id="preferred-wood-display" value="Mango" readonly>
+                <input type="hidden" id="wood" name="wood" value="mango">
               </div>
 
               <label class="booking-terms" for="acceptTerms">
@@ -1040,6 +1045,9 @@ background-color: #808080;
             document.getElementById('book-button').classList.add('hidden');
     
     document.getElementById('bookingModal').style.display = 'flex';
+    document.getElementById('wood').value = document.getElementById('wood-type-selector').value;
+            document.getElementById('preferred-wood-display').value =
+              document.getElementById('wood-type-selector').selectedOptions[0].textContent;
     // Copy image details to the booking modal
     document.getElementById('booking-image').innerText = document.getElementById('details-title').innerText;
     document.getElementById('itemid').innerText = document.getElementById('details-productid').innerText;
@@ -1069,12 +1077,14 @@ background-color: #808080;
           const confirmationMessage = document.getElementById('confirmation-message');
           const productName = document.getElementById('details-title').innerText.trim();
           const itemId = document.getElementById('details-productid').innerText.replace(/^Item ID\s*/i, '').trim();
+          const bookingWebsite = 'https://vishwakarmaart.in';
+          const productUrl = `${bookingWebsite}/details.html?id=${encodeURIComponent(new URLSearchParams(window.location.search).get('id') || '')}`;
 
           document.getElementById('loadingPage').style.display = 'flex';
           submitButton.disabled = true;
           confirmationMessage.innerText = '';
 
-          fetch('https://script.google.com/macros/s/AKfycbwWltB_eMch5bLYxO0hi0IKpCpSvYrISU51QDHSlF-1WYfAh9tfjN1pyQnzXnPsUGmABw/exec', {
+          fetch('https://script.google.com/macros/s/AKfycbwl0TieJUjbqOnW6dW5jLxDuB8SRKc_LEZbQ8stIXxnvQVlxOt-mwIuuzLedWmDWCckSQ/exec', {
             method: 'POST',
             mode: 'cors',
             body: new URLSearchParams({
@@ -1087,21 +1097,38 @@ background-color: #808080;
               'wood type': document.getElementById('wood').value,
               'product name': productName,
               'item id': itemId,
+              'price': document.getElementById('details-amount').innerText.trim(),
+              'website url': bookingWebsite,
+              'product url': productUrl,
             }),
             })
           .then((response) => {
             if (!response.ok) {
               throw new Error(`Booking request failed with status ${response.status}`);
             }
-            return response.text();
+            return response.text().then((responseText) => {
+              let result;
+              try {
+                result = JSON.parse(responseText);
+              } catch (error) {
+                if (/^(error|failed|false)\b/i.test(responseText.trim())) {
+                  throw new Error(responseText.trim());
+                }
+                throw new Error('The booking service returned an invalid response.');
+              }
+
+              if (result.result !== 'success') {
+                throw new Error(result.error || 'The booking could not be submitted.');
+              }
+              return result;
+            });
           })
-          .then((responseText) => {
-            if (/^(error|failed|false)\b/i.test(responseText.trim())) {
-              throw new Error(responseText.trim());
-            }
+          .then((result) => {
             document.getElementById('loadingPage').style.display = 'none';
             confirmationMessage.classList.remove('is-error');
-            confirmationMessage.innerText = 'Booking submitted! A confirmation was sent to your email, and Vishwakarma Art will contact you soon.';
+            confirmationMessage.innerText = result.emailSent
+              ? 'Booking submitted! A confirmation with your booking details was sent to your email.'
+              : 'Your booking was received, but we could not send the confirmation email. Vishwakarma Art will contact you soon.';
             window.setTimeout(() => {
               document.getElementById('bookingForm').reset();
               submitButton.disabled = false;
