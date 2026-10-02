@@ -75,9 +75,44 @@
     : `${product.name} by Vishwakarma Art is a handcrafted ${product.categoryLabel ? product.categoryLabel.toLowerCase() : 'furniture'} piece designed for everyday use. Contact us for exact size, wood finish, and customisation options.`;
   document.getElementById("details-description").textContent = descriptionText;
 
-  document.getElementById("details-amount").textContent = product.price === null
-    ? "Price on request"
-    : `₹${product.price.toLocaleString("en-IN")}`;
+  const woodTypes = {
+    sheesham: { name: "Sheesham", rate: 900 },
+    mango: { name: "Mango", rate: 700 },
+    babula: { name: "Babula", rate: 600 },
+    shagman: { name: "Shagman", rate: 2000 },
+  };
+  const estimatedTimberByCategory = {
+    mirror: 1.5,
+    bookshelves: 5,
+    chair: 2.5,
+    studytables: 4,
+    sideboards: 7,
+    beds: 10,
+    diningtable: 6,
+    coffeetable: 3,
+    shoeracks: 3,
+    woodentemple: 4,
+  };
+  const timberVolume = estimatedTimberByCategory[product.category] || 4;
+  const woodSelector = document.getElementById("wood-type-selector");
+  const bookingWood = document.getElementById("wood");
+  const bookingWoodDisplay = document.getElementById("preferred-wood-display");
+  const amount = document.getElementById("details-amount");
+  const basePrice = product.price === null ? null : Number(product.price);
+
+  const updateWoodPrice = () => {
+    const selectedWood = woodTypes[woodSelector.value] || woodTypes.mango;
+    const adjustment = Math.round(timberVolume * (selectedWood.rate - woodTypes.mango.rate));
+
+    bookingWood.value = woodSelector.value;
+    bookingWoodDisplay.value = selectedWood.name;
+    amount.textContent = basePrice === null
+      ? "Price on request"
+      : `₹${Math.max(0, basePrice + adjustment).toLocaleString("en-IN")}`;
+  };
+
+  woodSelector.addEventListener("change", updateWoodPrice);
+  updateWoodPrice();
 
   const rating = document.getElementById("star-rating");
   rating.setAttribute("aria-label", `${product.rating} out of 5 stars`);
