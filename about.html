@@ -21,7 +21,7 @@
   <!-- 
     - custom css link
   -->
-  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="./assets/css/style.css?v=phone-layout-20261002">
 
   <!-- 
     - google font link
@@ -83,6 +83,141 @@
             opacity: 1;
             transform: scale(1);
         }
+    }
+
+    .about-page {
+      padding: 80px 0 40px;
+      background: linear-gradient(180deg, #f8f6f0 0%, #fffdf9 100%);
+    }
+
+    .about-hero {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 36px;
+      align-items: center;
+    }
+
+    .about-hero__eyebrow {
+      display: inline-block;
+      margin-bottom: 16px;
+      color: #6d5632;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .about-hero h1 {
+      margin: 0 0 18px;
+      color: #1c2d24;
+      font-size: clamp(2.5rem, 4vw, 4rem);
+      line-height: 1.1;
+    }
+
+    .about-hero p {
+      margin: 0;
+      color: #4f554d;
+      font-size: 1.06rem;
+      line-height: 1.8;
+    }
+
+    .about-hero__card {
+      overflow: hidden;
+      border-radius: 22px;
+      background: #fff;
+      box-shadow: 0 18px 40px rgba(25, 37, 31, 0.08);
+    }
+
+    .about-hero__card img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      min-height: 420px;
+      object-fit: cover;
+    }
+
+    .about-section {
+      padding: 30px 0 20px;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 24px;
+      margin-top: 28px;
+    }
+
+    .info-card {
+      padding: 28px 22px;
+      border: 1px solid rgba(27, 37, 33, 0.08);
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.8);
+      box-shadow: 0 14px 30px rgba(17, 17, 17, 0.03);
+    }
+
+    .info-card h3 {
+      margin: 0 0 14px;
+      color: #1d2c24;
+      font-size: 1.3rem;
+    }
+
+    .info-card p,
+    .info-card li {
+      color: #4f554d;
+      line-height: 1.7;
+      font-size: 0.98rem;
+    }
+
+    .info-card ul {
+      margin: 0;
+      padding-left: 18px;
+    }
+
+    .info-card__tag {
+      display: inline-flex;
+      margin-bottom: 12px;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: #efe6d7;
+      color: #6d5632;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .workshop-spotlight {
+      margin-top: 18px;
+      padding: 26px;
+      border-radius: 20px;
+      background: linear-gradient(135deg, #f4efe9 0%, #f4f7f1 100%);
+    }
+
+    .workshop-spotlight__grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px;
+      margin-top: 18px;
+    }
+
+    .workshop-spotlight__card {
+      padding: 22px;
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.7);
+    }
+
+    .workshop-spotlight__card h4 {
+      margin: 0 0 10px;
+      color: #1d2c24;
+      font-size: 1.1rem;
+    }
+
+    @media (max-width: 900px) {
+      .about-hero,
+      .about-grid,
+      .workshop-spotlight__grid {
+        grid-template-columns: 1fr;
+      }
     }
     </style>
   <link rel="stylesheet" href="./assets/css/site-assistant.css">
@@ -251,28 +386,116 @@
 
 
   <main>
-    
-
-      <section class="section about" id="about" aria-label="about">
-        <div class="container">
-          <!-- <h1 class="section-title">About</h1> -->
-
-
-          <h2 class="section-title">Vishwakarma Art</h2>
-
-          <p class="section-text">
-           "VISHWAKARMA ARTS" is fantastic factory which "MANUFACTURER & SUPPLIERS ALL TYPES OF HANDICRAFT ITEMS". Greetings to everyone! Welcome to Vishwakarma Art. This factory offers great items with different design options. Vishwakarma Art always tries to keep its customers happy by making items as per the customer's wishes. This factory provides home delivery and online booking of wooden items. It can make any design of wooden items. If you want to like or make new design items then contact on        <a class="nav-link "  style="color: #42ed09;  font-weight: bold ;  font-size: 15px;" href="https://wa.me/919588938688?text=Hi%20Vishwakarma%20Art%2C%20I%27d%20like%20to%20know%20more.">whatsapp</a>
-</p>
-<h2>Founder/CEO <h4>Mr. Sudhir Vishwakarma</h4> </h2>
-<hr>
-
-         
+    <section class="about-page section" id="about" aria-label="About Vishwakarma Arts">
+      <div class="container">
+        <div class="about-hero">
+          <div>
+            <span class="about-hero__eyebrow">Crafted with care</span>
+            <h1>About Vishwakarma Art</h1>
+            <p>
+              Vishwakarma Art is a trusted name in handcrafted wooden furniture and home decor, bringing together
+              traditional craftsmanship, modern design, and practical functionality. From elegant wooden temples and
+              statement dining tables to thoughtful storage solutions and custom-made pieces, we create furniture that
+              fits the rhythm of real homes and lifestyles.
+            </p>
+            <p style="margin-top: 20px;">
+              We believe every piece should reflect quality, comfort, and personality. Our team works closely with
+              customers to transform ideas into beautifully finished furniture that feels both timeless and personal.
+            </p>
           </div>
 
+          <div class="about-hero__card">
+            <img src="./assets/images/hero-product-5.jpg" alt="Handcrafted wooden furniture" />
+          </div>
         </div>
-      </section>
 
-<section class="section hero" id="home" aria-label="home">
+        <div class="about-grid">
+          <article class="info-card">
+            <span class="info-card__tag">About Us</span>
+            <h3>Built on heritage and honesty</h3>
+            <p>
+              Based in Jodhpur, Vishwakarma Art is a family-driven furniture brand dedicated to creating durable,
+              distinctive, and artistically crafted pieces for homes, offices, and spiritual spaces.
+            </p>
+          </article>
+
+          <article class="info-card" id="featured-products">
+            <span class="info-card__tag">Featured Products</span>
+            <h3>Designed for everyday living</h3>
+            <ul>
+              <li>Wooden temple and pooja units</li>
+              <li>Dining tables and coffee tables</li>
+              <li>Beds, sideboards, and study tables</li>
+              <li>Bookshelves, mirrors, and shoe racks</li>
+            </ul>
+          </article>
+
+          <article class="info-card" id="why-choose-us">
+            <span class="info-card__tag">Why Choose Us</span>
+            <h3>Quality you can trust</h3>
+            <p>
+              We combine premium wood, experienced craftsmanship, customer-focused customization, and dependable
+              service to deliver furniture that stands the test of time.
+            </p>
+          </article>
+        </div>
+
+        <div class="about-section">
+          <div class="about-grid">
+            <article class="info-card" id="custom-furniture">
+              <span class="info-card__tag">Custom Furniture</span>
+              <h3>Made around your vision</h3>
+              <p>
+                Whether you need a unique dining arrangement, a personalized study setup, or a statement piece for a
+                special room, our custom furniture service gives you freedom to choose design, wood, finish, and size.
+              </p>
+            </article>
+
+            <article class="info-card" id="our-workshop">
+              <span class="info-card__tag">Our Workshop</span>
+              <h3>Where skill becomes furniture</h3>
+              <p>
+                Our workshop is where raw wood is shaped into practical, elegant pieces through precise cutting,
+                detailing, polishing, and careful finishing by skilled artisans.
+              </p>
+            </article>
+
+            <article class="info-card">
+              <span class="info-card__tag">Founder</span>
+              <h3>Mr. Sudhir Vishwakarma</h3>
+              <p>
+                Guided by his vision, the brand continues to create furniture that balances traditional craftsmanship
+                with modern living needs.
+              </p>
+            </article>
+          </div>
+        </div>
+
+        <div class="workshop-spotlight" id="why-choose-vishwakarma-art">
+          <h2 class="section-title" style="margin-bottom: 0;">Why Choose Vishwakarma Art</h2>
+          <div class="workshop-spotlight__grid">
+            <div class="workshop-spotlight__card">
+              <h4>Handcrafted Excellence</h4>
+              <p>Every item is shaped with attention to detail, natural textures, and durable finishing.</p>
+            </div>
+            <div class="workshop-spotlight__card">
+              <h4>Custom Design Support</h4>
+              <p>We design furniture as per your preferences, room dimensions, and lifestyle requirements.</p>
+            </div>
+            <div class="workshop-spotlight__card">
+              <h4>Premium Wood & Finish</h4>
+              <p>Our materials and finishes are selected for longevity, comfort, and elegant appearance.</p>
+            </div>
+            <div class="workshop-spotlight__card">
+              <h4>Trusted Service</h4>
+              <p>We offer supportive guidance, home delivery, and a commitment to customer satisfaction.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section hero" id="home" aria-label="home">
         <div class="container">
 
           <ul class="hero-list">
@@ -393,27 +616,17 @@
         </div>
 
         <ul class="footer-list">
-
           <li>
-            <p class="footer-list-title">Help & Information</p>
+            <p class="footer-list-title">Info</p>
           </li>
 
           <li>
-            <a href="#" class="footer-link">Help & Contact Us</a>
+            <a href="terms-policy.html#terms-and-conditions" class="footer-link">Term &amp; Condition</a>
           </li>
 
           <li>
-            <a href="#" class="footer-link">Returns & Refunds</a>
+            <a href="terms-policy.html#policy" class="footer-link">Policy</a>
           </li>
-
-          <li>
-            <a href="#" class="footer-link">Online Stores</a>
-          </li>
-
-          <li>
-            <a href="#" class="footer-link">Terms & Conditions</a>
-          </li>
-
         </ul>
 
         <ul class="footer-list">
@@ -425,18 +638,21 @@
           <li>
             <a href="about.html" class="footer-link">About Us</a>
           </li>
-
           <li>
-            <a href="#" class="footer-link">What We Do</a>
+            <a href="about.html#featured-products" class="footer-link">Featured Products</a>
+          </li>
+          <li>
+            <a href="about.html#why-choose-vishwakarma-art" class="footer-link">Why Choose Vishwakarma Art</a>
+          </li>
+          <li>
+            <a href="about.html#custom-furniture" class="footer-link">Custom Furniture</a>
+          </li>
+          <li>
+            <a href="about.html#our-workshop" class="footer-link">Our Workshop</a>
           </li>
 
-          <li>
-            <a href="#" class="footer-link">FAQ Page</a>
-          </li>
 
-          <li>
-            <a href="#" class="footer-link">Contact Us</a>
-          </li>
+
 
         </ul>
 
@@ -454,8 +670,8 @@
 
           <div class="wrapper">
 
-            <a href="#" class="footer-link">Term & Condition</a>
-            <a href="#" class="footer-link">Policy</a>
+            
+            
             <a href="https://www.google.com/maps/place/Vishwakarma+art/@26.2118763,73.009431,17z/data=!3m1!4b1!4m6!3m5!1s0x39418bb86dc0918b:0x8358a74cc35a317c!8m2!3d26.2118763!4d73.009431!16s%2Fg%2F11vl9d0z_2?entry=ttu" class="footer-link">Map</a>
 
           </div>
