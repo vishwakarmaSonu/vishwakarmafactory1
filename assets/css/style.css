@@ -306,7 +306,22 @@ body.active { overflow: hidden; }
 
 @media (max-width: 575px) {
   .container {
-    padding-inline: 0 !important;
+    padding-inline: 15px !important;
+  }
+
+  .footer-top {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px 16px;
+    padding-block-end: 32px;
+  }
+
+  .footer-top > .footer-brand { grid-column: 1 / -1; }
+
+  .footer-top > :nth-child(3) { grid-column: 1 / -1; }
+
+  .footer-top > :nth-child(4) {
+    grid-column: 2;
+    grid-row: 2;
   }
 
   .header .container { gap: 8px; }
@@ -879,9 +894,20 @@ a.card-meta-text:is(:hover, :focus) { color: var(--tan-crayola); }
 
 .footer-top {
   display: grid;
+  align-items: start;
   gap: 30px;
   padding-block-end: 40px;
 }
+
+.footer-top > * { min-width: 0; }
+
+.footer-top .footer-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.footer-top .footer-list > li + li { margin-block-start: 6px; }
 
 .footer-list-item {
   display: flex;
@@ -890,9 +916,19 @@ a.card-meta-text:is(:hover, :focus) { color: var(--tan-crayola); }
 }
 
 .footer-link {
+  display: inline-block;
+  max-width: 100%;
   padding-block: 4px;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
   transition: var(--transition-1);
 }
+
+.footer-brand > ul { padding-inline-start: 0; }
+
+.footer-brand .footer-list-item { flex-wrap: wrap; }
+
+.footer-brand .address { overflow-wrap: anywhere; }
 
 .footer-link:is(:hover, :focus) { color: var(--tan-crayola); }
 
@@ -905,9 +941,14 @@ a.card-meta-text:is(:hover, :focus) { color: var(--tan-crayola); }
   margin-block-end: 15px;
 }
 
-.footer-form { position: relative; }
+.footer-form {
+  position: relative;
+  width: 100%;
+}
 
 .footer .email-field {
+  box-sizing: border-box;
+  width: 100%;
   padding-block: 10px;
   padding-inline-end: 35px;
   border-block-end: 1px solid var(--black_25);
@@ -1227,7 +1268,8 @@ a.card-meta-text:is(:hover, :focus) { color: var(--tan-crayola); }
    */
 
   .footer-top {
-    grid-template-columns: 1fr 0.75fr 0.6fr 1fr;
+    grid-template-columns: minmax(250px, 1.3fr) minmax(130px, 0.65fr) minmax(230px, 1.15fr) minmax(210px, 1.05fr);
+    column-gap: clamp(24px, 3vw, 40px);
     padding-block-end: 60px;
   }
 
