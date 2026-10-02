@@ -335,6 +335,34 @@
   gap: 1rem;
 }
 
+.wood-selector-group {
+  display: grid;
+  width: min(100%, 26rem);
+  gap: 0.45rem;
+}
+
+.wood-selector-group label {
+  color: var(--catalog-ink);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.wood-selector-group select {
+  width: 100%;
+  min-height: 2.9rem;
+  padding: 0.65rem 0.8rem;
+  border: 1px solid #d8d5cb;
+  border-radius: 0.65rem;
+  background: #fff;
+  color: var(--catalog-ink);
+  font: inherit;
+}
+
+.wood-selector-group select:focus-visible {
+  outline: 3px solid rgb(49 91 69 / 25%);
+  border-color: var(--catalog-green);
+}
+
 .image-details #details-title {
   color: var(--catalog-ink);
   font-size: clamp(1.8rem, 4vw, 2.75rem);
