@@ -1,6 +1,6 @@
 window.VISHWAKARMA_SETTINGS = Object.freeze({
-  contactUrl: 'tel:+919588938688',
-  whatsappUrl: 'https://wa.me/919588938688?text=Hi%20Vishwakarma%20Art%2C%20I%27d%20like%20to%20know%20more.',
+  contactUrl: 'tel:+919549759857',
+  whatsappUrl: 'https://wa.me/919549759857?text=Hi%20Vishwakarma%20Art%2C%20I%27d%20like%20to%20know%20more.',
   feedbackUrl: 'https://script.google.com/macros/s/AKfycbwtgE0UD4llXd3LGf94Wfh80yGlcvHssyO2blFCVTic5pEH-_6x7aih8IjmlMyWGckqHg/exec',
 });
 
