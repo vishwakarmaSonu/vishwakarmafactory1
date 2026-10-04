@@ -41,7 +41,7 @@ function buildProductDescription(product) {
                     ? 'for keeping entryways neat and organised'
                     : 'for devotional, peaceful corners at home';
 
-return `${safeName} by Vishwakarma Art is a handcrafted ${product.categoryLabel ? product.categoryLabel.toLowerCase() : 'furniture'} piece. ${itemLabel} is designed ${usage} and offers practical comfort with a warm handcrafted finish. ${categoryCopy} <b>Please contact us to confirm exact dimensions, wood finish, and customisation options for the final piece.</b>`;}
+return `${safeName} by Vishwakarma Art is a handcrafted ${product.categoryLabel ? product.categoryLabel.toLowerCase() : 'furniture'} piece. ${itemLabel} is designed ${usage} and offers practical comfort with a warm handcrafted finish. ${categoryCopy} Please contact us to confirm exact dimensions, wood finish, and customisation options for the final piece.`;}
 
 window.VISHWAKARMA_PRODUCTS = Object.freeze(
 [
