@@ -876,19 +876,15 @@ background-color: #808080;
         <div class="details-gallery__track" data-product-track tabindex="0" aria-label="Swipe or use the arrow keys to view product angles">
           <figure class="details-gallery__item">
             <img data-product-view="front" alt="">
-            <figcaption>Front</figcaption>
           </figure>
           <figure class="details-gallery__item">
             <img data-product-view="rear" alt="">
-            <figcaption>Rear</figcaption>
           </figure>
           <figure class="details-gallery__item">
             <img data-product-view="left" alt="">
-            <figcaption>Left</figcaption>
           </figure>
           <figure class="details-gallery__item">
             <img data-product-view="right" alt="">
-            <figcaption>Right</figcaption>
           </figure>
         </div>
         <div class="details-gallery__controls">
@@ -902,16 +898,6 @@ background-color: #808080;
             <p id="details-productid" class="rating">Image Title</p>
       
             <p id="details-description" class="rating">Image Description</p>
-
-            <div class="wood-selector-group">
-              <label for="wood-type-selector">Type of wood</label>
-              <select id="wood-type-selector">
-                <option value="sheesham">Sheesham</option>
-                <option value="mango">Mango</option>
-                <option value="babula" selected>Babula</option>
-                <option value="shagman">Shagman</option>
-              </select>
-            </div>
 
             <p id="details-amount" class="rating">Image Title</p>
               <div class="rating" id="star-rating"></div>
@@ -983,9 +969,13 @@ background-color: #808080;
                
 
               <div class="booking-field">
-                <label for="preferred-wood-display">Preferred wood</label>
-                <input type="text" id="preferred-wood-display" value="Babula" readonly>
-                <input type="hidden" id="wood" name="wood" value="babula">
+                <label for="wood">Preferred wood</label>
+                <select id="wood" name="wood" required>
+                  <option value="sheesham" selected>Sheesham</option>
+                  <option value="mango">Mango</option>
+                  <option value="babula">Babula</option>
+                  <option value="shagman">Shagman</option>
+                </select>
               </div>
 
               <label class="booking-terms" for="acceptTerms">
@@ -1046,11 +1036,8 @@ background-color: #808080;
         function openModal() {
             document.getElementById('book-button').classList.add('hidden');
     
-    document.getElementById('bookingModal').style.display = 'flex';
-    document.getElementById('wood').value = document.getElementById('wood-type-selector').value;
-            document.getElementById('preferred-wood-display').value =
-              document.getElementById('wood-type-selector').selectedOptions[0].textContent;
-    // Copy image details to the booking modal
+            document.getElementById('bookingModal').style.display = 'flex';
+            // Copy image details to the booking modal
     document.getElementById('booking-image').innerText = document.getElementById('details-title').innerText;
     document.getElementById('itemid').innerText = document.getElementById('details-productid').innerText;
     }
@@ -1086,7 +1073,7 @@ background-color: #808080;
           submitButton.disabled = true;
           confirmationMessage.innerText = '';
 
-          fetch('https://script.google.com/macros/s/AKfycbwl0TieJUjbqOnW6dW5jLxDuB8SRKc_LEZbQ8stIXxnvQVlxOt-mwIuuzLedWmDWCckSQ/exec', {
+          fetch('https://script.google.com/macros/s/AKfycbxB9BaOpvGd0yG7WTli7e1tliNZxgf3Nhz0gvfX11ChrvXotOnssYX1aqDI3LgDtSciNA/exec', {
             method: 'POST',
             mode: 'cors',
             body: new URLSearchParams({
