@@ -70,35 +70,32 @@
   document.getElementById("details-title").textContent = product.name;
   document.getElementById("details-productid").textContent = `Item ID ${product.itemId}`;
 
-  document.getElementById("details-description").textContent =
-    typeof product.description === "string" ? product.description : "";
+  const description = typeof product.description === "string" ? product.description : "";
+  const highlightedSentence =
+    "Please contact us to confirm the exact dimensions, wood selection, and any custom design requirements.";
+  const descriptionElement = document.getElementById("details-description");
+  const highlightedSentenceIndex = description.indexOf(highlightedSentence);
+  descriptionElement.textContent = "";
 
-  const woodTypes = {
-    sheesham: { name: "Sheesham", rate: 900 },
-    mango: { name: "Mango", rate: 700 },
-    babula: { name: "Babula", rate: 600 },
-    shagman: { name: "Shagman", rate: 3000 },
-  };
-  const woodSelector = document.getElementById("wood-type-selector");
-  const bookingWood = document.getElementById("wood");
-  const bookingWoodDisplay = document.getElementById("preferred-wood-display");
+  if (highlightedSentenceIndex === -1) {
+    descriptionElement.textContent = description;
+  } else {
+    descriptionElement.append(
+      document.createTextNode(description.slice(0, highlightedSentenceIndex)),
+    );
+    const highlightedText = document.createElement("mark");
+    highlightedText.textContent = highlightedSentence;
+    descriptionElement.append(highlightedText);
+    descriptionElement.append(
+      document.createTextNode(description.slice(highlightedSentenceIndex + highlightedSentence.length)),
+    );
+  }
+
   const amount = document.getElementById("details-amount");
   const basePrice = product.price === null ? null : Number(product.price);
-  const babulaRate = woodTypes.babula.rate;
-
-  const updateWoodPrice = () => {
-    const selectedWood = woodTypes[woodSelector.value] || woodTypes.babula;
-    const selectedPrice = basePrice === null ? null : Math.round((basePrice / babulaRate) * selectedWood.rate);
-
-    bookingWood.value = woodSelector.value;
-    bookingWoodDisplay.value = selectedWood.name;
-    amount.textContent = selectedPrice === null
-      ? "Price on request"
-      : `₹${selectedPrice.toLocaleString("en-IN")}`;
-  };
-
-  woodSelector.addEventListener("change", updateWoodPrice);
-  updateWoodPrice();
+  amount.textContent = basePrice === null
+    ? "Price on request"
+    : `₹${basePrice.toLocaleString("en-IN")}`;
 
   const rating = document.getElementById("star-rating");
   rating.setAttribute("aria-label", `${product.rating} out of 5 stars`);
