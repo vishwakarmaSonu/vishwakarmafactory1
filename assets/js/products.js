@@ -234,12 +234,12 @@ window.VISHWAKARMA_PRODUCTS = Object.freeze(
   },
   {
     "id": "18",
-    "name": "Chair",
+    "name": "Around Cherry side Table",
     "itemId": "1122",
-    "image": "assets/images/c1.jpg",
+    "image": "assets/images/cherry_table.jpg",
     "description": "Size is not decided yet",
-    "price": 7099,
-    "rating": 4,
+    "price": 5500,
+    "rating": 5,
     "category": "chair",
     "categoryLabel": "Chairs"
   },
