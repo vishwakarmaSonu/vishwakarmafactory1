@@ -289,12 +289,12 @@ window.VISHWAKARMA_PRODUCTS = Object.freeze(
   },
   {
     "id": "23",
-    "name": "Chair",
+    "name": "Rocking Chair",
     "itemId": "1127",
-    "image": "assets/images/4chair.jpg",
-    "description": "Size is not decided yet",
-    "price": 9999,
-    "rating": 4,
+    "image": "assets/images/Rock_chair.jpeg",
+    "description": "Size is 53 decided yet",
+    "price": ,
+    "rating": 5,
     "category": "chair",
     "categoryLabel": "Chairs"
   },
