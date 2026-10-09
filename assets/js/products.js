@@ -971,11 +971,11 @@ window.VISHWAKARMA_PRODUCTS = Object.freeze(
   },
   {
     "id": "85",
-    "name": "Coffee Table",
+    "name": "Round cherry side Table",
     "itemId": "1179",
-    "image": "assets/images/ct6.jpeg",
+    "image": "assets/images/cherry_table.jpeg",
     "description": "Size is not decided yet",
-    "price": 11999,
+    "price": 5500,
     "rating": 4,
     "category": "coffeetable",
     "categoryLabel": "Coffee tables"
