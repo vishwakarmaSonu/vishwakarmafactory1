@@ -458,9 +458,36 @@
   gap: 1rem;
 }
 
+.customer-feedback__person {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  min-width: 0;
+}
+
+.customer-feedback__avatar {
+  display: inline-grid;
+  width: 2.15rem;
+  height: 2.15rem;
+  flex: 0 0 auto;
+  place-items: center;
+  border: 1px solid #d1dccd;
+  border-radius: 50%;
+  background: #edf4ef;
+  color: #315b45;
+}
+
+.customer-feedback__avatar svg {
+  width: 1.1rem;
+  height: 1.1rem;
+}
+
 .customer-feedback__name {
+  overflow: hidden;
   color: #1c2923;
   font-weight: 700;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .customer-feedback__rating {
