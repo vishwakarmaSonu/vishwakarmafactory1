@@ -234,11 +234,11 @@ window.VISHWAKARMA_PRODUCTS = Object.freeze(
   },
   {
     "id": "18",
-    "name": "Around Cherry side Table",
+    "name": "Wooden accent arm chair",
     "itemId": "1122",
-    "image": "assets/images/cherry_table.jpg",
-    "description": "Size is not decided yet",
-    "price": 5500,
+    "image": "assets/images/shoffa_chair.jpeg",
+    "description": "Size is 68 decided yet",
+    "price": 7500,
     "rating": 5,
     "category": "chair",
     "categoryLabel": "Chairs"
