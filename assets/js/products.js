@@ -293,7 +293,7 @@ window.VISHWAKARMA_PRODUCTS = Object.freeze(
     "itemId": "1127",
     "image": "assets/images/4chair.jpg",
     "description": "Size is not decided yet",
-    "price": ,
+    "price": null,
     "rating": 5,
     "category": "chair",
     "categoryLabel": "Chairs"
