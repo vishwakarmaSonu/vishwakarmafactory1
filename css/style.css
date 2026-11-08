@@ -568,6 +568,21 @@ body.modal-open { overflow: hidden; }
   to { opacity: 1; transform: scale(1); }
 }
 @media (max-width: 860px) {
+  .home-page .nav-links {
+    background: #493321;
+    border-bottom-color: rgba(255,255,255,.12);
+  }
+  .home-page .dropdown { width: 100%; }
+  .home-page .dropdown > .menu {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    padding-left: 8px;
+  }
+  .home-page .menu a { padding: 8px 10px; }
   .home-page .hero-inner { width: min(700px, 100% - 40px); gap: 34px; }
   .home-page .hero-visual { width: 100%; min-height: 320px; aspect-ratio: 1.3; border-radius: 4px 80px 4px 4px; }
   .home-page .cat-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
@@ -577,6 +592,12 @@ body.modal-open { overflow: hidden; }
   .home-page .feature { min-height: 0; }
 }
 @media (max-width: 520px) {
+  .home-page .nav { gap: 10px; padding: 10px 0; }
+  .home-page .brand { gap: 8px; font-size: 1.2rem; }
+  .home-page .brand-mark { width: 46px; height: 38px; }
+  .home-page .brand-copy { white-space: nowrap; }
+  .home-page .brand small { font-size: .55rem; letter-spacing: 1px; }
+  .home-page .menu-toggle { padding: 5px 8px; font-size: 1.05rem; }
   .home-page .hero-inner { width: min(100% - 36px, 440px); padding: 46px 0 52px; }
   .home-page .hero h1 { font-size: clamp(2.25rem, 8.6vw, 3rem); }
   .home-page .hero-visual { min-height: 280px; aspect-ratio: 1.08; border-radius: 4px 66px 4px 4px; }
