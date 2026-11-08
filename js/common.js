@@ -31,6 +31,26 @@ async function api(path, opts = {}) {
   return data;
 }
 
+async function staticCatalog(path) {
+  const res = await fetch(path);
+  if (!res.ok) throw new Error(`Catalog request failed with status ${res.status}`);
+  return res.json();
+}
+
+async function loadCategories() {
+  try { return await api('/api/categories'); }
+  catch { return staticCatalog('/data/categories.json'); }
+}
+
+async function loadProducts(category) {
+  const query = category ? `?category=${encodeURIComponent(category)}` : '';
+  try { return await api(`/api/products${query}`); }
+  catch {
+    const products = await staticCatalog('/data/products.json');
+    return category ? products.filter(product => product.category === category) : products;
+  }
+}
+
 function waLink(text) { return `https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent(text)}`; }
 
 function displayPrice(price) {
@@ -55,7 +75,8 @@ function socialIcon(name) {
 
 async function renderChrome(active) {
   let cats = [];
-  try { cats = await api('/api/categories'); } catch {}
+  try { cats = await loadCategories(); }
+  catch (error) { console.error('Failed to load catalog categories:', error); }
   const header = document.getElementById('site-header');
   if (header) header.outerHTML = `
     <div class="topbar">${esc(SITE.topbar)}</div>

@@ -1,7 +1,8 @@
 (async function () {
   const cats = await renderChrome('home');
   let products = [];
-  try { products = await api('/api/products'); } catch {}
+  try { products = await loadProducts(); }
+  catch (error) { console.error('Failed to load catalog products:', error); }
 
   const counts = {};
   products.forEach(p => counts[p.category] = (counts[p.category] || 0) + 1);

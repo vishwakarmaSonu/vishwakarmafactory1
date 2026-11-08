@@ -17,8 +17,12 @@
   document.getElementById('crumb').textContent = cat.name;
 
   let products = [];
-  try { products = await api('/api/products?category=' + encodeURIComponent(slug)); }
-  catch { grid.innerHTML = '<p class="empty">Could not load products. Please refresh.</p>'; return; }
+  try { products = await loadProducts(slug); }
+  catch (error) {
+    console.error('Failed to load collection products:', error);
+    grid.innerHTML = '<p class="empty">Could not load products. Please refresh.</p>';
+    return;
+  }
 
   function draw() {
     const q = document.getElementById('q').value.trim().toLowerCase();

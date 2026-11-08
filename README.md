@@ -50,4 +50,4 @@ Business name, phone numbers, WhatsApp number, address and social links are in t
 
 ## Hosting note
 
-This needs a host that can run Node.js (a VPS, Render, Railway, etc.). Ordinary static-only hosting cannot save admin uploads.
+The public pages can be hosted statically; they load the checked-in catalog JSON and images when the Node API is unavailable. Admin changes, logins, and uploads require a host that can run Node.js (a VPS, Render, Railway, etc.). Static hosting cannot save admin uploads.
