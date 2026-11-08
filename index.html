@@ -1,441 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to Our Website</title>
-    <style>
-      @keyframes brand-mark-arrive {
-        from { opacity: 0; transform: scale(0.94); }
-        to { opacity: 1; transform: scale(1); }
-      }
-
-      @keyframes brand-copy-arrive {
-        from { opacity: 0; transform: translateY(8px); }
-        to { opacity: 1; transform: translateY(0); }
-      }
-
-      @keyframes brand-piece-arrive {
-        from { opacity: 0; scale: 0.7; }
-        to { opacity: 1; scale: 1; }
-      }
-
-      .brand-splash {
-        box-sizing: border-box;
-        display: grid;
-        min-height: 100vh;
-        min-height: 100svh;
-        place-items: center;
-        padding: 32px 16px;
-        background: #f8f6f0;
-        text-align: center;
-      }
-
-      .brand-splash__content {
-        display: flex;
-        width: min(100%, 540px);
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-      }
-
-      .brand-splash__mark {
-        position: relative;
-        flex: none;
-        --mark-width: 270px;
-        --mark-height: 190px;
-        --mark-outline: 2px;
-        --bar-top: 24px;
-        --bar-width: 56px;
-        --bar-height: 142px;
-        --bar-inset: 34px;
-        --dot-size: 56px;
-        --dot-inset: 14px;
-        --blue-dot-offset: 44px;
-        --green-dot-offset: 12px;
-        width: var(--mark-width);
-        height: var(--mark-height);
-      }
-
-      .brand-mark__piece {
-        position: absolute;
-        display: block;
-        box-sizing: border-box;
-        border: var(--mark-outline) solid #d7b65c;
-        box-shadow: 0 2px 0 rgba(37, 39, 31, 0.08);
-        opacity: 1;
-        scale: 1;
-      }
-
-      .brand-splash__mark.is-animated .brand-mark__piece {
-        animation: brand-piece-arrive 520ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
-        animation-delay: var(--piece-delay, 0ms);
-      }
-
-      .brand-mark__bar {
-        top: var(--bar-top);
-        width: var(--bar-width);
-        height: var(--bar-height);
-        border-radius: 999px;
-        transform: rotate(-28deg);
-      }
-
-      .brand-mark__bar--blue {
-        left: var(--bar-inset);
-        background: #1598f2;
-        --piece-delay: 0ms;
-      }
-
-      .brand-mark__bar--green {
-        right: var(--bar-inset);
-        background: #16a85e;
-        --piece-delay: 240ms;
-      }
-
-      .brand-mark__dot {
-        width: var(--dot-size);
-        height: var(--dot-size);
-        border-radius: 50%;
-      }
-
-      .brand-mark__dot--blue {
-        left: calc(50% - var(--blue-dot-offset));
-        top: var(--dot-inset);
-        background: #1598f2;
-        --piece-delay: 120ms;
-      }
-
-      .brand-mark__dot--green {
-        left: calc(50% - var(--green-dot-offset));
-        bottom: var(--dot-inset);
-        background: #16a85e;
-        --piece-delay: 360ms;
-      }
-
-      #animated-text {
-        margin: 0;
-        color: #315b45;
-        font-family: 'Mr De Haviland', cursive;
-        font-size: 52px;
-        font-weight: 500;
-        line-height: 1;
-        animation: brand-copy-arrive 600ms 100ms ease-out both;
-      }
-
-      .brand-splash__divider {
-        width: 44px;
-        height: 2px;
-        margin: 2px 0;
-        background: #bd8d4b;
-      }
-
-      .brand-splash__tagline,
-      .brand-splash__welcome {
-        margin: 0;
-        color: #72746b;
-        font-family: Arial, sans-serif;
-      }
-
-      .brand-splash__tagline {
-        font-size: 12px;
-        font-weight: 700;
-        text-transform: uppercase;
-      }
-
-      .brand-splash__welcome {
-        margin-top: 6px;
-        color: #25271f;
-        font-size: 16px;
-        font-weight: 600;
-      }
-
-      @media (max-width: 600px) {
-        #animated-text { font-size: 36px; }
-        .brand-splash__mark {
-          --mark-width: 220px;
-          --mark-height: 155px;
-          --mark-outline: 1.6px;
-          --bar-top: 20px;
-          --bar-width: 46px;
-          --bar-height: 116px;
-          --bar-inset: 28px;
-          --dot-size: 46px;
-          --dot-inset: 11px;
-          --blue-dot-offset: 36px;
-          --green-dot-offset: 10px;
-        }
-      }
-
-      @media (max-width: 340px) {
-        .brand-splash__mark {
-          --mark-width: 190px;
-          --mark-height: 134px;
-          --mark-outline: 1.4px;
-          --bar-top: 17px;
-          --bar-width: 39px;
-          --bar-height: 100px;
-          --bar-inset: 24px;
-          --dot-size: 39px;
-          --dot-inset: 10px;
-          --blue-dot-offset: 31px;
-          --green-dot-offset: 8px;
-        }
-      }
-
-      @media (prefers-reduced-motion: reduce) {
-        .brand-mark__piece {
-          opacity: 1;
-          scale: 1;
-          animation: none !important;
-        }
-
-        #animated-text { animation: none; }
-      }
-    </style>
-    <style>
-        body {
-          margin: 0;
-          padding: 0;
-          background: #f8f6f0;
-        }
-    </style>
-  <link rel="stylesheet" href="./assets/css/site-assistant.css">
-</head>
-<body>
-
-    
-
-</body>
-</html>
-
-
-
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- 
-    - primary meta tag
-  -->
-  <title>Vishwakarma Arts</title>
-  <meta name="title" content="Vishwakarma Arts - Get Quality Furniture">
-  <meta name="description" content="Manufacture and suppliers all type of Handicrafe items">
-
-  <!-- 
-    - favicon
-  -->
-  <link rel="shortcut icon" href="./favicon_io/favicon.ico" type="image/svg+xml">
-
-  <!-- 
-    - custom css link
-  -->
-  <link rel="stylesheet" href="./assets/css/style.css?v=phone-layout-20261002">
-
-  <!-- 
-    - google font link
-  -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Mr+De+Haviland&family=Roboto:wght@400;500;700&display=swap"
-    rel="stylesheet">
-
-  <!-- 
-    - preload images
-  -->
-  <link rel="preload" as="image" href="./assets/images/hero-product-1.jpg">
-  <link rel="preload" as="image" href="./assets/images/hero-product-2.jpg">
-  <link rel="preload" as="image" href="./assets/images/hero-product-3.jpg">
-  <link rel="preload" as="image" href="./assets/images/hero-product-4.jpg">
-  <link rel="preload" as="image" href="./assets/images/hero-product-5.jpg">
-
-  <!-- <script>
-    alert("Welcome To Vishwakarma Art \n Happy Diwali");
-
-  </script> -->
+  <title>Vishwakarma Arts – Handcrafted Wooden Furniture</title>
+  <meta name="description" content="Manufacturer and supplier of handcrafted wooden furniture and handicraft items.">
+  <link rel="icon" type="image/png" href="/assets/brand-mark.png">
+  <link rel="stylesheet" href="/css/style.css">
 </head>
+<body class="home-page">
+  <div id="site-header"></div>
 
-<body id="top">
-
-  <!-- 
-    - #HEADER
-  -->
-
-  <header class="header" data-header>
-    <div class="container">
-
-      <a href="/" class="logo" style="display:flex; align-items:center; gap:12px; text-decoration:none; color:#111; font-weight:700; line-height:1.1; font-size:185%;">
-        <img src="./assets/images/1.png" style="width:52px; height:auto; display:block; flex-shrink:0;">
-        <span style="display:flex; flex-direction:column; align-items:flex-start;">
-          <span style="font-size:1.05em; letter-spacing:0.04em;">Vishwakarma Arts</span>
-          <small style="font-size:0.42em; font-weight:600; letter-spacing:0.08em; color:#6d5632; text-transform:uppercase;">Handcrafted Wooden Furniture</small>
-        </span>
-      </a>
-
-      <div class="header-action">
-        <div class="notification"></div>
-        <select style="color: #000000; width: min(190px, 32vw); max-width: 100%; font-weight: 700; border: 1px solid rgba(17,17,17,0.14); border-radius: 999px; background: #f8f6f1; padding: 0.55rem 0.9rem; appearance: none; transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease, background-color 0.25s ease;" id="dropdown" onchange="if (this.value) window.location.href = this.value;" onfocus="this.style.transform='translateY(-1px)'; this.style.boxShadow='0 8px 20px rgba(49, 91, 69, 0.12)'; this.style.borderColor='rgba(49, 91, 69, 0.45)'; this.style.backgroundColor='#fffdf8';" onblur="this.style.transform=''; this.style.boxShadow=''; this.style.borderColor='rgba(17,17,17,0.14)'; this.style.backgroundColor='#f8f6f1';" onmouseenter="this.style.transform='translateY(-1px)'; this.style.boxShadow='0 8px 20px rgba(49, 91, 69, 0.12)'; this.style.borderColor='rgba(49, 91, 69, 0.45)';" onmouseleave="this.style.transform=''; this.style.boxShadow=''; this.style.borderColor='rgba(17,17,17,0.14)';">
-          <option value="al.html">Collections</option>
-          <option value="woodentemple.html">Wooden Temple</option>
-          <option value="chair.html">Chair</option>
-          <option value="diningtable.html">Dining Table</option>
-          <option value="beds.html">Beds</option>
-          <option value="sideboards.html">Sideboards</option>
-          <option value="studytables.html">Study Tables</option>
-          <option value="mirror.html">Mirror</option>
-          <option value="bookshelves.html">Bookshelves</option>
-          <option value="coffeetable.html">Coffee Tables</option>
-          <option value="shoeracks.html">Shoe Racks</option>
-        </select>
-        <script>
-          (function () {
-            const dropdown = document.getElementById('dropdown');
-            if (!dropdown) return;
-            const currentPath = (window.location.pathname.split('/').pop() || '').toLowerCase();
-            const currentPage = currentPath || 'al.html';
-            const productId = new URLSearchParams(window.location.search).get('id');
-            const productList = window.VISHWAKARMA_PRODUCTS || [];
-            const matchedProduct = productId ? productList.find((item) => String(item.id) === String(productId)) : null;
-            const categoryPage = matchedProduct ? `${matchedProduct.category}.html` : null;
-            const matchingOption = Array.from(dropdown.options).find((option) => {
-              const optionValue = option.value.toLowerCase();
-              return optionValue === categoryPage || optionValue === currentPage || (optionValue === '/' && ['al.html', 'index.html', ''].includes(currentPage));
-            });
-            if (matchingOption) dropdown.value = matchingOption.value;
-          })();
-        </script>
-
-        <button class="header-action-btn" aria-label="open menu" data-nav-toggler>
-          <ion-icon name="menu-outline" aria-hidden="true"></ion-icon>
-        </button>
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="hero-copy">
+        <p class="eyebrow">The art of slow-made living</p>
+        <h1>A little more soul in the spaces you call home.</h1>
+        <p>Discover handcrafted wooden furniture made in our Jodhpur workshop. Thoughtful designs, made to order, with custom sizes and finishes to make each piece yours.</p>
+        <div class="hero-actions">
+          <a class="btn" href="#collections">Explore collections <span aria-hidden="true">→</span></a>
+          <a class="btn outline" href="/about.html">Our story</a>
+        </div>
+        <div class="hero-note" aria-label="Our catalog">
+          <span><strong id="productCount">98+</strong> considered designs</span>
+          <span><strong id="categoryCount">10</strong> collections</span>
+          <span>Made to order</span>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <img src="/assets/product-images/1chair.jpg" alt="Handcrafted wooden rocking chair" fetchpriority="high">
+        <div class="hero-caption"><span>Made for moments that slow down</span><strong>Crafted with care, made for home.</strong></div>
+        <span class="hero-stamp">Made in<br>Jodhpur, India</span>
       </div>
     </div>
-  </header>
+  </section>
 
-  <div class="overlay" data-overlay data-nav-toggler></div>
-
-  <div class="sidebar" data-navbar>
-    <button class="nav-close-btn" aria-label="close menu" data-nav-toggler>
-      <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
-    </button>
-
-    <nav class="navbar">
-      <ul class="navbar-list">
-        <li class="navbar-item">
-          <a href="/" class="navbar-link" data-nav-link>Home</a>
-        </li>
-        <li class="navbar-item"></li>
-        <li class="navbar-item">
-          <a class="nav-link" style="color: #000000; font-weight: bold; font-size: 15px;" href="https://wa.me/919588938688?text=Hi%20Vishwakarma%20Art%2C%20I%27d%20like%20to%20know%20more.">Contact</a>
-        </li>
-      </ul>
-    </nav>
-
-    <ul class="contact-list">
-      <li>
-        <p class="contact-list-title">Contact Us</p>
-      </li>
-      <li class="contact-item">
-        <address class="address">Indira nagar , Sangariya jodhpur(Raj)</address>
-      </li>
-      <li class="contact-item">
-        <a href="mailto:support@vishwakarmaart.in" class="contact-link">support@vishwakarmaart.in</a>
-      </li>
-      <li class="contact-item">
-        <a href="tel:+91 9588938688" class="contact-link">+91 9588938688</a>
-      </li>
-      <li class="contact-item">
-        <a href="tel:+91 9251628649" class="contact-link">+91 9251628649</a>
-      </li>
-    </ul>
-
-    <div class="social-wrapper">
-      <p class="social-list-title">Follow US On Socials</p>
-      <ul class="social-list">
-        <li>
-          <a href="https://www.facebook.com/profile.php?id=61555298892002" class="social-link">
-            <ion-icon name="logo-facebook"></ion-icon>
-          </a>
-        </li>
-      </ul>
+  <section class="block" id="collections">
+    <div class="container">
+      <div class="section-head">
+        <p class="section-kicker">Find your kind of comfort</p>
+        <h2>Made for the way you live</h2>
+        <p>Explore furniture for every corner of your home.</p>
+      </div>
+      <div class="cat-grid" id="catGrid"></div>
     </div>
-  </div>
+  </section>
 
+  <section class="block" style="padding-top:0">
+    <div class="container">
+      <div class="section-head">
+        <p class="section-kicker">A few much-loved pieces</p>
+        <h2>Workshop favourites</h2>
+        <p>Distinctive details, honest materials, and a little Jodhpur in every piece.</p>
+      </div>
+      <div class="product-grid" id="featuredGrid"></div>
+    </div>
+  </section>
 
+  <section class="home-story">
+    <div class="container home-story-inner">
+      <div class="home-story-image">
+        <img src="/assets/product-images/Rock_chair.jpeg" alt="Handcrafted wooden rocking chair, made to order" loading="lazy">
+        <span>Shaped by hand. Made for home.</span>
+      </div>
+      <div class="home-story-copy">
+        <p class="section-kicker">Made with intention</p>
+        <h2>Your home is one of a kind. Your furniture can be, too.</h2>
+        <p>From a finish that feels just right to a size that fits your space, our team can help you make a piece your own. Tell us what you have in mind and we’ll take it from there.</p>
+        <a class="btn" id="customContact" href="#collections" target="_blank" rel="noopener">Talk to us about a custom piece <span aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </section>
 
+  <section class="block home-values">
+    <div class="container">
+      <div class="section-head">
+        <p class="section-kicker">The Vishwakarma way</p>
+        <h2>Good things take a little care</h2>
+      </div>
+      <div class="features">
+        <div class="feature"><span class="feature-number">01</span><h3>Made by hand</h3><p>Every piece is shaped and finished by skilled craftspeople.</p></div>
+        <div class="feature"><span class="feature-number">02</span><h3>Made for you</h3><p>Choose a size and finish that feel right for your space.</p></div>
+        <div class="feature"><span class="feature-number">03</span><h3>Made in Jodhpur</h3><p>Work directly with the makers behind your furniture.</p></div>
+      </div>
+    </div>
+  </section>
 
-
-  <main>
-    
-
-      <section class="brand-splash" id="about" aria-label="Vishwakarma Art">
-        <div class="brand-splash__content">
-          <div class="brand-splash__mark" aria-hidden="true">
-            <span class="brand-mark__piece brand-mark__bar brand-mark__bar--blue"></span>
-            <span class="brand-mark__piece brand-mark__dot brand-mark__dot--blue"></span>
-            <span class="brand-mark__piece brand-mark__bar brand-mark__bar--green"></span>
-            <span class="brand-mark__piece brand-mark__dot brand-mark__dot--green"></span>
-          </div>
-          <script>
-            (function() {
-              const mark = document.querySelector('.brand-splash__mark');
-              if (mark) {
-                mark.classList.add('is-animated');
-              }
-            })();
-          </script>
-          <h1 id="animated-text">Vishwakarma Art</h1>
-          <span class="brand-splash__divider" aria-hidden="true"></span>
-          <p class="brand-splash__tagline">Handcrafted Wooden Furniture</p>
-          <p class="brand-splash__welcome">Welcome</p>
-        </div>
-      </section>
-
-
-
-
-
-      <script>
-          window.setTimeout(function() {
-            window.location.href = 'al.html';
-          }, 2100);
-      </script>
-
-  
-
-
-
-
-
-  <!-- 
-    - #BACK TO TOP
-  -->
-
-  <a href="#top" class="back-top-btn" aria-label="back to top" data-back-top-btn>
-    <ion-icon name="arrow-up" aria-hidden="true"></ion-icon>
-  </a>
-
-
-
-
-
-  <!-- 
-    - custom js link
-  -->
-  <script src="./assets/js/script.js" defer></script>
-
-  <!-- 
-    - ionicon link
-  -->
-  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-
-  <script src="./assets/js/products.js" defer></script>
-  <script src="./assets/js/site-assistant.js" defer></script>
-  </body>
-
+  <div id="site-footer"></div>
+  <script src="/js/common.js"></script>
+  <script src="/js/home.js"></script>
+</body>
 </html>
-

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Admin – Vishwakarma Arts</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <!-- Login -->
+  <div id="loginView" class="container" hidden>
+    <form class="login-box" id="loginForm">
+      <h1>Admin Login</h1>
+      <div class="msg" id="loginMsg"></div>
+      <div class="field"><label for="u">Username</label><input id="u" autocomplete="username" required></div>
+      <div class="field"><label for="p">Password</label>
+        <div class="password-control">
+          <input id="p" type="password" autocomplete="current-password" required>
+          <button type="button" class="password-toggle" id="passwordToggle" aria-controls="p" aria-pressed="false">Show</button>
+        </div>
+      </div>
+      <button class="btn" style="width:100%">Log in</button>
+      <p style="margin-top:14px;font-size:.88rem"><a href="/">← Back to website</a></p>
+    </form>
+  </div>
+
+  <!-- Dashboard -->
+  <div id="dashView" class="container admin-wrap" hidden>
+    <div class="admin-top">
+      <h1 style="font-size:1.8rem">Product Manager</h1>
+      <div style="display:flex;gap:10px">
+        <a class="btn outline small" href="/" target="_blank">View website</a>
+        <button class="btn danger small" id="logoutBtn">Log out</button>
+      </div>
+    </div>
+
+    <div class="admin-grid">
+      <div>
+        <form class="panel" id="productForm">
+          <h2 id="formTitle">Add product</h2>
+          <div class="msg" id="formMsg"></div>
+          <input type="hidden" id="pid">
+          <img class="preview" id="preview" alt="">
+          <div class="field">
+            <label for="itemId">Item ID *</label>
+            <input id="itemId" maxlength="30" pattern="[A-Za-z0-9][A-Za-z0-9_\-]{0,29}" title="Use 1–30 letters, numbers, hyphens, or underscores." required>
+            <small class="admin-item-id">Suggested code is editable. Use a unique readable code.</small>
+          </div>
+          <div class="field"><label for="pname">Name *</label><input id="pname" maxlength="120" required></div>
+          <div class="field"><label for="pcat">Category *</label><select id="pcat" required></select></div>
+          <div class="field"><label for="pprice">Price (₹) – optional</label><input id="pprice" maxlength="40" placeholder="e.g. 24,500"></div>
+          <div class="field"><label for="pdesc">Description</label><textarea id="pdesc" maxlength="2000"></textarea></div>
+          <div class="field"><label for="pimg">Photo (PNG, JPG or WebP, max 8 MB)</label><input id="pimg" type="file" accept="image/png,image/jpeg,image/webp"></div>
+          <fieldset class="view-photo-fields">
+            <legend>Additional product views (optional)</legend>
+            <p class="admin-item-id">Add photos so customers can view the product from each side.</p>
+            <div class="field view-photo-field">
+              <label for="pview-left">Left view</label><img class="view-photo-preview" id="preview-left" alt="Left view preview" hidden>
+              <input id="pview-left" type="file" accept="image/png,image/jpeg,image/webp">
+              <label class="view-photo-remove" id="remove-label-left" for="remove-left" hidden><input id="remove-left" type="checkbox"> Remove saved left photo</label>
+            </div>
+            <div class="field view-photo-field">
+              <label for="pview-right">Right view</label><img class="view-photo-preview" id="preview-right" alt="Right view preview" hidden>
+              <input id="pview-right" type="file" accept="image/png,image/jpeg,image/webp">
+              <label class="view-photo-remove" id="remove-label-right" for="remove-right" hidden><input id="remove-right" type="checkbox"> Remove saved right photo</label>
+            </div>
+            <div class="field view-photo-field">
+              <label for="pview-front">Front view</label><img class="view-photo-preview" id="preview-front" alt="Front view preview" hidden>
+              <input id="pview-front" type="file" accept="image/png,image/jpeg,image/webp">
+              <label class="view-photo-remove" id="remove-label-front" for="remove-front" hidden><input id="remove-front" type="checkbox"> Remove saved front photo</label>
+            </div>
+            <div class="field view-photo-field">
+              <label for="pview-back">Back view</label><img class="view-photo-preview" id="preview-back" alt="Back view preview" hidden>
+              <input id="pview-back" type="file" accept="image/png,image/jpeg,image/webp">
+              <label class="view-photo-remove" id="remove-label-back" for="remove-back" hidden><input id="remove-back" type="checkbox"> Remove saved back photo</label>
+            </div>
+          </fieldset>
+          <label class="check"><input type="checkbox" id="pfeat"> Show in “Popular Products” on home page</label>
+          <div style="display:flex;gap:10px">
+            <button class="btn" id="saveBtn">Save product</button>
+            <button type="button" class="btn outline" id="cancelBtn" hidden>Cancel edit</button>
+          </div>
+        </form>
+
+        <div class="panel" style="margin-top:20px">
+          <h2>Categories</h2>
+          <div class="msg" id="catMsg"></div>
+          <div id="catList"></div>
+          <form class="inline-form" id="catForm">
+            <input id="newCat" placeholder="New category name" maxlength="60" required>
+            <button class="btn small">Add</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="panel" style="overflow-x:auto">
+        <h2>All products (<span id="count">0</span>)</h2>
+        <table class="admin-table">
+          <thead><tr><th></th><th>Name</th><th>Category</th><th>Price</th><th></th></tr></thead>
+          <tbody id="rows"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <script src="/js/common.js"></script>
+  <script src="/js/admin.js"></script>
+</body>
+</html>

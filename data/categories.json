@@ -1,0 +1,52 @@
+[
+  {
+    "slug": "wooden-temple",
+    "name": "Wooden Temple",
+    "image": "/assets/product-images/temp1.jpg"
+  },
+  {
+    "slug": "chair",
+    "name": "Chair",
+    "image": "/assets/product-images/1chair.jpg"
+  },
+  {
+    "slug": "dining-table",
+    "name": "Dining Table",
+    "image": "/assets/product-images/dt1.jpg"
+  },
+  {
+    "slug": "beds",
+    "name": "Beds",
+    "image": "/assets/product-images/b1.jpg"
+  },
+  {
+    "slug": "sideboards",
+    "name": "Sideboards",
+    "image": "/assets/product-images/side1.jpg"
+  },
+  {
+    "slug": "study-tables",
+    "name": "Study Tables",
+    "image": "/assets/product-images/st.jpg"
+  },
+  {
+    "slug": "mirror",
+    "name": "Mirror",
+    "image": "/assets/product-images/mir.jpg"
+  },
+  {
+    "slug": "bookshelves",
+    "name": "Bookshelves",
+    "image": "/assets/product-images/bk.jpg"
+  },
+  {
+    "slug": "coffee-tables",
+    "name": "Coffee Tables",
+    "image": "/assets/product-images/ct.jpg"
+  },
+  {
+    "slug": "shoe-racks",
+    "name": "Shoe Racks",
+    "image": "/assets/product-images/sr.jpg"
+  }
+]

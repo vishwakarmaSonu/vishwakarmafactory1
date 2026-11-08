@@ -1,725 +1,331 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- 
-    - primary meta tag
-  -->
-  <title>Vishwakarma Arts</title>
-  <meta name="title" content="Vishwakarma Arts - Get Quality Furniture">
-  <meta name="description" content="Manufacture and suppliers all type of Handicrafe items">
-
-  <!-- 
-    - favicon
-  -->
-  <link rel="shortcut icon" href="./favicon_io/favicon.ico" type="image/svg+xml">
-
-  <!-- 
-    - custom css link
-  -->
-  <link rel="stylesheet" href="./assets/css/style.css?v=phone-layout-20261002">
-
-  <!-- 
-    - google font link
-  -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Mr+De+Haviland&family=Roboto:wght@400;500;700&display=swap"
-    rel="stylesheet">
-
-  <!-- 
-    - preload images
-  -->
-  <link rel="preload" as="image" href="./assets/images/hero-product-1.jpg">
-  <link rel="preload" as="image" href="./assets/images/hero-product-2.jpg">
-  <link rel="preload" as="image" href="./assets/images/hero-product-3.jpg">
-  <link rel="preload" as="image" href="./assets/images/hero-product-4.jpg">
-  <link rel="preload" as="image" href="./assets/images/hero-product-5.jpg">
-
-  <!-- <script>
-    alert("Welcome To Vishwakarma Art \n Happy Diwali");
-
-  </script> -->
-   <style>
-      /* body {
-        font-family: Arial, sans-serif;
-        background-color: #f4f4f4;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 100vh;
-    } */
-    
-    .image-container {
-        width: 200px;
-        height: 200px;
-        overflow: hidden;
-        border-radius: 50%;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        animation: scaleAndFade 1s ease-in-out;
-    }
-    
-    img {
-        width: 100%;
-        height: auto;
-        display: block;
-        opacity: 0;
-        transform: scale(0.8);
-        animation: scaleAndFade 1s ease-in-out forwards;
-    }
-    
-    @keyframes scaleAndFade {
-        from {
-            opacity: 0;
-            transform: scale(0.8);
-        }
-        to {
-            opacity: 1;
-            transform: scale(1);
-        }
-    }
-
-    .about-page {
-      padding: 80px 0 40px;
-      background: linear-gradient(180deg, #f8f6f0 0%, #fffdf9 100%);
-    }
-
-    .about-hero {
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 36px;
-      align-items: center;
-    }
-
-    .about-hero__eyebrow {
-      display: inline-block;
-      margin-bottom: 16px;
-      color: #6d5632;
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-    }
-
-    .about-hero h1 {
-      margin: 0 0 18px;
-      color: #1c2d24;
-      font-size: clamp(2.5rem, 4vw, 4rem);
-      line-height: 1.1;
-    }
-
-    .about-hero p {
-      margin: 0;
-      color: #4f554d;
-      font-size: 1.06rem;
-      line-height: 1.8;
-    }
-
-    .about-hero__card {
-      overflow: hidden;
-      border-radius: 22px;
-      background: #fff;
-      box-shadow: 0 18px 40px rgba(25, 37, 31, 0.08);
-    }
-
-    .about-hero__card img {
-      display: block;
-      width: 100%;
-      height: 100%;
-      min-height: 420px;
-      object-fit: cover;
-    }
-
-    .about-section {
-      padding: 30px 0 20px;
-    }
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 24px;
-      margin-top: 28px;
-    }
-
-    .info-card {
-      padding: 28px 22px;
-      border: 1px solid rgba(27, 37, 33, 0.08);
-      border-radius: 18px;
-      background: rgba(255, 255, 255, 0.8);
-      box-shadow: 0 14px 30px rgba(17, 17, 17, 0.03);
-    }
-
-    .info-card h3 {
-      margin: 0 0 14px;
-      color: #1d2c24;
-      font-size: 1.3rem;
-    }
-
-    .info-card p,
-    .info-card li {
-      color: #4f554d;
-      line-height: 1.7;
-      font-size: 0.98rem;
-    }
-
-    .info-card ul {
-      margin: 0;
-      padding-left: 18px;
-    }
-
-    .info-card__tag {
-      display: inline-flex;
-      margin-bottom: 12px;
-      padding: 7px 12px;
-      border-radius: 999px;
-      background: #efe6d7;
-      color: #6d5632;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-
-    .workshop-spotlight {
-      margin-top: 18px;
-      padding: 26px;
-      border-radius: 20px;
-      background: linear-gradient(135deg, #f4efe9 0%, #f4f7f1 100%);
-    }
-
-    .workshop-spotlight__grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 24px;
-      margin-top: 18px;
-    }
-
-    .workshop-spotlight__card {
-      padding: 22px;
-      border-radius: 16px;
-      background: rgba(255, 255, 255, 0.7);
-    }
-
-    .workshop-spotlight__card h4 {
-      margin: 0 0 10px;
-      color: #1d2c24;
-      font-size: 1.1rem;
-    }
-
-    @media (max-width: 900px) {
-      .about-hero,
-      .about-grid,
-      .workshop-spotlight__grid {
-        grid-template-columns: 1fr;
-      }
-    }
-    </style>
-  <link rel="stylesheet" href="./assets/css/site-assistant.css">
+  <title>About Us – Vishwakarma Arts</title>
+  <link rel="icon" type="image/png" href="/assets/brand-mark.png">
+  <link rel="stylesheet" href="/css/style.css">
 </head>
-
-<body id="top">
-
-  <!-- 
-    - #HEADER
-  -->
-
-  <header class="header" data-header>
-    <div class="container">
-
-      <a href="/" class="logo" style="display:flex; align-items:center; gap:12px; text-decoration:none; color:#111; font-weight:700; line-height:1.1; font-size:185%;">
-        <img src="./assets/images/1.png" style="width:52px; height:auto; display:block; flex-shrink:0;">
-        <span style="display:flex; flex-direction:column; align-items:flex-start;">
-          <span style="font-size:1.05em; letter-spacing:0.04em;">Vishwakarma Arts</span>
-          <small style="font-size:0.42em; font-weight:600; letter-spacing:0.08em; color:#6d5632; text-transform:uppercase;">Handcrafted Wooden Furniture</small>
-        </span>
-      </a>
-
-      <div class="header-action">
-        <div class="notification"></div>
-        <select style="color: #000000; width: min(190px, 32vw); max-width: 100%; font-weight: 700; border: 1px solid rgba(17,17,17,0.14); border-radius: 999px; background: #f8f6f1; padding: 0.55rem 0.9rem; appearance: none; transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease, background-color 0.25s ease;" id="dropdown" onchange="if (this.value) window.location.href = this.value;" onfocus="this.style.transform='translateY(-1px)'; this.style.boxShadow='0 8px 20px rgba(49, 91, 69, 0.12)'; this.style.borderColor='rgba(49, 91, 69, 0.45)'; this.style.backgroundColor='#fffdf8';" onblur="this.style.transform=''; this.style.boxShadow=''; this.style.borderColor='rgba(17,17,17,0.14)'; this.style.backgroundColor='#f8f6f1';" onmouseenter="this.style.transform='translateY(-1px)'; this.style.boxShadow='0 8px 20px rgba(49, 91, 69, 0.12)'; this.style.borderColor='rgba(49, 91, 69, 0.45)';" onmouseleave="this.style.transform=''; this.style.boxShadow=''; this.style.borderColor='rgba(17,17,17,0.14)';">
-          <option value="al.html">Collections</option>
-          <option value="woodentemple.html">Wooden Temple</option>
-          <option value="chair.html">Chair</option>
-          <option value="diningtable.html">Dining Table</option>
-          <option value="beds.html">Beds</option>
-          <option value="sideboards.html">Sideboards</option>
-          <option value="studytables.html">Study Tables</option>
-          <option value="mirror.html">Mirror</option>
-          <option value="bookshelves.html">Bookshelves</option>
-          <option value="coffeetable.html">Coffee Tables</option>
-          <option value="shoeracks.html">Shoe Racks</option>
-        </select>
-        <script>
-          (function () {
-            const dropdown = document.getElementById('dropdown');
-            if (!dropdown) return;
-            const currentPath = (window.location.pathname.split('/').pop() || '').toLowerCase();
-            const currentPage = currentPath || 'al.html';
-            const productId = new URLSearchParams(window.location.search).get('id');
-            const productList = window.VISHWAKARMA_PRODUCTS || [];
-            const matchedProduct = productId ? productList.find((item) => String(item.id) === String(productId)) : null;
-            const categoryPage = matchedProduct ? `${matchedProduct.category}.html` : null;
-            const matchingOption = Array.from(dropdown.options).find((option) => {
-              const optionValue = option.value.toLowerCase();
-              return optionValue === categoryPage || optionValue === currentPage || (optionValue === '/' && ['al.html', 'index.html', ''].includes(currentPage));
-            });
-            if (matchingOption) dropdown.value = matchingOption.value;
-          })();
-        </script>
-
-        <button class="header-action-btn" aria-label="open menu" data-nav-toggler>
-          <ion-icon name="menu-outline" aria-hidden="true"></ion-icon>
-        </button>
-
-      </div>
-
-    </div>
-  </header>
-
-
-
-
-
-  <!-- 
-    - #SIDEBAR
-  -->
-
-  <div class="sidebar" data-navbar>
-
-    <button class="nav-close-btn" aria-label="close menu" data-nav-toggler>
-      <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
-    </button>
-
-    
-
-    <nav class="navbar">
-      <ul class="navbar-list">
-
-        <li class="navbar-item">
-          <a href="/" class="navbar-link" data-nav-link>Home</a>
-        </li>
-
-        <li class="navbar-item">
-        </li>
-        <li class="navbar-item">
-
-        <a class="nav-link "  style="color: #000000;  font-weight: bold ;  font-size: 15px;" href="https://wa.me/919588938688?text=Hi%20Vishwakarma%20Art%2C%20I%27d%20like%20to%20know%20more.">Contact</a>
-      </li>
-
-
-
-
-      </ul>
-    </nav>
-
-    <ul class="contact-list">
-
-      <li>
-        <p class="contact-list-title">Contact Us</p>
-      </li>
-
-      <li class="contact-item">
-        <address class="address">
-          Indira nagar , Sangariya jodhpur(Raj)
-        </address>
-      </li>
-
-      <li class="contact-item">
-        <a href="mailto:support@vishwakarmaart.in" class="contact-link">support@vishwakarmaart.in</a>
-      </li>
-
-      <li class="contact-item">
-        <a href="tel:+91 9588938688" class="contact-link">+91 9588938688</a>
-      </li>
-      <li class="contact-item">
-        <a href="tel:+91 9251628649" class="contact-link">+91 9251628649</a>
-      </li>
-
-    </ul>
-
-    <div class="social-wrapper">
-
-      <p class="social-list-title">Follow US On Socials</p>
-
-     <ul class="social-list">
-
-        <li>
-          <a href="https://www.facebook.com/profile.php?id=61555298892002" class="social-link">
-            <ion-icon name="logo-facebook"></ion-icon>
-          </a>
-        </li>
-
-        <li>
-          <a href="https://twitter.com/VishwakarmaArt3" class="social-link">
-            <ion-icon name="logo-twitter"></ion-icon>
-          </a>
-        </li>
-
-        <li>
-          <a href="https://www.instagram.com/vishwakarma_art21/" class="social-link">
-            <ion-icon name="logo-instagram"></ion-icon>
-          </a>
-        </li>
-
-         <li>
-                  <a href="https://www.linkedin.com/in/vishwakarma-art-a22b79292/" class="social-link">
-                    <ion-icon name="logo-linkedin"></ion-icon>
-                  </a>
-                </li>
-
-      </ul>
-
-    </div>
-
-  </div>
-
-  <div class="overlay" data-overlay data-nav-toggler></div>
-
-
-
-
+<body class="about-page">
+  <div id="site-header"></div>
 
   <main>
-    <section class="about-page section" id="about" aria-label="About Vishwakarma Arts">
-      <div class="container">
-        <div class="about-hero">
-          <div>
-            <span class="about-hero__eyebrow">Crafted with care</span>
-            <h1>About Vishwakarma Art</h1>
-            <p>
-              Vishwakarma Art is a trusted name in handcrafted wooden furniture and home decor, bringing together
-              traditional craftsmanship, modern design, and practical functionality. From elegant wooden temples and
-              statement dining tables to thoughtful storage solutions and custom-made pieces, we create furniture that
-              fits the rhythm of real homes and lifestyles.
-            </p>
-            <p style="margin-top: 20px;">
-              We believe every piece should reflect quality, comfort, and personality. Our team works closely with
-              customers to transform ideas into beautifully finished furniture that feels both timeless and personal.
-            </p>
-          </div>
+    <section class="about-hero">
+      <img class="about-hero-image" src="/assets/product-images/1chair.jpg" alt="Handcrafted wooden furniture from the Vishwakarma Arts collection">
+      <div class="about-hero-shade"></div>
+      <div class="container about-hero-content">
+        <div class="crumbs"><a href="/">Home</a> / About Us</div>
+        <p class="about-kicker">Vishwakarma Arts · Jodhpur, Rajasthan</p>
+        <h1>Thoughtfully made furniture.<br><em>Rooted in craft.</em></h1>
+        <p>We bring the warmth of handcrafted wood into everyday spaces—with considered designs, skilled hands, and room to make each piece your own.</p>
+        <a class="about-hero-link" href="#our-story">Meet the makers <span aria-hidden="true">↓</span></a>
+      </div>
+      <span class="about-hero-note">Made with care in Jodhpur, India</span>
+    </section>
 
-          <div class="about-hero__card">
-            <img src="./assets/images/hero-product-5.jpg" alt="Handcrafted wooden furniture" />
-          </div>
+    <section class="about-intro" id="our-story">
+      <div class="container about-intro-grid">
+        <div class="about-intro-image">
+          <img src="/assets/product-images/Rock_chair.jpeg" alt="A handcrafted wooden rocking chair from Vishwakarma Arts" loading="lazy">
+          <span class="about-image-note">A slower kind of making</span>
         </div>
-
-        <div class="about-grid">
-          <article class="info-card">
-            <span class="info-card__tag">About Us</span>
-            <h3>Built on heritage and honesty</h3>
-            <p>
-              Based in Jodhpur, Vishwakarma Art is a family-driven furniture brand dedicated to creating durable,
-              distinctive, and artistically crafted pieces for homes, offices, and spiritual spaces.
-            </p>
-          </article>
-
-          <article class="info-card" id="featured-products">
-            <span class="info-card__tag">Featured Products</span>
-            <h3>Designed for everyday living</h3>
-            <ul>
-              <li>Wooden temple and pooja units</li>
-              <li>Dining tables and coffee tables</li>
-              <li>Beds, sideboards, and study tables</li>
-              <li>Bookshelves, mirrors, and shoe racks</li>
-            </ul>
-          </article>
-
-          <article class="info-card" id="why-choose-us">
-            <span class="info-card__tag">Why Choose Us</span>
-            <h3>Quality you can trust</h3>
-            <p>
-              We combine premium wood, experienced craftsmanship, customer-focused customization, and dependable
-              service to deliver furniture that stands the test of time.
-            </p>
-          </article>
-        </div>
-
-        <div class="about-section">
-          <div class="about-grid">
-            <article class="info-card" id="custom-furniture">
-              <span class="info-card__tag">Custom Furniture</span>
-              <h3>Made around your vision</h3>
-              <p>
-                Whether you need a unique dining arrangement, a personalized study setup, or a statement piece for a
-                special room, our custom furniture service gives you freedom to choose design, wood, finish, and size.
-              </p>
-            </article>
-
-            <article class="info-card" id="our-workshop">
-              <span class="info-card__tag">Our Workshop</span>
-              <h3>Where skill becomes furniture</h3>
-              <p>
-                Our workshop is where raw wood is shaped into practical, elegant pieces through precise cutting,
-                detailing, polishing, and careful finishing by skilled artisans.
-              </p>
-            </article>
-
-            <article class="info-card">
-              <span class="info-card__tag">Founder</span>
-              <h3>Mr. Sudhir Vishwakarma</h3>
-              <p>
-                Guided by his vision, the brand continues to create furniture that balances traditional craftsmanship
-                with modern living needs.
-              </p>
-            </article>
+        <div class="about-intro-copy">
+          <p class="about-kicker">About Vishwakarma Arts</p>
+          <h2>Furniture is part of the stories we live in.</h2>
+          <p>Vishwakarma Arts is a furniture maker and supplier based in Jodhpur, Rajasthan. Our team brings traditional woodworking sensibilities together with practical designs for modern homes.</p>
+          <p>From chairs and dining tables to beds, mirrors, and more, we make pieces with a focus on lasting utility and the natural character of wood.</p>
+          <div class="about-experience" aria-label="Making furniture in Jodhpur since 2021">
+            <strong>2021</strong>
+            <span><b>Our journey began</b><br>Making furniture in Jodhpur since 2021</span>
           </div>
-        </div>
-
-        <div class="workshop-spotlight" id="why-choose-vishwakarma-art">
-          <h2 class="section-title" style="margin-bottom: 0;">Why Choose Vishwakarma Art</h2>
-          <div class="workshop-spotlight__grid">
-            <div class="workshop-spotlight__card">
-              <h4>Handcrafted Excellence</h4>
-              <p>Every item is shaped with attention to detail, natural textures, and durable finishing.</p>
-            </div>
-            <div class="workshop-spotlight__card">
-              <h4>Custom Design Support</h4>
-              <p>We design furniture as per your preferences, room dimensions, and lifestyle requirements.</p>
-            </div>
-            <div class="workshop-spotlight__card">
-              <h4>Premium Wood & Finish</h4>
-              <p>Our materials and finishes are selected for longevity, comfort, and elegant appearance.</p>
-            </div>
-            <div class="workshop-spotlight__card">
-              <h4>Trusted Service</h4>
-              <p>We offer supportive guidance, home delivery, and a commitment to customer satisfaction.</p>
-            </div>
-          </div>
+          <a class="about-text-link" href="/#collections">Explore our collections <span aria-hidden="true">→</span></a>
         </div>
       </div>
     </section>
 
-    <section class="section hero" id="home" aria-label="home">
-        <div class="container">
-
-          <ul class="hero-list">
-
-          
-
-            <li class="colspan-2">
-              <div class="hero-card">
-
-                <figure class="card-banner img-holder" style="--width: 580; --height: 213;">
-                  <img src="./assets/images/dt2.jpg" width="580" height="213" alt="Wood Eggs"
-                    class="img-cover">
-                </figure>
-
-                <!-- <div class="card-content">
-                  <h3>
-                    <a href="#" class="card-title">Wooden Khalbatta Okhli Masher</a>
-                  </h3>
-
-                  <p class="card-text">Decoration</p>
-                </div> -->
-
-              </div>
-            </li>
-
-            <li class="colspan-2">
-              <div class="hero-card">
-
-                <figure class="card-banner img-holder" style="--width: 580; --height: 213;">
-                  <img src="./assets/images/hero-product-5.jpg" width="580" height="213" alt="Table Wood Pine"
-                    class="img-cover">
-                </figure>
-
-                <!-- <div class="card-content">
-                  <h3>
-                    <a href="#" class="card-title">Table Wood Pine</a>
-                  </h3>
-
-                  <p class="card-text">Furniture</p>
-                </div> -->
-
-              </div>
-            </li>
-
-          </ul>
-
+    <section class="about-promise" aria-labelledby="promiseTitle">
+      <div class="container about-promise-inner">
+        <div class="about-promise-heading">
+          <p class="about-kicker">Our promise</p>
+          <h2 id="promiseTitle">Thoughtful work, from wood to finish.</h2>
         </div>
-      </section>
-
-
-
-
-
-
-  <!-- 
-    - #FOOTER
-  -->
-
-  <footer class="footer">
-    <div class="container">
-
-      <div class="footer-top section">
-
-        <div class="footer-brand">
-
-          <a href="#" class="logo">Vishwakarma Art</a>
-
+        <div class="about-promise-copy">
+          <p>We believe good furniture begins with care—for the material, the details, and the people who will live with it.</p>
           <ul>
-
-            <li class="footer-list-item">
-              <ion-icon name="location-sharp" aria-hidden="true"></ion-icon>
-
-              <address class="address">
-                Indira Nagar,Sangariya jodhpur(Raj)
-              </address>
-            </li>
-
-            <li class="footer-list-item">
-              <ion-icon name="call-sharp" aria-hidden="true"></ion-icon>
-
-              <a href="tel:+91 9549759857" class="footer-link">+91 9549759857</a>
-              <a href="tel:+91 9251628649" class="footer-link">+91 9251628649</a>
-
-            </li>
-
-            <li>
-              <ul class="social-list">
-
-                <li>
-                  <a href="https://www.facebook.com/profile.php?id=61555298892002" class="social-link">
-                    <ion-icon name="logo-facebook"></ion-icon>
-                  </a>
-                </li>
-
-                <li>
-                  <a href="https://twitter.com/VishwakarmaArt3" class="social-link">
-                    <ion-icon name="logo-twitter"></ion-icon>
-                  </a>
-                </li>
-
-                <li>
-                  <a href="https://www.instagram.com/vishwakarma_art21/" class="social-link">
-                    <ion-icon name="logo-instagram"></ion-icon>
-                  </a>
-                </li>
-
-                 <li>
-                  <a href="https://www.linkedin.com/in/vishwakarma-art-a22b79292/" class="social-link">
-                    <ion-icon name="logo-linkedin"></ion-icon>
-                  </a>
-                </li>
-
-              </ul>
-            </li>
-
+            <li><span>01</span> Considered designs made for everyday living</li>
+            <li><span>02</span> Clear conversations about size, wood, and finish</li>
+            <li><span>03</span> Careful making and attention to the final details</li>
           </ul>
-
         </div>
+      </div>
+    </section>
 
-        <ul class="footer-list">
-          <li>
-            <p class="footer-list-title">Info</p>
-          </li>
+    <section class="about-capabilities" aria-labelledby="capabilitiesTitle">
+      <div class="container">
+        <div class="about-section-heading">
+          <p class="about-kicker">Why choose us</p>
+          <h2 id="capabilitiesTitle">A furniture partner who listens.</h2>
+          <p>From a single piece for home to a considered furniture enquiry for a project, we start by understanding what you need.</p>
+        </div>
+        <div class="about-capability-grid">
+          <article class="about-capability">
+            <span class="about-card-mark" aria-hidden="true">01</span>
+            <h3>Made in Jodhpur</h3>
+            <p>Work directly with a furniture team based in Rajasthan’s renowned woodworking city.</p>
+          </article>
+          <article class="about-capability">
+            <span class="about-card-mark" aria-hidden="true">02</span>
+            <h3>Made to order</h3>
+            <p>Talk through sizing, finishes, and design details to make a piece work for your home.</p>
+          </article>
+          <article class="about-capability">
+            <span class="about-card-mark" aria-hidden="true">03</span>
+            <h3>Thoughtful materials</h3>
+            <p>Wood and finishes are considered for the design, use, and feel of each piece.</p>
+          </article>
+          <article class="about-capability">
+            <span class="about-card-mark" aria-hidden="true">04</span>
+            <h3>A collection to live with</h3>
+            <p>Explore furniture for dining, lounging, storage, and the quieter corners of home.</p>
+          </article>
+        </div>
+      </div>
+    </section>
 
-          <li>
-            <a href="terms-policy.html#terms-and-conditions" class="footer-link">Term &amp; Condition</a>
-          </li>
+    <section class="about-audience" aria-labelledby="audienceTitle">
+      <div class="container">
+        <div class="about-section-heading">
+          <p class="about-kicker">Who we serve</p>
+          <h2 id="audienceTitle">Furniture for homes, and ideas beyond them.</h2>
+          <p>Whether you know exactly what you want or are still exploring, we’re happy to start a conversation.</p>
+        </div>
+        <div class="about-audience-grid">
+          <article class="about-audience-card">
+            <span>01 · AT HOME</span>
+            <h3>Individuals &amp; families</h3>
+            <p>Find a piece for your home, or talk with us about a size or finish that suits your space.</p>
+          </article>
+          <article class="about-audience-card">
+            <span>02 · DESIGN</span>
+            <h3>Designers &amp; decorators</h3>
+            <p>Share a reference, furniture brief, or custom idea with our team for discussion.</p>
+          </article>
+          <article class="about-audience-card">
+            <span>03 · PROJECTS</span>
+            <h3>Business &amp; hospitality</h3>
+            <p>Get in touch about furniture requirements for a workplace, guest space, or project.</p>
+          </article>
+        </div>
+      </div>
+    </section>
 
-          <li>
-            <a href="terms-policy.html#policy" class="footer-link">Policy</a>
-          </li>
-        </ul>
-
-        <ul class="footer-list">
-
-          <li>
-            <p class="footer-list-title">About Us</p>
-          </li>
-
-          <li>
-            <a href="about.html" class="footer-link">About Us</a>
-          </li>
-          <li>
-            <a href="about.html#featured-products" class="footer-link">Featured Products</a>
-          </li>
-          <li>
-            <a href="about.html#why-choose-vishwakarma-art" class="footer-link">Why Choose Vishwakarma Art</a>
-          </li>
-          <li>
-            <a href="about.html#custom-furniture" class="footer-link">Custom Furniture</a>
-          </li>
-          <li>
-            <a href="about.html#our-workshop" class="footer-link">Our Workshop</a>
-          </li>
-
-
-
-
-        </ul>
-
-        <div class="footer-list">
-
-          <p class="footer-list-title">Subscribe</p>
-
-          <form action="" class="footer-form">
-            <input type="email" name="email_address" placeholder="Your email address" required class="email-field">
-
-            <button type="submit" class="footer-form-btn">
-              <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
-            </button>
-          </form>
-
-          <div class="wrapper">
-
-            
-            
-            <a href="https://www.google.com/maps/place/Vishwakarma+art/@26.2118763,73.009431,17z/data=!3m1!4b1!4m6!3m5!1s0x39418bb86dc0918b:0x8358a74cc35a317c!8m2!3d26.2118763!4d73.009431!16s%2Fg%2F11vl9d0z_2?entry=ttu" class="footer-link">Map</a>
-
+    <section class="about-workflow" aria-labelledby="workflowTitle">
+      <div class="container about-workflow-heading">
+        <div>
+          <p class="about-kicker">How we work</p>
+          <h2 id="workflowTitle">The care behind every piece.</h2>
+        </div>
+        <p>Follow the steps that shape a piece of furniture, from selecting the wood to preparing it for its new home.</p>
+      </div>
+      <div class="about-workflow-window">
+        <div class="about-workflow-track">
+          <div class="about-workflow-group" role="list" aria-label="Furniture making process">
+            <figure class="about-workflow-card" role="listitem">
+              <img src="/assets/wooden%20process/wood_selection.png" alt="Wood selection process" loading="lazy">
+              <figcaption><span>01</span>Wood selection</figcaption>
+            </figure>
+            <figure class="about-workflow-card" role="listitem">
+              <img src="/assets/wooden%20process/wood%20grading.png" alt="Wood grading process" loading="lazy">
+              <figcaption><span>02</span>Wood grading</figcaption>
+            </figure>
+            <figure class="about-workflow-card" role="listitem">
+              <img src="/assets/wooden%20process/precision%20cutting.jpg" alt="Precision cutting process" loading="lazy">
+              <figcaption><span>03</span>Precision cutting</figcaption>
+            </figure>
+            <figure class="about-workflow-card" role="listitem">
+              <img src="/assets/wooden%20process/joinery.jpg" alt="Wood joinery process" loading="lazy">
+              <figcaption><span>04</span>Joinery</figcaption>
+            </figure>
+            <figure class="about-workflow-card" role="listitem">
+              <img src="/assets/wooden%20process/marker%20cutting.jpg" alt="Marked cutting process" loading="lazy">
+              <figcaption><span>05</span>Marked cutting</figcaption>
+            </figure>
+            <figure class="about-workflow-card" role="listitem">
+              <img src="/assets/wooden%20process/sanding.jpg" alt="Sanding and surface preparation process" loading="lazy">
+              <figcaption><span>06</span>Sanding &amp; surface</figcaption>
+            </figure>
+            <figure class="about-workflow-card" role="listitem">
+              <img src="/assets/wooden%20process/precision%20journery.jpg" alt="Precise joinery process" loading="lazy">
+              <figcaption><span>07</span>Precise joinery</figcaption>
+            </figure>
+            <figure class="about-workflow-card" role="listitem">
+              <img src="/assets/wooden%20process/cutting%20and%20shape.jpg" alt="Cutting and shaping process" loading="lazy">
+              <figcaption><span>08</span>Cut &amp; shape</figcaption>
+            </figure>
+            <figure class="about-workflow-card" role="listitem">
+              <img src="/assets/wooden%20process/finishing%20and%20development.jpg" alt="Finish and development process" loading="lazy">
+              <figcaption><span>09</span>Finish &amp; development</figcaption>
+            </figure>
+            <figure class="about-workflow-card" role="listitem">
+              <img src="/assets/wooden%20process/assembly.jpg" alt="Furniture assembly process" loading="lazy">
+              <figcaption><span>10</span>Assembly</figcaption>
+            </figure>
+            <figure class="about-workflow-card" role="listitem">
+              <img src="/assets/wooden%20process/quality%20control.jpg" alt="Furniture quality control process" loading="lazy">
+              <figcaption><span>11</span>Quality control</figcaption>
+            </figure>
+            <figure class="about-workflow-card" role="listitem">
+              <img src="/assets/wooden%20process/moisture%20control.jpg" alt="Wood moisture checking process" loading="lazy">
+              <figcaption><span>12</span>Moisture checking</figcaption>
+            </figure>
+            <figure class="about-workflow-card" role="listitem">
+              <img src="/assets/wooden%20process/packing.jpeg" alt="Furniture packing process" loading="lazy">
+              <figcaption><span>13</span>Packing</figcaption>
+            </figure>
           </div>
-
+          <div class="about-workflow-group" aria-hidden="true">
+            <figure class="about-workflow-card">
+              <img src="/assets/wooden%20process/wood_selection.png" alt="" loading="lazy">
+              <figcaption><span>01</span>Wood selection</figcaption>
+            </figure>
+            <figure class="about-workflow-card">
+              <img src="/assets/wooden%20process/wood%20grading.png" alt="" loading="lazy">
+              <figcaption><span>02</span>Wood grading</figcaption>
+            </figure>
+            <figure class="about-workflow-card">
+              <img src="/assets/wooden%20process/precision%20cutting.jpg" alt="" loading="lazy">
+              <figcaption><span>03</span>Precision cutting</figcaption>
+            </figure>
+            <figure class="about-workflow-card">
+              <img src="/assets/wooden%20process/joinery.jpg" alt="" loading="lazy">
+              <figcaption><span>04</span>Joinery</figcaption>
+            </figure>
+            <figure class="about-workflow-card">
+              <img src="/assets/wooden%20process/marker%20cutting.jpg" alt="" loading="lazy">
+              <figcaption><span>05</span>Marked cutting</figcaption>
+            </figure>
+            <figure class="about-workflow-card">
+              <img src="/assets/wooden%20process/sanding.jpg" alt="" loading="lazy">
+              <figcaption><span>06</span>Sanding &amp; surface</figcaption>
+            </figure>
+            <figure class="about-workflow-card">
+              <img src="/assets/wooden%20process/precision%20journery.jpg" alt="" loading="lazy">
+              <figcaption><span>07</span>Precise joinery</figcaption>
+            </figure>
+            <figure class="about-workflow-card">
+              <img src="/assets/wooden%20process/cutting%20and%20shape.jpg" alt="" loading="lazy">
+              <figcaption><span>08</span>Cut &amp; shape</figcaption>
+            </figure>
+            <figure class="about-workflow-card">
+              <img src="/assets/wooden%20process/finishing%20and%20development.jpg" alt="" loading="lazy">
+              <figcaption><span>09</span>Finish &amp; development</figcaption>
+            </figure>
+            <figure class="about-workflow-card">
+              <img src="/assets/wooden%20process/assembly.jpg" alt="" loading="lazy">
+              <figcaption><span>10</span>Assembly</figcaption>
+            </figure>
+            <figure class="about-workflow-card">
+              <img src="/assets/wooden%20process/quality%20control.jpg" alt="" loading="lazy">
+              <figcaption><span>11</span>Quality control</figcaption>
+            </figure>
+            <figure class="about-workflow-card">
+              <img src="/assets/wooden%20process/moisture%20control.jpg" alt="" loading="lazy">
+              <figcaption><span>12</span>Moisture checking</figcaption>
+            </figure>
+            <figure class="about-workflow-card">
+              <img src="/assets/wooden%20process/packing.jpeg" alt="" loading="lazy">
+              <figcaption><span>13</span>Packing</figcaption>
+            </figure>
+          </div>
         </div>
-
       </div>
+      <p class="about-workflow-note">Our workshop process, from selecting the wood to carefully packing each finished piece.</p>
+    </section>
 
-      <div class="footer-bottom">
-
-        <p class="copyright">
-          &copy; 2026 All Rights Reserved by <a href="#" class="copyright-link">Vishwakarma Arts</a>.
-        </p>
-
+    <section class="about-client-journey" aria-labelledby="journeyTitle">
+      <div class="container">
+        <div class="about-section-heading">
+          <p class="about-kicker">How we work with you</p>
+          <h2 id="journeyTitle">From your first idea to a piece made for you.</h2>
+          <p>A straightforward, personal process—so you know what comes next.</p>
+        </div>
+        <ol class="about-journey-grid">
+          <li><span>01</span><h3>Tell us what you need</h3><p>Share the piece you have in mind, your space, and any photos or measurements.</p></li>
+          <li><span>02</span><h3>Discuss the details</h3><p>Talk through size, wood, finish, and design options with our team.</p></li>
+          <li><span>03</span><h3>Review your enquiry</h3><p>We’ll discuss the requirements with you and share the next steps for your piece.</p></li>
+          <li><span>04</span><h3>Made with care</h3><p>Once details are agreed, your furniture moves through our making and finishing process.</p></li>
+        </ol>
+        <p class="about-journey-cta"><a class="btn" id="waJourneyBtn" target="_blank" rel="noopener">Start a conversation <span aria-hidden="true">→</span></a></p>
       </div>
+    </section>
 
-    </div>
-  </footer>
+    <section class="about-craft" aria-labelledby="craftTitle">
+      <div class="container">
+        <div class="about-craft-heading">
+          <div>
+            <p class="about-kicker">The Vishwakarma craft</p>
+            <h2 id="craftTitle">Thoughtful design, in every detail.</h2>
+          </div>
+          <p>Every piece begins with a purpose: a seat to settle into, a table to gather around, a home for the things you keep.</p>
+        </div>
+        <div class="about-craft-gallery">
+          <figure class="about-craft-card">
+            <img src="/assets/product-images/1chair.jpg" alt="Handcrafted wooden chair from the Vishwakarma Arts collection" loading="lazy">
+            <figcaption><span>01 · Seating</span><strong>Made for slower moments</strong></figcaption>
+          </figure>
+          <figure class="about-craft-card">
+            <img src="/assets/product-images/dt1.jpg" alt="Wooden dining table from the Vishwakarma Arts collection" loading="lazy">
+            <figcaption><span>02 · Dining</span><strong>A place to gather</strong></figcaption>
+          </figure>
+          <figure class="about-craft-card">
+            <img src="/assets/product-images/side1.jpg" alt="Wooden sideboard from the Vishwakarma Arts collection" loading="lazy">
+            <figcaption><span>03 · Storage</span><strong>Considered for your home</strong></figcaption>
+          </figure>
+        </div>
+        <a class="about-craft-link" href="/#collections">Discover the collections <span aria-hidden="true">→</span></a>
+      </div>
+    </section>
 
+    <section class="about-process">
+      <div class="container about-process-grid">
+        <div class="about-process-heading">
+          <p class="about-kicker">From idea to home</p>
+          <h2>Good furniture starts with a conversation.</h2>
+          <p>Have a room to furnish or a design in mind? We’ll help you work out what fits.</p>
+          <a class="btn" id="waBtn" target="_blank" rel="noopener">Tell us what you’re looking for <span aria-hidden="true">→</span></a>
+        </div>
+        <ol class="about-steps">
+          <li><span>01</span><div><h3>Share your idea</h3><p>Tell us what you need, where it will go, and any sizes or references you have.</p></div></li>
+          <li><span>02</span><div><h3>Choose the details</h3><p>Discuss the design, finish, and custom details with our team.</p></div></li>
+          <li><span>03</span><div><h3>Made for your space</h3><p>We’ll help you take the next steps toward a piece made to order.</p></div></li>
+        </ol>
+      </div>
+    </section>
 
+    <section class="about-visit">
+      <div class="container about-visit-inner">
+        <div>
+          <p class="about-kicker">Come say hello</p>
+          <h2>Made in Jodhpur.<br>Here for your home.</h2>
+        </div>
+        <div class="about-visit-contact">
+          <p id="addr"></p>
+          <a class="about-text-link" href="tel:+919549759857">Call us <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </section>
+  </main>
 
-
-
-  <!-- 
-    - #BACK TO TOP
-  -->
-
-  <a href="#top" class="back-top-btn" aria-label="back to top" data-back-top-btn>
-    <ion-icon name="arrow-up" aria-hidden="true"></ion-icon>
-  </a>
-
-
-
-
-
-  <!-- 
-    - custom js link
-  -->
-  <script src="./assets/js/script.js" defer></script>
-
-  <!-- 
-    - ionicon link
-  -->
-  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-
-  <script src="./assets/js/products.js" defer></script>
-  <script src="./assets/js/site-assistant.js" defer></script>
+  <div id="site-footer"></div>
+  <script src="/js/common.js"></script>
+  <script>
+    renderChrome('about').then(() => {
+      document.getElementById('addr').textContent = SITE.address + ' · ' + SITE.phones.join(' / ');
+      const enquiryLink = waLink('Hello, I would like to discuss a furniture design for my home.');
+      document.getElementById('waBtn').href = enquiryLink;
+      document.getElementById('waJourneyBtn').href = enquiryLink;
+    });
+  </script>
 </body>
-
 </html>
