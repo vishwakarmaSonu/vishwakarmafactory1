@@ -753,6 +753,50 @@ body.modal-open { overflow: hidden; }
   line-height: 1.85;
   margin: 0 0 14px;
 }
+.about-owner {
+  padding: 0 0 clamp(68px, 10vw, 124px);
+}
+.about-owner-grid {
+  display: grid;
+  grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
+  align-items: center;
+  gap: clamp(42px, 8vw, 104px);
+}
+.about-owner-photo { position: relative; padding: 0 0 24px 24px; }
+.about-owner-photo::before {
+  position: absolute;
+  inset: 22px 22px 0 0;
+  border: 1px solid #cdbb9e;
+  content: '';
+}
+.about-owner-photo img {
+  position: relative;
+  width: 100%;
+  height: clamp(360px, 44vw, 540px);
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 20px;
+  box-shadow: 0 22px 48px rgba(59, 42, 28, 0.12);
+}
+.about-owner-badge {
+  position: absolute;
+  left: 18px;
+  bottom: 18px;
+  padding: 8px 14px;
+  background: #493321;
+  color: #fff8ee;
+  font: 600 .74rem var(--sans);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  border-radius: 999px;
+}
+.about-owner-copy { max-width: 560px; }
+.about-owner-copy .about-kicker { margin-bottom: 18px; }
+.about-owner-copy p:not(.about-kicker) {
+  color: #706254;
+  line-height: 1.85;
+  margin: 0 0 14px;
+}
 .about-experience {
   display: flex;
   align-items: center;
@@ -1044,6 +1088,8 @@ body.modal-open { overflow: hidden; }
   .about-hero-note { right: 18px; bottom: 18px; font-size: .66rem; }
   .about-intro-grid { grid-template-columns: 1fr; gap: 34px; }
   .about-intro-image img { height: min(112vw, 440px); }
+  .about-owner-grid { grid-template-columns: 1fr; gap: 34px; }
+  .about-owner-photo img { height: min(112vw, 440px); }
   .about-promise-inner { grid-template-columns: 1fr; gap: 24px; }
   .about-capability-grid { grid-template-columns: 1fr; gap: 10px; }
   .about-capability { min-height: 0; padding: 21px; }
